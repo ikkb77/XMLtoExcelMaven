@@ -1,29 +1,24 @@
 package service;
 
+import model.FortifyDTO;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.util.CellRangeAddress;
-
-import model.FortifyDTO;
 
 public class ExcelWriterService {
     static String excel_path = "";
     Properties properties;
     int nCount = 0;
-    Map<String,Integer> seq = new HashMap<String,Integer>();
-    Map<String,Boolean> hidden = new HashMap<String,Boolean>();
+    Map<String,Integer> seq = new HashMap<>();
+    Map<String,Boolean> hidden = new HashMap<>();
 
     public ExcelWriterService(Properties properties) {
         this.properties = properties;
@@ -34,8 +29,8 @@ public class ExcelWriterService {
             seq.put(name, properties.getProperty(name) == null ? null : Integer.parseInt(properties.getProperty(name))-1);
 
             // 열 숨김 설정 저장
-            // properties에 설정할때 숨김을 0으로 저장함.
-            hidden.put(name, properties.getProperty(name + "_hidden") == null ? false : (properties.getProperty(name + "_hidden").equals("0") ? true : false));
+            // properties 에 설정할때 숨김을 0으로 저장함.
+            hidden.put(name, properties.getProperty(name + "_hidden") != null && (properties.getProperty(name + "_hidden").equals("0")));
 
         }
     }
@@ -44,7 +39,7 @@ public class ExcelWriterService {
 
         System.out.println("xls 생성중...");
 
-        Workbook workbook = new HSSFWorkbook();
+        Workbook workbook = new XSSFWorkbook();
 
         // 시트명 설정
         Sheet sheet = workbook.createSheet("Sheet");
@@ -52,33 +47,31 @@ public class ExcelWriterService {
         sheet.setAutoFilter(CellRangeAddress.valueOf("A1:X" + list.size()));
 
         // 기본 셀 스타일 설정
-        CellStyle defaltStyle = workbook.createCellStyle();
-        defaltStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
-        defaltStyle.setBorderBottom(CellStyle.BORDER_THIN);
-        defaltStyle.setBottomBorderColor(IndexedColors.BLACK.index);
-        defaltStyle.setBorderLeft(CellStyle.BORDER_THIN);
-        defaltStyle.setLeftBorderColor(IndexedColors.BLACK.index);
-        defaltStyle.setBorderRight(CellStyle.BORDER_THIN);
-        defaltStyle.setRightBorderColor(IndexedColors.BLACK.index);
-        defaltStyle.setBorderTop(CellStyle.BORDER_THIN);
-        defaltStyle.setTopBorderColor(IndexedColors.BLACK.index);
-        defaltStyle.setWrapText(true);
-
-        Row row;
+        CellStyle defaultStyle = workbook.createCellStyle();
+        defaultStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+        defaultStyle.setBorderBottom(BorderStyle.THIN);
+        defaultStyle.setBottomBorderColor(IndexedColors.BLACK.index);
+        defaultStyle.setBorderLeft(BorderStyle.THIN);
+        defaultStyle.setLeftBorderColor(IndexedColors.BLACK.index);
+        defaultStyle.setBorderRight(BorderStyle.THIN);
+        defaultStyle.setRightBorderColor(IndexedColors.BLACK.index);
+        defaultStyle.setBorderTop(BorderStyle.THIN);
+        defaultStyle.setTopBorderColor(IndexedColors.BLACK.index);
+        defaultStyle.setWrapText(true);
 
         // 헤더 설정
-        row = sheet.createRow(0);
+        Row row = sheet.createRow(0);
         row.createCell(seq.get("friority")).setCellValue("위험도");
         row.createCell(seq.get("folder")).setCellValue("폴더");
         row.createCell(seq.get("kingdom")).setCellValue("대분류");
         row.createCell(seq.get("category")).setCellValue("취약점");
         row.createCell(seq.get("source_filepath")).setCellValue("위험인자 진입 파일경로");
-        row.createCell(seq.get("source_filenname")).setCellValue("위험인자 진입 파일명");
+        row.createCell(seq.get("source_filename")).setCellValue("위험인자 진입 파일명");
         row.createCell(seq.get("source_linestart")).setCellValue("위험인자 진입 라인넘버");
         row.createCell(seq.get("source_snippet")).setCellValue("위험인자 진입 소스조각");
         row.createCell(seq.get("source_targetfunction")).setCellValue("위험인자 진입 함수");
         row.createCell(seq.get("primary_filepath")).setCellValue("취약점 탐지 파일경로");
-        row.createCell(seq.get("primary_filenname")).setCellValue("취약점 탐지 파일명");
+        row.createCell(seq.get("primary_filename")).setCellValue("취약점 탐지 파일명");
         row.createCell(seq.get("primary_linestart")).setCellValue("취약점 탐지 라인넘버");
         row.createCell(seq.get("primary_snippet")).setCellValue("취약점 탐지 소스조각");
         row.createCell(seq.get("primary_targetfunction")).setCellValue("취약점 탐지 함수");
@@ -104,12 +97,12 @@ public class ExcelWriterService {
             setCell(row, seq.get("kingdom"), entity.getKingdom());
             setCell(row, seq.get("category"), entity.getCategory());
             setCell(row, seq.get("source_filepath"), entity.getSource_filepath());
-            setCell(row, seq.get("source_filenname"), entity.getSource_filenname());
+            setCell(row, seq.get("source_filename"), entity.getSource_filename());
             setCell(row, seq.get("source_linestart"), entity.getSource_linestart(), "int");
             setCell(row, seq.get("source_snippet"), entity.getSource_snippet());
             setCell(row, seq.get("source_targetfunction"), entity.getSource_targetfunction());
             setCell(row, seq.get("primary_filepath"), entity.getPrimary_filepath());
-            setCell(row, seq.get("primary_filenname"), entity.getPrimary_filenname());
+            setCell(row, seq.get("primary_filename"), entity.getPrimary_filename());
             setCell(row, seq.get("primary_linestart"), entity.getPrimary_linestart(), "int");
             setCell(row, seq.get("primary_snippet"), entity.getPrimary_snippet());
             setCell(row, seq.get("primary_targetfunction"), entity.getPrimary_targetfunction());
@@ -126,7 +119,7 @@ public class ExcelWriterService {
 
             // 기본 셀 스타일 적용
             for(int i = 0; i < row.getLastCellNum() ; i++){
-                row.getCell(i).setCellStyle(defaltStyle);
+                row.getCell(i).setCellStyle(defaultStyle);
             }
 
             // 줄바꿈 셀기준 행 높이 설정
@@ -155,6 +148,7 @@ public class ExcelWriterService {
             }
         }
 
+
         FileOutputStream fos;
         try {
             fos = new FileOutputStream(excel_path);
@@ -164,7 +158,7 @@ public class ExcelWriterService {
             System.out.println("완료.");
         } catch (Exception e) {
             System.out.println(excel_path + " 파일을 생성할 수 없습니다.");
-//        	e.printStackTrace();
+        	e.printStackTrace();
         }
     }
 
@@ -174,9 +168,12 @@ public class ExcelWriterService {
             if(style == null){
                 row.createCell(index).setCellValue(value);
             }else{
+
                 switch(style){
                     case "int": row.createCell(index).setCellValue(Integer.parseInt(value)); break;
                     case "wrap" : row.createCell(index).setCellValue(setWrapCell(value)); break;
+//                    case "wrap" : row.createCell(index).setCellValue(setWrapCell(value)); break;
+
                 }
             }
         }else{
@@ -188,20 +185,18 @@ public class ExcelWriterService {
     }
 
     //줄바뀜 셀 설정
-    HSSFRichTextString setWrapCell(String value){
+    String setWrapCell(String value){
         int count = 0;
-        String description = "";
+        StringBuilder description = new StringBuilder();
 
         if(value != null){
             String[] remark = value.split("\n");
-            for (int k = 0; k < remark.length; k++)
-            {
-                if (remark[k].length() > 0)
-                {
+            for (String s : remark) {
+                if (s.length() > 0) {
                     if (count == 0)
-                        description += remark[k];
+                        description.append(s);
                     else
-                        description += "\r\n"+ remark[k];
+                        description.append("\r\n").append(s);
 
                     count++;
                 }
@@ -211,6 +206,6 @@ public class ExcelWriterService {
             }
         }
 
-        return new HSSFRichTextString(description);
+        return description.toString();
     }
 }

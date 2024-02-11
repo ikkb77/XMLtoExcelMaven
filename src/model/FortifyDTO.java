@@ -6,12 +6,12 @@ public class FortifyDTO {
 	private String kingdom;
 	private String category;
 	private String source_filepath;
-	private String source_filenname;
+	private String source_filename;
 	private String source_linestart;
 	private String source_snippet;
 	private String source_targetfunction;
 	private String primary_filepath;
-	private String primary_filenname;
+	private String primary_filename;
 	private String primary_linestart;
 	private String primary_snippet;
 	private String primary_targetfunction;
@@ -30,12 +30,12 @@ public class FortifyDTO {
 			"kingdom",
 			"category",
 			"source_filepath",
-			"source_filenname",
+			"source_filename",
 			"source_linestart",
 			"source_snippet",
 			"source_targetfunction",
 			"primary_filepath",
-			"primary_filenname",
+			"primary_filename",
 			"primary_linestart",
 			"primary_snippet",
 			"primary_targetfunction",
@@ -56,12 +56,12 @@ public class FortifyDTO {
 		this.kingdom = null;
 		this.category = null;
 		this.source_filepath = null;
-		this.source_filenname = null;
+		this.source_filename = null;
 		this.source_linestart = null;
 		this.source_snippet = null;
 		this.source_targetfunction = null;
 		this.primary_filepath = null;
-		this.primary_filenname = null;
+		this.primary_filename = null;
 		this.primary_linestart = null;
 		this.primary_snippet = null;
 		this.primary_targetfunction = null;
@@ -78,8 +78,8 @@ public class FortifyDTO {
 	}
 
 	public FortifyDTO(String friority, String folder, String kingdom, String category, String source_filepath,
-					  String source_filenname, String source_linestart, String source_snippet, String source_targetfunction,
-					  String primary_filepath, String primary_filenname, String primary_linestart, String primary_snippet,
+					  String source_filename, String source_linestart, String source_snippet, String source_targetfunction,
+					  String primary_filepath, String primary_filename, String primary_linestart, String primary_snippet,
 					  String primary_targetfunction, String issue_abstract, String metainfo_abstract, String metainfo_explanation,
 					  String metainfo_recommendations, String metainfo_tips, String iid, String ruleid, String tag,
 					  String userinfo, String comment) {
@@ -89,12 +89,12 @@ public class FortifyDTO {
 		this.kingdom = kingdom;
 		this.category = category;
 		this.source_filepath = source_filepath;
-		this.source_filenname = source_filenname;
+		this.source_filename = source_filename;
 		this.source_linestart = source_linestart;
 		this.source_snippet = source_snippet;
 		this.source_targetfunction = source_targetfunction;
 		this.primary_filepath = primary_filepath;
-		this.primary_filenname = primary_filenname;
+		this.primary_filename = primary_filename;
 		this.primary_linestart = primary_linestart;
 		this.primary_snippet = primary_snippet;
 		this.primary_targetfunction = primary_targetfunction;
@@ -139,11 +139,11 @@ public class FortifyDTO {
 	public void setSource_filepath(String source_filepath) {
 		this.source_filepath = source_filepath;
 	}
-	public String getSource_filenname() {
-		return source_filenname;
+	public String getSource_filename() {
+		return source_filename;
 	}
-	public void setSource_filenname(String source_filenname) {
-		this.source_filenname = source_filenname;
+	public void setSource_filename(String source_filenname) {
+		this.source_filename = source_filenname;
 	}
 	public String getSource_linestart() {
 		return source_linestart;
@@ -169,11 +169,11 @@ public class FortifyDTO {
 	public void setPrimary_filepath(String primary_filepath) {
 		this.primary_filepath = primary_filepath;
 	}
-	public String getPrimary_filenname() {
-		return primary_filenname;
+	public String getPrimary_filename() {
+		return primary_filename;
 	}
-	public void setPrimary_filenname(String primary_filenname) {
-		this.primary_filenname = primary_filenname;
+	public void setPrimary_filename(String primary_filename) {
+		this.primary_filename = primary_filename;
 	}
 	public String getPrimary_linestart() {
 		return primary_linestart;
@@ -260,12 +260,12 @@ public class FortifyDTO {
 		kingdom = null;
 		category = null;
 		source_filepath = null;
-		source_filenname = null;
+		source_filename = null;
 		source_linestart = null;
 		source_snippet = null;
 		source_targetfunction = null;
 		primary_filepath = null;
-		primary_filenname = null;
+		primary_filename = null;
 		primary_linestart = null;
 		primary_snippet = null;
 		primary_targetfunction = null;
