@@ -142,8 +142,8 @@ public class FortifyDTO {
 	public String getSource_filename() {
 		return source_filename;
 	}
-	public void setSource_filename(String source_filenname) {
-		this.source_filename = source_filenname;
+	public void setSource_filename(String source_filename) {
+		this.source_filename = source_filename;
 	}
 	public String getSource_linestart() {
 		return source_linestart;
