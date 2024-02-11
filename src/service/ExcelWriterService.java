@@ -192,7 +192,7 @@ public class ExcelWriterService {
         if(value != null){
             String[] remark = value.split("\n");
             for (String s : remark) {
-                if (s.length() > 0) {
+                if (!s.isEmpty()) {
                     if (count == 0)
                         description.append(s);
                     else
