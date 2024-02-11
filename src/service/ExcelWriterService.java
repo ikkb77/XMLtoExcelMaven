@@ -37,7 +37,7 @@ public class ExcelWriterService {
 
     public void makeExcelFileParmList(ArrayList<FortifyDTO> list) {
 
-        System.out.println("xls 생성중...");
+        System.out.println("xlsx 생성중...");
 
         Workbook workbook = new XSSFWorkbook();
 

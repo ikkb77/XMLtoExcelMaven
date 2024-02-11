@@ -24,7 +24,7 @@ public class XMLReaderService {
 		try {
 			properties.load(Files.newInputStream(Paths.get("xls-generator.properties")));
 		} catch (IOException e) {
-			System.out.println("설정파일을 찾을 수 없습니다.\nxls-generator.properties 파일을 확인해주시기 바랍니다.");
+			System.out.println("설정파일을 찾을 수 없습니다.\n xls-generator.properties 파일을 확인해주시기 바랍니다.");
 		}
 
 		readXMLFile(properties);
@@ -295,16 +295,16 @@ public class XMLReaderService {
 
 	static String setXlsURL(String path){
 
-		if(!path.endsWith(".xls"))
-			path = path + ".xls";
+		if(!path.endsWith(".xlsx"))
+			path = path + ".xlsx";
 
 		return path;
 	}
 
 	public static void main(String[] args) {
 		if (args == null || args.length != 2) {
-			System.out.println("Usage : xls-generator <xml file> <xls file>");
-			System.out.println("Convert xml file into xls file");
+			System.out.println("Usage : xlsx-generator <xml file> <xlsx file>");
+			System.out.println("Convert xml file into xlsx file");
 
 			System.exit(-1);
 		}
