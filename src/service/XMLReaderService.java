@@ -82,6 +82,7 @@ public class XMLReaderService {
 			String userinfo = null;
 			String comment = null;
 			String metainfo_name = null;
+			String scandate = null;
 
 			while (event_type != XmlPullParser.END_DOCUMENT) {
 				if (event_type == XmlPullParser.START_TAG) {
@@ -90,6 +91,9 @@ public class XMLReaderService {
 					if(tag.equals("Issue")){
 						iid = xpp.getAttributeValue(null, "iid");
 						ruleid = xpp.getAttributeValue(null, "ruleID");
+					}
+					if(tag.equals("TemplateName")){
+						scandate = xpp.getText();
 					}
 				}else if (event_type == XmlPullParser.TEXT && tag_start) {
 					//각 태그별로 값을 가져온다.
@@ -202,7 +206,8 @@ public class XMLReaderService {
 						}
 						if(tag.equals("MajorAttributeSummary")){
 							tag_MajorAttributeSummary = true;
-						}if(tag.equals("Issue")){
+						}
+						if(tag.equals("Issue")){
 							tag_Issue = true;
 						}
 					}
@@ -253,6 +258,7 @@ public class XMLReaderService {
 							entity.setMetainfo_tips(metainfo_tips);
 							entity.setIid(iid);
 							entity.setRuleid(ruleid);
+							entity.setScanDate(scandate);
 
 							list.add(entity);
 							tag_Issue = false;
@@ -285,7 +291,7 @@ public class XMLReaderService {
 
 	}
 
-	static String setXmlURL(String path){
+	static String setXmlDirPath(String path){
 
 		if(!path.endsWith(".xml"))
 			path = path + ".xml";
@@ -293,7 +299,7 @@ public class XMLReaderService {
 		return path;
 	}
 
-	static String setXlsURL(String path){
+	static String setXlsDirPath(String path){
 
 		if(!path.endsWith(".xlsx"))
 			path = path + ".xlsx";
@@ -309,8 +315,8 @@ public class XMLReaderService {
 			System.exit(-1);
 		}
 
-		XMLReaderService.xml_path = setXmlURL(args[0]);
-		ExcelWriterService.excel_path = setXlsURL(args[1]);
+		XMLReaderService.xml_path = setXmlDirPath(args[0]);
+		ExcelWriterService.excel_path = setXlsDirPath(args[1]);
 		new XMLReaderService();
 
 	}

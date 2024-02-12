@@ -25,6 +25,7 @@ public class FortifyDTO {
 	private String tag;
 	private String userinfo;
 	private String comment;
+	private String scandate;
 	public static String[] parameters = {"friority",
 			"folder",
 			"kingdom",
@@ -48,7 +49,8 @@ public class FortifyDTO {
 			"ruleid",
 			"tag",
 			"userinfo",
-			"comment"};
+			"comment",
+			"scandate"};
 
 	public FortifyDTO() {
 		this.friority = null;
@@ -75,6 +77,7 @@ public class FortifyDTO {
 		this.tag = null;
 		this.userinfo = null;
 		this.comment = null;
+		this.scandate = null;
 	}
 
 	public FortifyDTO(String friority, String folder, String kingdom, String category, String source_filepath,
@@ -82,7 +85,7 @@ public class FortifyDTO {
 					  String primary_filepath, String primary_filename, String primary_linestart, String primary_snippet,
 					  String primary_targetfunction, String issue_abstract, String metainfo_abstract, String metainfo_explanation,
 					  String metainfo_recommendations, String metainfo_tips, String iid, String ruleid, String tag,
-					  String userinfo, String comment) {
+					  String userinfo, String comment, String scandate) {
 		super();
 		this.friority = friority;
 		this.folder = folder;
@@ -108,6 +111,7 @@ public class FortifyDTO {
 		this.tag = tag;
 		this.userinfo = userinfo;
 		this.comment = comment;
+		this.scandate = scandate;
 	}
 	public String getFriority() {
 		return friority;
@@ -253,7 +257,8 @@ public class FortifyDTO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-
+	public String getScanDate() { return scandate; }
+	public void setScanDate(String scandate) { this.scandate = scandate; }
 	public void setNull(){
 		friority = null;
 		folder = null;
@@ -279,6 +284,8 @@ public class FortifyDTO {
 		tag = null;
 		userinfo = null;
 		comment = null;
+		scandate = null;
 	}
+
 
 }
