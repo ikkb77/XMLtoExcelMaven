@@ -44,7 +44,7 @@ public class ExcelWriterService {
         // 시트명 설정
         Sheet sheet = workbook.createSheet("Sheet");
         // 필터 설정
-        sheet.setAutoFilter(CellRangeAddress.valueOf("A1:X" + list.size()));
+        sheet.setAutoFilter(CellRangeAddress.valueOf("A1:Y" + list.size()));
 
         // 기본 셀 스타일 설정
         CellStyle defaultStyle = workbook.createCellStyle();
@@ -85,6 +85,7 @@ public class ExcelWriterService {
         row.createCell(seq.get("tag")).setCellValue("auditor 태그");
         row.createCell(seq.get("userinfo")).setCellValue("auditor 아이디");
         row.createCell(seq.get("comment")).setCellValue("auditor 의견");
+        row.createCell(seq.get("scandate")).setCellValue("scan 일자");
 
         int count = 1;
 
@@ -116,6 +117,7 @@ public class ExcelWriterService {
             setCell(row, seq.get("tag"), entity.getTag());
             setCell(row, seq.get("userinfo"), entity.getUserinfo());
             setCell(row, seq.get("comment"), entity.getComment());
+            setCell(row, seq.get("scandate"), entity.getScanDate());
 
             // 기본 셀 스타일 적용
             for(int i = 0; i < row.getLastCellNum() ; i++){
@@ -172,7 +174,6 @@ public class ExcelWriterService {
                 switch(style){
                     case "int": row.createCell(index).setCellValue(Integer.parseInt(value)); break;
                     case "wrap" : row.createCell(index).setCellValue(setWrapCell(value)); break;
-//                    case "wrap" : row.createCell(index).setCellValue(setWrapCell(value)); break;
 
                 }
             }
