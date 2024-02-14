@@ -12,8 +12,7 @@ jobs:
         with:
           java-version: 11
       - uses: fortify/gha-setup-scancentral-client@v2
-        with:
-          client-auth-token: 15d4af11-4107-4edf-96f9-71f69e79fc67
+
       - run: scancentral -url http://13.209.176.153:8081/scancentral-ctrl start -bt mvn
       - uses: actions/upload-artifact@v2
         if: always()
