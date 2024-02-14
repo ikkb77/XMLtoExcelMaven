@@ -13,7 +13,7 @@ jobs:
           java-version: 11
       - uses: fortify/gha-setup-scancentral-client@v2
 
-      - run: scancentral -url http://13.209.176.153:8081/scancentral-ctrl start -bt mvn
+      - run: scancentral -url http://13.209.176.153:8081/scancentral-ctrl start -bt mvn upload -application intelliJ -version XMLtoExcelMaven -uptoken 15d4af11-4107-4edf-96f9-71f69e79fc67
       - uses: actions/upload-artifact@v2
         if: always()
         with:
