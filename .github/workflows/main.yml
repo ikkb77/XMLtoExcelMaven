@@ -14,7 +14,7 @@ jobs:
       - uses: fortify/gha-setup-scancentral-client@v2
         with:
           client-auth-token: sampleToken
-      - run: scancentral -url http://microfocus.com/fortify start -bt mvn
+      - run: scancentral -url http://13.209.176.153:8081/scancentral-ctrl start -bt mvn
       - uses: actions/upload-artifact@v2
         if: always()
         with:
