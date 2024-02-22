@@ -53,6 +53,7 @@ public class XMLReaderService {
 			boolean tag_Source = false;
 			boolean tag_Tag = false;
 			boolean tag_Comment = false;
+			boolean tag_Text= false;
 			int event_type = xpp.getEventType();
 
 			ArrayList<FortifyDTO> list = new ArrayList<>();
@@ -84,6 +85,9 @@ public class XMLReaderService {
 			String metainfo_name = null;
 			String scandate = null;
 
+
+
+
 			while (event_type != XmlPullParser.END_DOCUMENT) {
 				if (event_type == XmlPullParser.START_TAG) {
 					tag = xpp.getName();
@@ -92,12 +96,28 @@ public class XMLReaderService {
 						iid = xpp.getAttributeValue(null, "iid");
 						ruleid = xpp.getAttributeValue(null, "ruleID");
 					}
-					if(tag.equals("TemplateName")){
-						scandate = xpp.getText();
-					}
 				}else if (event_type == XmlPullParser.TEXT && tag_start) {
 					//각 태그별로 값을 가져온다.
-
+					if(tag.equals("Text") && !tag_Text){
+						String month = null;
+						switch (xpp.getText().substring(3,6)){
+							case "Jan": month = "01"; break;
+							case "Feb":	month = "02"; break;
+							case "Mar":	month = "03"; break;
+							case "Apr":	month = "04"; break;
+							case "May": month = "05"; break;
+							case "Jun":	month = "06"; break;
+							case "Jul":	month = "07"; break;
+							case "Aug":	month = "08"; break;
+							case "Sep":	month = "09"; break;
+							case "Oct":	month = "10"; break;
+							case "Nov":	month = "11"; break;
+							case "Dec": month = "12"; break;
+							default: month = "Invalid month"; break;
+						}
+						scandate = xpp.getText().substring(11,15)+"-"+month+"-"+xpp.getText().substring(7,9);
+						tag_Text=true;
+					}
 					//GroupingSection 안의 내용만 확인
 					if(tag_GroupingSection){
 
