@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReportDefinition type="xml">
+    <TemplateName>Fortify Security Report</TemplateName>
+    <TemplatePath></TemplatePath>
+    <LogoPath>/OT_logo.png</LogoPath>
+    <Footnote>Copyright 2023 Open Text.</Footnote>
+    <UserName>kchoi</UserName>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Executive Summary</Title>
+        <SubSection enabled="true">
+            <Title>Issues Overview</Title>
+            <Description>This section provides an overview of the issues uncovered during analysis. The report covers a summary of vulnerability categories discovered by the tool. The auditor should augment this section with higher-level conclusions derived from human review of the application (including architecture reviews, black-box testing, compliance issues, etc.)</Description>
+            <Text>On Feb 7, 2024, a source code review was performed over the WebGoat-2023.8 code base. 2,232 files, 29,188 LOC (Executable) were scanned and reviewed for defects that could lead to potential security vulnerabilities. A total of 660 reviewed findings were uncovered during the analysis.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Issue Summary by Fortify Priority Order</Title>
+            <Description>A table summarizing the number of issues found and the breakdown of issues in each Fortify Priority Level</Description>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Fortify Priority Order</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="445">
+                        <groupTitle>Low</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="112">
+                        <groupTitle>High</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="91">
+                        <groupTitle>Critical</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="12">
+                        <groupTitle>Medium</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Recommendations and Conclusions</Title>
+            <Description>This section gives some high-level recommendations on remediating the issues discussed in the Issues Summary sub section. Recommendations will vary based on deployment scenarios, risk appetite, and existing mitigating strategies. The auditor should supplement the Fortify generic recommendations with specific information that takes into account the application specific variables.</Description>
+            <Text>The Issues Category section provides Fortify recommendations for addressing issues at a generic level.  The recommendations for specific fixes can be extrapolated from those generic recommendations by the development group.</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Project Summary</Title>
+        <SubSection enabled="true">
+            <Title>Code Base Summary</Title>
+            <Description>Summary of the Codebase that was analyzed</Description>
+            <Text>Code location: C:/Users/CChoi&#13;
+Number of Files: 2232&#13;
+Lines of Code: 29188&#13;
+Build Label: &lt;No Build Label&gt;</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Scan Information</Title>
+            <Description>Details of the analysis</Description>
+            <Text>Scan time: 07:43&#13;
+SCA Engine version: 23.2.0.0125&#13;
+Machine Name: KRCCHOI01&#13;
+Username running scan: kchoi</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Results Certification</Title>
+            <Description>A full summary of the Results Certification for this project</Description>
+            <Text>Results Certification Valid&#13;
+&#13;
+Details:&#13;
+&#13;
+Results Signature:
+
+	SCA Analysis Results has Valid signature
+	
+
+Rules Signature:
+
+	There were no custom rules used in this scan</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Attack Surface</Title>
+            <Description>A full summary of the attack surface for this project</Description>
+            <Text>Attack Surface:&#13;
+Command Line Arguments:
+	null.MavenWrapperDownloader.main
+	org.owasp.webgoat.lessons.challenges.challenge7.MD5.main
+	org.owasp.webgoat.lessons.challenges.challenge7.PasswordResetLink.main
+	org.owasp.webgoat.server.StartWebGoat.main
+
+Environment Variables:
+	null.null.null
+	java.lang.System.getenv
+	org.owasp.webgoat.container.WebGoat.pluginTargetDirectory
+	org.owasp.webgoat.lessons.challenges.challenge7.Assignment7.Assignment7
+	org.owasp.webgoat.lessons.passwordreset.ResetLinkAssignmentForgotPassword.ResetLinkAssignmentForgotPassword
+	org.owasp.webgoat.lessons.passwordreset.SimpleMailAssignment.SimpleMailAssignment
+	org.owasp.webgoat.lessons.pathtraversal.ProfileUpload.ProfileUpload
+	org.owasp.webgoat.lessons.pathtraversal.ProfileUploadFix.ProfileUploadFix
+	org.owasp.webgoat.lessons.pathtraversal.ProfileUploadRemoveUserInput.ProfileUploadRemoveUserInput
+	org.owasp.webgoat.lessons.pathtraversal.ProfileUploadRetrieval.ProfileUploadRetrieval
+	org.owasp.webgoat.lessons.pathtraversal.ProfileZipSlip.ProfileZipSlip
+	org.owasp.webgoat.lessons.webwolfintroduction.MailAssignment.MailAssignment
+	org.owasp.webgoat.lessons.xxe.BlindSendFileAssignment.BlindSendFileAssignment
+	org.springframework.core.env.PropertyResolver.getProperty
+
+File System:
+	java.io.FileInputStream.FileInputStream
+	java.io.FileInputStream.FileInputStream
+	java.nio.file.Files.readAllBytes
+	java.nio.file.Files.writeString
+	java.util.zip.ZipFile.entries
+	org.springframework.core.io.ResourceLoader.getResource
+	org.springframework.util.FileCopyUtils.copyToByteArray
+
+Network:
+	org.springframework.core.io.ResourceLoader.getResource
+
+Private Information:
+	null.null.null
+	null.null.null
+	java.lang.System.getenv
+	java.util.Properties.getProperty
+	org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.getPassword
+	org.springframework.core.env.PropertyResolver.getProperty
+
+Java Properties:
+	java.lang.System.getProperty
+	java.util.Properties.load
+
+Serialized Data:
+	null.null.null
+	java.io.ObjectInputStream.readObject
+
+Stream:
+	java.io.InputStream.read
+	java.io.InputStream.readAllBytes
+	org.springframework.util.FileCopyUtils.copyToByteArray
+
+System Information:
+	null.null.null
+	java.io.File.listFiles
+	java.lang.System.getProperty
+	java.lang.System.getProperty
+	java.lang.System.getProperty
+	java.lang.Throwable.getMessage
+	java.net.InetAddress.getLocalHost
+	org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace
+
+Web:
+	null.null.null
+	null.null.prompt
+	null.~JS_Generic.val
+	jakarta.servlet.ServletRequest.getContentType
+	jakarta.servlet.http.HttpServletRequest.getMethod
+	org.springframework.web.servlet.LocaleResolver.resolveLocale
+
+Web Service:
+	org.springframework.core.io.ResourceLoader.getResource
+</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Filter Set Summary</Title>
+            <Description>A brief summary of the filterset used to create this report</Description>
+            <Text>Current Enabled Filter Set:&#13;
+Security Auditor View&#13;
+&#13;
+Filter Set Details:&#13;
+&#13;
+Folder Filters:
+If [fortify priority order] contains critical Then set folder to Critical
+If [fortify priority order] contains high Then set folder to High
+If [fortify priority order] contains medium Then set folder to Medium
+If [fortify priority order] contains low Then set folder to Low
+Visibility Filters:
+</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Audit Guide Summary</Title>
+            <Description>Summary of the impact of the audit guide</Description>
+            <Text>Code Quality Issues
+
+Hide code quality issues.
+Poor code quality leads to unpredictable behavior, poor usability, and an opportunity for an attacker to stress the system in unexpected ways. AuditGuide can hide code quality issues if you are not concerned with them.
+Enable if you are not concerned with code quality issues.
+		
+
+Filters:
+If kingdom contains code quality Then hide issueSerialization Issues
+
+Hide serialization issues.
+Incorrect serialization and de-serialization can lead to unpredictable behavior and cause denial of service attacks. AuditGuide can hide serialization issues if you are not concerned with them.
+Enable if you are not concerned with serialization issues.
+		
+
+Filters:
+If taint contains serialized Then hide issue
+If category is j2ee bad practices: non-serializable object stored in session Then hide issue
+If category is incorrect definition of serializable class Then hide issue
+If category is serializable class with no version id Then hide issueDenial of Service Attacks
+
+Hide issues that are not directly security-related.
+Certain issues may lead to program crashes, but are unlikely to result in malicious code execution. AuditGuide can hide issues that are based on null pointer dereferences, uninitialized variables, double free bugs, and more.
+Enable if you are more concerned about security than reliability.
+		
+
+Filters:
+If category is use after free Then hide issue
+If category is double free Then hide issue
+If category is null dereference Then hide issue
+If category is uninitialized variable Then hide issue
+If category is missing check against null Then hide issuePoor Programming Style Issues
+
+Hide poor programming style issues.
+Poor programming style usually results in confusing and buggy code. AuditGuide can hide poor programming style issues if you are not concerned with them.
+Enable if you are not concerned with poor programming style issues.
+		
+
+Filters:
+If category contains poor style Then hide issue</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Results Outline</Title>
+        <SubSection enabled="true">
+            <Title>Overall number of results</Title>
+            <Description>Results count</Description>
+            <Text>The scan found 660 issues.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Vulnerability Examples by Category</Title>
+            <Description>Results summary for critical and high priority issues.  Vulnerability examples are provided by category.</Description>
+            <IssueListing listing="true" limit="-1">
+                <Refinement>[fortify priority order]:critical OR [fortify priority order]:high AND [fortify priority order]:medium AND [fortify priority order]:low</Refinement>
+                <Chart chartType="list">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Count by Category</Title>
+        <SubSection enabled="true">
+            <Title>Issues By Category</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="215">
+                        <groupTitle>Poor Error Handling: Overly Broad Throws</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="49">
+                        <groupTitle>System Information Leak: External</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="35">
+                        <groupTitle>Path Manipulation</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="33">
+                        <groupTitle>Cross-Site Request Forgery</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="30">
+                        <groupTitle>Mass Assignment: Insecure Binder Configuration</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="27">
+                        <groupTitle>SQL Injection</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="23">
+                        <groupTitle>Password Management: Hardcoded Password</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="21">
+                        <groupTitle>System Information Leak: Internal</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="17">
+                        <groupTitle>Credential Management: Hardcoded API Credentials</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="17">
+                        <groupTitle>Insecure Randomness</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="16">
+                        <groupTitle>Cookie Security: HTTPOnly not Set</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="16">
+                        <groupTitle>Cross-Site Scripting: DOM</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="14">
+                        <groupTitle>Cookie Security: Cookie not Sent Over SSL</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="10">
+                        <groupTitle>Poor Logging Practice: Use of a System Output Stream</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="9">
+                        <groupTitle>Open Redirect</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="9">
+                        <groupTitle>Trust Boundary Violation</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="8">
+                        <groupTitle>Access Control: Database</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="8">
+                        <groupTitle>Resource Injection</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="8">
+                        <groupTitle>System Information Leak</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="7">
+                        <groupTitle>Password Management: Password in Comment</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="7">
+                        <groupTitle>Privacy Violation</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="6">
+                        <groupTitle>Log Forging</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="6">
+                        <groupTitle>Poor Error Handling: Overly Broad Catch</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="5">
+                        <groupTitle>Often Misused: File Upload</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="5">
+                        <groupTitle>Race Condition</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>Denial of Service: StringBuilder</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>J2EE Bad Practices: Leftover Debug Code</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>Key Management: Hardcoded Encryption Key</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>Poor Error Handling: Empty Catch Block</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>Unchecked Return Value</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>J2EE Bad Practices: JVM Termination</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>Log Forging (debug)</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>XML Entity Expansion Injection</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>XML External Entity Injection</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Cross-Site Scripting: Persistent</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Cross-Site Scripting: Self</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Password Management: Password in Configuration File</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Password Management: Weak Cryptography</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Privacy Violation: Autocomplete</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Code Correctness: Incorrect Serializable Method Signature</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Command Injection</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Denial of Service</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Dockerfile Misconfiguration: Default User Privilege</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Dockerfile Misconfiguration: Dependency Confusion</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Dynamic Code Evaluation: Unsafe Deserialization</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Dynamic Code Evaluation: Unsafe XStream Deserialization</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>File Disclosure: Spring</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>HTML5: Overly Permissive Message Posting Policy</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Insecure Randomness: User-Controlled Seed</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Often Misused: Authentication</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Password Management: Empty Password</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Path Manipulation: Zip Entry Overwrite</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Race Condition: Singleton Member Field</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Server-Side Request Forgery</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Spring Security Misconfiguration: Disabled Security Headers</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Weak Cryptographic Hash</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Breakdown by Analysis</Title>
+        <SubSection enabled="true">
+            <Title>Issue by Analysis</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="pie">
+                    <Axis>Analysis</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="660">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+</ReportDefinition>

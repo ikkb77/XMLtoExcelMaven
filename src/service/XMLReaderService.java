@@ -99,23 +99,32 @@ public class XMLReaderService {
 				}else if (event_type == XmlPullParser.TEXT && tag_start) {
 					//각 태그별로 값을 가져온다.
 					if(tag.equals("Text") && !tag_Text){
-						String month = null;
-						switch (xpp.getText().substring(3,6)){
-							case "Jan": month = "01"; break;
-							case "Feb":	month = "02"; break;
-							case "Mar":	month = "03"; break;
-							case "Apr":	month = "04"; break;
-							case "May": month = "05"; break;
-							case "Jun":	month = "06"; break;
-							case "Jul":	month = "07"; break;
-							case "Aug":	month = "08"; break;
-							case "Sep":	month = "09"; break;
-							case "Oct":	month = "10"; break;
-							case "Nov":	month = "11"; break;
-							case "Dec": month = "12"; break;
-							default: month = "Invalid month"; break;
+
+						String scan_ymd[] = xpp.getText().split(",");
+						String scan_monthdate = scan_ymd[0].replaceAll(" ", "");
+						String scan_year = scan_ymd[1].replaceAll(" ", "");
+
+
+						String scan_month = scan_monthdate.substring(2,5);
+						String scan_date = String.format("%02d", Integer.parseInt(scan_monthdate.substring(5)));
+
+						switch (scan_month){
+							case "Jan": scan_month = "01"; break;
+							case "Feb":	scan_month = "02"; break;
+							case "Mar":	scan_month = "03"; break;
+							case "Apr":	scan_month = "04"; break;
+							case "May": scan_month = "05"; break;
+							case "Jun":	scan_month = "06"; break;
+							case "Jul":	scan_month = "07"; break;
+							case "Aug":	scan_month = "08"; break;
+							case "Sep":	scan_month = "09"; break;
+							case "Oct":	scan_month = "10"; break;
+							case "Nov":	scan_month = "11"; break;
+							case "Dec": scan_month = "12"; break;
+							default: scan_month = "Invalid month"; break;
 						}
-						scandate = xpp.getText().substring(11,15)+"-"+month+"-"+xpp.getText().substring(7,9);
+
+						scandate = scan_year + "-" + scan_month + "-" + scan_date;
 						tag_Text=true;
 					}
 					//GroupingSection 안의 내용만 확인
