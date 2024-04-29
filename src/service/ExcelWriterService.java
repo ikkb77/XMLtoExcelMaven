@@ -7,6 +7,9 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +40,7 @@ public class ExcelWriterService {
 
     public void makeExcelFileParmList(ArrayList<FortifyDTO> list) {
 
-        System.out.println("xlsx 생성중...");
+        System.out.println("xlsx generating...");
 
         Workbook workbook = new XSSFWorkbook();
 
@@ -157,11 +160,49 @@ public class ExcelWriterService {
             workbook.write(fos);
             fos.close();
             workbook.close();
-            System.out.println("완료.");
+            System.out.println("xlsx generated successfully.");
+
+            xlsxToCSV(excel_path);
+
+
         } catch (Exception e) {
-            System.out.println(excel_path + " 파일을 생성할 수 없습니다.");
+            System.out.println(excel_path + " xlsx couldn't generated.");
         	e.printStackTrace();
         }
+    }
+
+    void xlsxToCSV(String excel_path){
+        try {
+            FileInputStream fis = new FileInputStream(excel_path);
+            Workbook workbook = new XSSFWorkbook(fis);
+
+            Sheet sheet = workbook.getSheetAt(0);
+
+            FileWriter writer = new FileWriter(excel_path+".csv");
+
+            for (Row row : sheet){
+                for (Cell cell : row){
+                    switch (cell.getCellTypeEnum()){
+                        case STRING:
+                            writer.append(cell.getStringCellValue());
+                            break;
+                        default:
+                            break;
+                    }
+                    writer.append(",");
+                }
+                writer.append("\n");
+            }
+            writer.flush();
+            writer.close();
+            fis.close();
+
+            System.out.println("xlsx to CSV file converted successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     // 셀 값 입력
