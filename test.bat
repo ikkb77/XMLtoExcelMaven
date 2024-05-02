@@ -1,3 +1,3 @@
-java -jar ./target/XMLtoExcelMaven-0.0.1-SNAPSHOT-jar-with-dependencies.jar FortifyLoginProject_Security_Report.xml FortifyLoginProject_Security_Report.xlsx
-
+rem java -jar ./target/XMLtoExcelMaven-0.0.1-SNAPSHOT-jar-with-dependencies.jar FortifyLoginProject_Security_Report.xml FortifyLoginProject_Security_Report.xlsx
+ java -jar ./target/XMLtoExcelMaven-0.0.1-SNAPSHOT-jar-with-dependencies.jar test.xml test.xlsx
 pause

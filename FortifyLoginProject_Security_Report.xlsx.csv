@@ -23,7 +23,7 @@ High,High,Security Features,Privacy Violation: Autocomplete,,,,,,register.html,r
   </form>
 
 
-autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,CA9E64516D6FCAE0C54C2ED7EF6704A2,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,2024-02-13,
+autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,CA9E64516D6FCAE0C54C2ED7EF6704A2,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Tue Feb 13 20:18:45 KST 2024,
 High,High,Security Features,Privacy Violation: Autocomplete,,,,,,register.html,register.html,,    <span>è´??·: <input onmouseout = "UserCheck()" id="User" type="text" name="LoginUser" ></input><p id="2"></p><br/><br/></span>
     <span>å¯†ç : <input onmouseout = "PassCheck()" id="Pass" type="password" name="LoginPass" ></input><br/><br/><p id="3"></p></span>
     <span style="margin-left: 218px;">ç¡?è®¤å¯†? : <input onmouseout = "PassTwoCheck()" id = "PassTwo" type="password" name="PassTwo" ></input><br/><br/><p id="4"></p></span>
@@ -48,7 +48,7 @@ High,High,Security Features,Privacy Violation: Autocomplete,,,,,,register.html,r
   </form>
 
 
-autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,CA9E64516D6FCAE0C54C2ED7EF6704A3,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,2024-02-13,
+autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,CA9E64516D6FCAE0C54C2ED7EF6704A3,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Tue Feb 13 20:18:45 KST 2024,
 High,High,Security Features,Privacy Violation: Autocomplete,,,,,,login.html,login.html,,        <center>?”¨?ˆ·?™»å½?</center><br/><br/>
         USER: <br/> <input type="text" name="user"></input><br/><br/>
         PASS: <br/><input type="password" name="pass"></input>
@@ -73,7 +73,7 @@ High,High,Security Features,Privacy Violation: Autocomplete,,,,,,login.html,logi
   </form>
 
 
-autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,DA87A9C902D54BAADFCA48C96419F2F2,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,2024-02-13,
+autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,DA87A9C902D54BAADFCA48C96419F2F2,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Tue Feb 13 20:18:45 KST 2024,
 High,High,Security Features,Privacy Violation: Autocomplete,,,,,,login.jsp,login.jsp,,    		<center>??¡§©¡?¡¤????¨ö?</center><br/><br/>
     		USER: <br/> <input type="text" name="user"></input><br/><br/>
     		PASS: <br/><input type="password" name="pass"></input>
@@ -98,7 +98,7 @@ High,High,Security Features,Privacy Violation: Autocomplete,,,,,,login.jsp,login
   </form>
 
 
-autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,62722A3F75BE81ECDF3ACB69E695990A,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,2024-02-13,
+autocomplete ¼Ó¼ºÀÇ ±âº»°ªÀÌ onÀÎÁö È®ÀÎÇÏ½Ê½Ã¿À. µû¶ó¼­ ¹Î°¨ÇÑ ÀÔ·ÂÀ» ´Ù·ê °æ¿ì, ¼Ó¼ºÀ» »ı·«ÇÏÁö ¸¶½Ê½Ã¿À.,,62722A3F75BE81ECDF3ACB69E695990A,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Tue Feb 13 20:18:45 KST 2024,
 Critical,Critical,Input Validation and Representation,SQL Injection,src/adrui/registerServlet.java,registerServlet.java,,		// TODO Auto-generated method stub
 		//doGet(request, response);
 		String sno = request.getParameter("Sno");
@@ -241,7 +241,7 @@ Android¿¡ ÇØ´çÇÏ´Â ÄÚµå´Â ´ÙÀ½°ú °°½À´Ï´Ù.
 
 3. SQL Injection ¹®Á¦´Â µ¥ÀÌÅÍ Èå¸§ ¼öÁ¤ ÀÛ¾÷ ÈÄ¿¡µµ °è¼ÓÇØ¼­ º¸°íµÉ ¼ö ÀÖ½À´Ï´Ù(¿ì¼± ¼øÀ§ °ªÀº °¨¼Ò). Fortify Static Code Analyzer¿¡¼­ »ç¿ëÀÚ Á¦¾î ÀÔ·ÂÀÌ SQL ¹® ±¸¼º¿¡ »ç¿ëµÇ°í ÀÖ´Ù´Â ºĞ¸íÇÑ µ¥ÀÌÅÍ Èå¸§ Áõ°Å°¡ ¹ß°ßµÇ¸é ³ôÀ½/½É°¢ ¿ì¼± ¼øÀ§ÀÇ µ¥ÀÌÅÍ Èå¸§ ¹®Á¦°¡ º¸°íµË´Ï´Ù. Fortify Static Code Analyzer¿¡¼­ µ¥ÀÌÅÍ ¼Ò½º¸¦ °áÁ¤ÇÒ ¼ö ¾ø°í ¼Ò½º°¡ µ¿ÀûÀ¸·Î º¯°æµÉ ¼ö ÀÖ´Â °æ¿ì ³·À½/Áß°£ ¿ì¼± ¼øÀ§ÀÇ ÀÇ¹Ì Ã¼°è ¹®Á¦°¡ º¸°íµË´Ï´Ù. ÀÌ Àü·«Àº SQL Injection°ú °°ÀÌ ¾Ç¿ëÀÇ ÀáÀçÀû ¿µÇâÀÌ °ÅÁş ±àÁ¤ ¹®Á¦¸¦ °¨»çÇÏ´Â ºÒÆíÇÔº¸´Ù Å« ÀÏºÎ Ãë¾à¼º ¹üÁÖ¿¡ Ã¤ÅÃµÇ¾ú½À´Ï´Ù.
 
-4. Fortify AppDefender adds protection against this category.,9147C5CEBDA6DE4FE869C32D0183E3F5,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,2024-02-13,
+4. Fortify AppDefender adds protection against this category.,9147C5CEBDA6DE4FE869C32D0183E3F5,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Input Validation and Representation,SQL Injection,src/adrui/registerServlet.java,registerServlet.java,,		// TODO Auto-generated method stub
 		//doGet(request, response);
 		String sno = request.getParameter("Sno");
@@ -384,7 +384,7 @@ Android¿¡ ÇØ´çÇÏ´Â ÄÚµå´Â ´ÙÀ½°ú °°½À´Ï´Ù.
 
 3. SQL Injection ¹®Á¦´Â µ¥ÀÌÅÍ Èå¸§ ¼öÁ¤ ÀÛ¾÷ ÈÄ¿¡µµ °è¼ÓÇØ¼­ º¸°íµÉ ¼ö ÀÖ½À´Ï´Ù(¿ì¼± ¼øÀ§ °ªÀº °¨¼Ò). Fortify Static Code Analyzer¿¡¼­ »ç¿ëÀÚ Á¦¾î ÀÔ·ÂÀÌ SQL ¹® ±¸¼º¿¡ »ç¿ëµÇ°í ÀÖ´Ù´Â ºĞ¸íÇÑ µ¥ÀÌÅÍ Èå¸§ Áõ°Å°¡ ¹ß°ßµÇ¸é ³ôÀ½/½É°¢ ¿ì¼± ¼øÀ§ÀÇ µ¥ÀÌÅÍ Èå¸§ ¹®Á¦°¡ º¸°íµË´Ï´Ù. Fortify Static Code Analyzer¿¡¼­ µ¥ÀÌÅÍ ¼Ò½º¸¦ °áÁ¤ÇÒ ¼ö ¾ø°í ¼Ò½º°¡ µ¿ÀûÀ¸·Î º¯°æµÉ ¼ö ÀÖ´Â °æ¿ì ³·À½/Áß°£ ¿ì¼± ¼øÀ§ÀÇ ÀÇ¹Ì Ã¼°è ¹®Á¦°¡ º¸°íµË´Ï´Ù. ÀÌ Àü·«Àº SQL Injection°ú °°ÀÌ ¾Ç¿ëÀÇ ÀáÀçÀû ¿µÇâÀÌ °ÅÁş ±àÁ¤ ¹®Á¦¸¦ °¨»çÇÏ´Â ºÒÆíÇÔº¸´Ù Å« ÀÏºÎ Ãë¾à¼º ¹üÁÖ¿¡ Ã¤ÅÃµÇ¾ú½À´Ï´Ù.
 
-4. Fortify AppDefender adds protection against this category.,E05BD34011271AF74D20BA4CC2F53A2E,4B673A45-9AD5-4CBA-945B-11A3702CDF57,,,,2024-02-13,
+4. Fortify AppDefender adds protection against this category.,E05BD34011271AF74D20BA4CC2F53A2E,4B673A45-9AD5-4CBA-945B-11A3702CDF57,,,,Tue Feb 13 20:18:45 KST 2024,
 Critical,Critical,Input Validation and Representation,SQL Injection,src/adrui/registerServlet.java,registerServlet.java,,		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
 		String pass = request.getParameter("LoginPass");
@@ -527,7 +527,7 @@ Android¿¡ ÇØ´çÇÏ´Â ÄÚµå´Â ´ÙÀ½°ú °°½À´Ï´Ù.
 
 3. SQL Injection ¹®Á¦´Â µ¥ÀÌÅÍ Èå¸§ ¼öÁ¤ ÀÛ¾÷ ÈÄ¿¡µµ °è¼ÓÇØ¼­ º¸°íµÉ ¼ö ÀÖ½À´Ï´Ù(¿ì¼± ¼øÀ§ °ªÀº °¨¼Ò). Fortify Static Code Analyzer¿¡¼­ »ç¿ëÀÚ Á¦¾î ÀÔ·ÂÀÌ SQL ¹® ±¸¼º¿¡ »ç¿ëµÇ°í ÀÖ´Ù´Â ºĞ¸íÇÑ µ¥ÀÌÅÍ Èå¸§ Áõ°Å°¡ ¹ß°ßµÇ¸é ³ôÀ½/½É°¢ ¿ì¼± ¼øÀ§ÀÇ µ¥ÀÌÅÍ Èå¸§ ¹®Á¦°¡ º¸°íµË´Ï´Ù. Fortify Static Code Analyzer¿¡¼­ µ¥ÀÌÅÍ ¼Ò½º¸¦ °áÁ¤ÇÒ ¼ö ¾ø°í ¼Ò½º°¡ µ¿ÀûÀ¸·Î º¯°æµÉ ¼ö ÀÖ´Â °æ¿ì ³·À½/Áß°£ ¿ì¼± ¼øÀ§ÀÇ ÀÇ¹Ì Ã¼°è ¹®Á¦°¡ º¸°íµË´Ï´Ù. ÀÌ Àü·«Àº SQL Injection°ú °°ÀÌ ¾Ç¿ëÀÇ ÀáÀçÀû ¿µÇâÀÌ °ÅÁş ±àÁ¤ ¹®Á¦¸¦ °¨»çÇÏ´Â ºÒÆíÇÔº¸´Ù Å« ÀÏºÎ Ãë¾à¼º ¹üÁÖ¿¡ Ã¤ÅÃµÇ¾ú½À´Ï´Ù.
 
-4. Fortify AppDefender adds protection against this category.,08D07C1407753721CFABDE9FE7DFE2CF,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,2024-02-13,
+4. Fortify AppDefender adds protection against this category.,08D07C1407753721CFABDE9FE7DFE2CF,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,Tue Feb 13 20:18:45 KST 2024,
 Critical,Critical,Input Validation and Representation,SQL Injection,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -670,7 +670,7 @@ Android¿¡ ÇØ´çÇÏ´Â ÄÚµå´Â ´ÙÀ½°ú °°½À´Ï´Ù.
 
 3. SQL Injection ¹®Á¦´Â µ¥ÀÌÅÍ Èå¸§ ¼öÁ¤ ÀÛ¾÷ ÈÄ¿¡µµ °è¼ÓÇØ¼­ º¸°íµÉ ¼ö ÀÖ½À´Ï´Ù(¿ì¼± ¼øÀ§ °ªÀº °¨¼Ò). Fortify Static Code Analyzer¿¡¼­ »ç¿ëÀÚ Á¦¾î ÀÔ·ÂÀÌ SQL ¹® ±¸¼º¿¡ »ç¿ëµÇ°í ÀÖ´Ù´Â ºĞ¸íÇÑ µ¥ÀÌÅÍ Èå¸§ Áõ°Å°¡ ¹ß°ßµÇ¸é ³ôÀ½/½É°¢ ¿ì¼± ¼øÀ§ÀÇ µ¥ÀÌÅÍ Èå¸§ ¹®Á¦°¡ º¸°íµË´Ï´Ù. Fortify Static Code Analyzer¿¡¼­ µ¥ÀÌÅÍ ¼Ò½º¸¦ °áÁ¤ÇÒ ¼ö ¾ø°í ¼Ò½º°¡ µ¿ÀûÀ¸·Î º¯°æµÉ ¼ö ÀÖ´Â °æ¿ì ³·À½/Áß°£ ¿ì¼± ¼øÀ§ÀÇ ÀÇ¹Ì Ã¼°è ¹®Á¦°¡ º¸°íµË´Ï´Ù. ÀÌ Àü·«Àº SQL Injection°ú °°ÀÌ ¾Ç¿ëÀÇ ÀáÀçÀû ¿µÇâÀÌ °ÅÁş ±àÁ¤ ¹®Á¦¸¦ °¨»çÇÏ´Â ºÒÆíÇÔº¸´Ù Å« ÀÏºÎ Ãë¾à¼º ¹üÁÖ¿¡ Ã¤ÅÃµÇ¾ú½À´Ï´Ù.
 
-4. Fortify AppDefender adds protection against this category.,7979A68DB1EB9D685F539D165EC5EE29,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,2024-02-13,
+4. Fortify AppDefender adds protection against this category.,7979A68DB1EB9D685F539D165EC5EE29,E04D3E1F-2D8C-400A-BB55-7DA143F987E3,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak: Incomplete Servlet Error Handling,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -721,7 +721,7 @@ protected void doPost (HttpServletRequest req,
       }
   }
 }
-,,0D85D8B3021CC15E7F4434F4B9EFED84,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,2024-02-13,
+,,0D85D8B3021CC15E7F4434F4B9EFED84,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak: Incomplete Servlet Error Handling,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -772,7 +772,7 @@ protected void doPost (HttpServletRequest req,
       }
   }
 }
-,,4C80BB31FC4828FD5B90F74DBFB384F9,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,2024-02-13,
+,,4C80BB31FC4828FD5B90F74DBFB384F9,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak: Incomplete Servlet Error Handling,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -823,7 +823,7 @@ protected void doPost (HttpServletRequest req,
       }
   }
 }
-,,D1CED827D763E2CF7E0809CC14ED711D,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,2024-02-13,
+,,D1CED827D763E2CF7E0809CC14ED711D,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak: Incomplete Servlet Error Handling,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -874,7 +874,7 @@ protected void doPost (HttpServletRequest req,
       }
   }
 }
-,,FCCFD957687589A021B1ADD593FB3FD6,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,2024-02-13,
+,,FCCFD957687589A021B1ADD593FB3FD6,97B9518A-F1BC-44CE-BEB1-D5FBDDFCCF9D,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Cross-Site Request Forgery,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -937,7 +937,7 @@ HTTP Referer/Origin Çì´õ °Ë»ç: °ø°İÀÚ°¡ CSRF °ø°İÀ» ½ÇÇàÇÏ´Â µ¿¾È ÀÌ·¯ÇÑ Çì´õ¸¦ 
 ¼¼¼Ç ¼ö¸í Á¦ÇÑ: CSRF °ø°İÀ» »ç¿ëÇÏ¿© º¸È£µÈ ¸®¼Ò½º¿¡ Á¢±ÙÇÒ ¶§ °ø°İÀÇ ÀÏºÎ·Î Àü¼ÛÇÑ ¼¼¼Ç ID°¡ ¼­¹ö¿¡¼­ À¯È¿ÇÑ µ¿¾È¿¡¸¸ °ø°İÀÌ À¯È¿ÇÏ°Ô µË´Ï´Ù. µû¶ó¼­ ¼¼¼Ç ¼ö¸íÀ» Á¦ÇÑÇÏ¸é °ø°İ ¼º°ø °¡´É¼ºÀÌ ÁÙ¾îµì´Ï´Ù.
 
 ¿©±â¿¡¼­ ¼³¸íÇÏ´Â ±â¹ıÀº XSS °ø°İÀ¸·Î ¹«·ÂÈ­µË´Ï´Ù. È¿°úÀûÀÎ CSRF ¿ÏÈ­ ±â¹ı¿¡´Â XSS ¿ÏÈ­ ±â¹ıÀÌ Æ÷ÇÔµË´Ï´Ù.
-,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,56FB5AE4E7E9BB62980D1AA7A3D90A86,78E0700E-56FE-45A2-A11B-6A560F730576,,,,2024-02-13,
+,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,56FB5AE4E7E9BB62980D1AA7A3D90A86,78E0700E-56FE-45A2-A11B-6A560F730576,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Cross-Site Request Forgery,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1000,7 +1000,7 @@ HTTP Referer/Origin Çì´õ °Ë»ç: °ø°İÀÚ°¡ CSRF °ø°İÀ» ½ÇÇàÇÏ´Â µ¿¾È ÀÌ·¯ÇÑ Çì´õ¸¦ 
 ¼¼¼Ç ¼ö¸í Á¦ÇÑ: CSRF °ø°İÀ» »ç¿ëÇÏ¿© º¸È£µÈ ¸®¼Ò½º¿¡ Á¢±ÙÇÒ ¶§ °ø°İÀÇ ÀÏºÎ·Î Àü¼ÛÇÑ ¼¼¼Ç ID°¡ ¼­¹ö¿¡¼­ À¯È¿ÇÑ µ¿¾È¿¡¸¸ °ø°İÀÌ À¯È¿ÇÏ°Ô µË´Ï´Ù. µû¶ó¼­ ¼¼¼Ç ¼ö¸íÀ» Á¦ÇÑÇÏ¸é °ø°İ ¼º°ø °¡´É¼ºÀÌ ÁÙ¾îµì´Ï´Ù.
 
 ¿©±â¿¡¼­ ¼³¸íÇÏ´Â ±â¹ıÀº XSS °ø°İÀ¸·Î ¹«·ÂÈ­µË´Ï´Ù. È¿°úÀûÀÎ CSRF ¿ÏÈ­ ±â¹ı¿¡´Â XSS ¿ÏÈ­ ±â¹ıÀÌ Æ÷ÇÔµË´Ï´Ù.
-,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,94FAB8D7062649FD7643BA144C209D75,78E0700E-56FE-45A2-A11B-6A560F730576,,,,2024-02-13,
+,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,94FAB8D7062649FD7643BA144C209D75,78E0700E-56FE-45A2-A11B-6A560F730576,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Cross-Site Request Forgery,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1063,7 +1063,7 @@ HTTP Referer/Origin Çì´õ °Ë»ç: °ø°İÀÚ°¡ CSRF °ø°İÀ» ½ÇÇàÇÏ´Â µ¿¾È ÀÌ·¯ÇÑ Çì´õ¸¦ 
 ¼¼¼Ç ¼ö¸í Á¦ÇÑ: CSRF °ø°İÀ» »ç¿ëÇÏ¿© º¸È£µÈ ¸®¼Ò½º¿¡ Á¢±ÙÇÒ ¶§ °ø°İÀÇ ÀÏºÎ·Î Àü¼ÛÇÑ ¼¼¼Ç ID°¡ ¼­¹ö¿¡¼­ À¯È¿ÇÑ µ¿¾È¿¡¸¸ °ø°İÀÌ À¯È¿ÇÏ°Ô µË´Ï´Ù. µû¶ó¼­ ¼¼¼Ç ¼ö¸íÀ» Á¦ÇÑÇÏ¸é °ø°İ ¼º°ø °¡´É¼ºÀÌ ÁÙ¾îµì´Ï´Ù.
 
 ¿©±â¿¡¼­ ¼³¸íÇÏ´Â ±â¹ıÀº XSS °ø°İÀ¸·Î ¹«·ÂÈ­µË´Ï´Ù. È¿°úÀûÀÎ CSRF ¿ÏÈ­ ±â¹ı¿¡´Â XSS ¿ÏÈ­ ±â¹ıÀÌ Æ÷ÇÔµË´Ï´Ù.
-,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,F9BBA322F3EF4182501DBA402388E4E9,78E0700E-56FE-45A2-A11B-6A560F730576,,,,2024-02-13,
+,1. Fortify Static Code Analyzer´Â GET ¶Ç´Â POST ÀÛ¾÷À» ¼öÇàÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¸ğµç HTML ¾ç½Ä ¹× XMLHttpRequest °³Ã¼¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. °¨»çÀÚ´Â °¢ ¾ç½ÄÀÌ °ø°İÀÚ¿¡°Ô CSRF ´ë»óÀ¸·Î¼­ °¡Ä¡°¡ ÀÖ´ÂÁö ¿©ºÎ¿Í ÇØ´çÇÏ´Â ¿ÏÈ­ ±â¹ıÀ» »ç¿ëÇÏ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇØ¾ß ÇÕ´Ï´Ù.,F9BBA322F3EF4182501DBA402388E4E9,78E0700E-56FE-45A2-A11B-6A560F730576,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,API Abuse,Missing Check against Null,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1117,7 +1117,7 @@ String safeGetParameter (HttpRequest request, String name)
     }
     return value;
 }
-,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,3C32B62872F71A75A0DC74034AEFC341,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,2024-02-13,
+,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,3C32B62872F71A75A0DC74034AEFC341,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,API Abuse,Missing Check against Null,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1171,7 +1171,7 @@ String safeGetParameter (HttpRequest request, String name)
     }
     return value;
 }
-,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,4B46D0EFD19B8C2C48CC00079DB08926,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,2024-02-13,
+,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,4B46D0EFD19B8C2C48CC00079DB08926,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,API Abuse,Missing Check against Null,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1225,7 +1225,7 @@ String safeGetParameter (HttpRequest request, String name)
     }
     return value;
 }
-,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,2FE6DD40847D6E8E121FE9262C1ED052,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,2024-02-13,
+,1. "±×·± ÀÏÀº Àı´ë ÀÏ¾î³¯ ¼ö ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é..."ÀÌ¶ó°í ¸»ÇÏ¸é¼­ ÀÌ ÀÌ½´¸¦ µ¤¾îµÎ·Á´Â ÇÁ·Î±×·¡¸Ó¸¦ Á¶½ÉÇÏ½Ê½Ã¿À. ÀÌµéÀº °³¹ß ¿öÅ©½ºÅ×ÀÌ¼ÇÀ» »ç¿ëÇÏ¿© ½Ã½ºÅÛ µ¿ÀÛ ¹æ½Ä¿¡ ´ëÇÑ Á÷°ü·ÂÀ» Å°¿üÀ» °¡´É¼ºÀÌ Å®´Ï´Ù. ¼ÒÇÁÆ®¿ş¾î¸¦ ´Ù¸¥ ¿î¿µ Ã¼Á¦, ´Ù¸¥ ¿î¿µ Ã¼Á¦ ¹öÀü, ´Ù¸¥ ÇÏµå¿ş¾î ±¸¼º ¶Ç´Â ´Ù¸¥ ·±Å¸ÀÓ È¯°æ¿¡¼­ ½ÇÇàÇÏ°Ô µÇ¸é ÀÌµéÀÇ Á÷°ü·ÂÀº ¹«¿ëÁö¹°ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.,2FE6DD40847D6E8E121FE9262C1ED052,4280F38B-9FDB-454E-B495-89CF45CD51B7,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Poor Logging Practice: Use of a System Output Stream,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1265,7 +1265,7 @@ public class MyClass {
     logger.info("hello world");
   ...
 }
-,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,88008082069DDB8934BAC242EE9E27DD,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,2024-02-13,
+,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,88008082069DDB8934BAC242EE9E27DD,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Poor Logging Practice: Use of a System Output Stream,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1305,7 +1305,7 @@ public class MyClass {
     logger.info("hello world");
   ...
 }
-,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,62793514B5C14E58E34A6C82F6EAA2FC,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,2024-02-13,
+,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,62793514B5C14E58E34A6C82F6EAA2FC,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Poor Logging Practice: Use of a System Output Stream,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1345,7 +1345,7 @@ public class MyClass {
     logger.info("hello world");
   ...
 }
-,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,3634AD4EBCD44C770289CB4C84EFC8FC,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,2024-02-13,
+,1. Fortify Static Code Analyzer¿¡¼­´Â ¿¹¿ÜÀûÀ¸·Î System.out ¶Ç´Â System.errÀ» main() ¹× ¸Ş¼­µå(main() ÀÇ È£Ãâ °èÃş)¿¡ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç ÀÌ·¯ÇÑ »ç¿ëÀ» Poor Logging Practice:  Use of a System Output Stream ÀÌ½´·Î º¸°íÇÏÁö ¾Ê½À´Ï´Ù.,3634AD4EBCD44C770289CB4C84EFC8FC,F972FE42-6C15-47D2-BD5C-448166A574C2,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1402,7 +1402,7 @@ Android ÀåÄ¡¿¡¼­ NFC¸¦ ÅëÇÑ ½Ã½ºÅÛ µ¥ÀÌÅÍ ´©ÃâÀÌ ¿°·ÁµÇ¸é ´ÙÀ½ÀÇ ¼¼ °¡Áö ÀÛ¾÷ Áß
 
 2. ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡Àº ¸ğµç À¯ÇüÀÇ ÇÁ·Î±×·¥¿¡ Àû¿ëµÇÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ °ø°İÀÚ°¡ ÀÌ¹Ì ½Ã½ºÅÛ Á¤º¸¸¦ È®º¸ÇÑ Å¬¶óÀÌ¾ğÆ® ½Ã½ºÅÛ¿¡¼­ ½ÇÇàµÇ°Å³ª ½Ã½ºÅÛ Á¤º¸¸¦ ½Å·ÚÇÒ ¼ö ÀÖ´Â ·Î±× ÆÄÀÏ¿¡¸¸ ÀÎ¼âÇÏ´Â °æ¿ì, Audit Guide¸¦ »ç¿ëÇÏ¿© ½ºÄµ °á°ú¿¡¼­ ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡À» ÇÊÅÍ¸µÇÒ ¼ö ÀÖ½À´Ï´Ù.
 
-3. Fortify AppDefender adds protection against this category.,08BD92B58521B0F455A66A26EE6288E1,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,2024-02-13,
+3. Fortify AppDefender adds protection against this category.,08BD92B58521B0F455A66A26EE6288E1,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1459,7 +1459,7 @@ Android ÀåÄ¡¿¡¼­ NFC¸¦ ÅëÇÑ ½Ã½ºÅÛ µ¥ÀÌÅÍ ´©ÃâÀÌ ¿°·ÁµÇ¸é ´ÙÀ½ÀÇ ¼¼ °¡Áö ÀÛ¾÷ Áß
 
 2. ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡Àº ¸ğµç À¯ÇüÀÇ ÇÁ·Î±×·¥¿¡ Àû¿ëµÇÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ °ø°İÀÚ°¡ ÀÌ¹Ì ½Ã½ºÅÛ Á¤º¸¸¦ È®º¸ÇÑ Å¬¶óÀÌ¾ğÆ® ½Ã½ºÅÛ¿¡¼­ ½ÇÇàµÇ°Å³ª ½Ã½ºÅÛ Á¤º¸¸¦ ½Å·ÚÇÒ ¼ö ÀÖ´Â ·Î±× ÆÄÀÏ¿¡¸¸ ÀÎ¼âÇÏ´Â °æ¿ì, Audit Guide¸¦ »ç¿ëÇÏ¿© ½ºÄµ °á°ú¿¡¼­ ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡À» ÇÊÅÍ¸µÇÒ ¼ö ÀÖ½À´Ï´Ù.
 
-3. Fortify AppDefender adds protection against this category.,0DD8B02E4BFE39436C2920BB34F94924,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,2024-02-13,
+3. Fortify AppDefender adds protection against this category.,0DD8B02E4BFE39436C2920BB34F94924,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,System Information Leak,src/adrui/registerServlet.java,registerServlet.java,,		//doGet(request, response);
 		String sno = request.getParameter("Sno");
 		String user = request.getParameter("LoginUser");
@@ -1516,7 +1516,7 @@ Android ÀåÄ¡¿¡¼­ NFC¸¦ ÅëÇÑ ½Ã½ºÅÛ µ¥ÀÌÅÍ ´©ÃâÀÌ ¿°·ÁµÇ¸é ´ÙÀ½ÀÇ ¼¼ °¡Áö ÀÛ¾÷ Áß
 
 2. ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡Àº ¸ğµç À¯ÇüÀÇ ÇÁ·Î±×·¥¿¡ Àû¿ëµÇÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ °ø°İÀÚ°¡ ÀÌ¹Ì ½Ã½ºÅÛ Á¤º¸¸¦ È®º¸ÇÑ Å¬¶óÀÌ¾ğÆ® ½Ã½ºÅÛ¿¡¼­ ½ÇÇàµÇ°Å³ª ½Ã½ºÅÛ Á¤º¸¸¦ ½Å·ÚÇÒ ¼ö ÀÖ´Â ·Î±× ÆÄÀÏ¿¡¸¸ ÀÎ¼âÇÏ´Â °æ¿ì, Audit Guide¸¦ »ç¿ëÇÏ¿© ½ºÄµ °á°ú¿¡¼­ ÀÌ Ä«Å×°í¸®ÀÇ Ãë¾àÁ¡À» ÇÊÅÍ¸µÇÒ ¼ö ÀÖ½À´Ï´Ù.
 
-3. Fortify AppDefender adds protection against this category.,53EE9CDA46A819785E847488896323C2,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,2024-02-13,
+3. Fortify AppDefender adds protection against this category.,53EE9CDA46A819785E847488896323C2,FE4EADF2-7055-4C36-863E-5A01C4A0E1A4,,,,Tue Feb 13 20:18:45 KST 2024,
 Critical,Critical,Input Validation and Representation,Cross-Site Scripting: Persistent,src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1651,7 +1651,7 @@ Block-level element Ç×¸ñ(ÅØ½ºÆ® ´Ü¶ô Áß°£):
 
 2. ºñ·Ï ½Å·ÚÇÒ ¼ö ¾ø´Â µ¥ÀÌÅÍ¿¡ ´ëÇÑ URL ÀÎÄÚµùÀÌ ¸¹Àº XSS °ø°İÀ» ¸·¾ÆÁÖ±ä ÇÏÁö¸¸, ÀÏºÎ ºê¶ó¿ìÀú(Æ¯È÷ Internet Explorer 6 ¹× 7 ±× ¿Ü ´Ù¸¥ ºê¶ó¿ìÀúµé)´Â JavaScript ÀÎÅÍÇÁ¸®ÅÍ·Î Àü¼ÛÇÏ±â Àü¿¡ DOM(Document Object Model) ³»ÀÇ Æ¯Á¤ ÁöÁ¡¿¡¼­ ÀÚµ¿À¸·Î ³»¿ëÀ» ÇØµ¶ÇÕ´Ï´Ù. ÀÌ·¯ÇÑ À§ÇèÀ» ¹İ¿µÇÏ±â À§ÇØ ·êÆÑÀº ´õ ÀÌ»ó Cross-Site ScriptingÀ» ¹æÁöÇÏ´Â µ¥ ÃæºĞÇÑ URL ÀÎÄÚµù ·çÆ¾À» Ã³¸®ÇÏÁö ¾Ê½À´Ï´Ù. URL ¾ÏÈ£È­ ÀÌÈÄ µµÃâµÇ´Â µ¥ÀÌÅÍ °ªÀ¸·Î Fortify´Â Cross-Site Scripting, Poor Validation Ãë¾àÁ¡À» º¸°íÇÒ ¼ö ÀÖ½À´Ï´Ù.
 
-3. Fortify AppDefender adds protection against this category.,B096458EEBEC91D30EA97721FF2F280D,4D69E4E2-959C-4EF8-84F4-A6489B288ABF,,,,2024-02-13,
+3. Fortify AppDefender adds protection against this category.,B096458EEBEC91D30EA97721FF2F280D,4D69E4E2-959C-4EF8-84F4-A6489B288ABF,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,API Abuse,J2EE Bad Practices: getConnection(),src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1680,7 +1680,7 @@ conn = DriverManager.getConnection(CONNECT_STRING);
 
 2. ¾ß±âµÉ °¡´É¼ºÀÌ ÀÖ´Â ´õ ¸¹Àº ÀÏ¹İÀûÀÎ ¼º´É ¹®Á¦ ¿Ü¿¡µµ µ¶Á¡ ¿¬°á °ü¸®´Â ºñ¹Ğ¹øÈ£ °ü¸® ½Ç¼ö·Î ÀÌ¾îÁö´Â °æ¿ì°¡ ¸¹½À´Ï´Ù. ÀÚÃ¼ µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» °ü¸®ÇÏ´Â ÀÀ¿ë ÇÁ·Î±×·¥¿¡¼­´Â Áï½Ã »ç¿ëÇÒ ¼ö ÀÖ´Â ´ë¾ÈÀÌ ¾ø±â ¶§¹®¿¡ ÀÏ¹İ ÅØ½ºÆ® ±¸¼º ÆÄÀÏ¿¡ ÇÏµåÄÚµåµÇ°Å³ª ÀúÀåµÈ ºñ¹Ğ¹øÈ£¸¦ Ã£´Â °ÍÀÌ ÀÏ¹İÀûÀÔ´Ï´Ù. ÀÌ·¯ÇÑ À¯ÇüÀÇ µ¿ÀÛ ¿¹´Â ÀÀ¿ë ÇÁ·Î±×·¥ ¼­¹ö °ü¸® ¿¬°á Ç®·Î ÀÌµ¿ÇÏ±â À§ÇÑ ÀÎ¼ö¿¡ Á¤º¸¸¦ Ãß°¡ÇÏ´Â ¿ªÇÒÀ» ÇØ¾ß ÇÕ´Ï´Ù.
 
-3. J2EE°¡ ¾Æ´Ñ Java ÀÀ¿ë ÇÁ·Î±×·¥À» °¨»çÇÏ´Â °æ¿ì J2EEÀÇ ºÎÀûÀıÇÑ »ç·Ê ¹üÁÖ°¡ »ç¿ëÀÚ È¯°æ¿¡ Àû¿ëµÇÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± °æ¿ì Audit Guide¸¦ »ç¿ëÇÏ¿© ÀÌ·¯ÇÑ ¹®Á¦¸¦ ¾ïÁ¦ÇÒ ¼ö ÀÖ½À´Ï´Ù.,E4385F2C90FC80BDADB7174333CB0B19,EDD8E0B5-D8F2-4F56-A20B-549E3880318B,,,,2024-02-13,
+3. J2EE°¡ ¾Æ´Ñ Java ÀÀ¿ë ÇÁ·Î±×·¥À» °¨»çÇÏ´Â °æ¿ì J2EEÀÇ ºÎÀûÀıÇÑ »ç·Ê ¹üÁÖ°¡ »ç¿ëÀÚ È¯°æ¿¡ Àû¿ëµÇÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± °æ¿ì Audit Guide¸¦ »ç¿ëÇÏ¿© ÀÌ·¯ÇÑ ¹®Á¦¸¦ ¾ïÁ¦ÇÒ ¼ö ÀÖ½À´Ï´Ù.,E4385F2C90FC80BDADB7174333CB0B19,EDD8E0B5-D8F2-4F56-A20B-549E3880318B,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Environment,J2EE Misconfiguration: Excessive Session Timeout,src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1705,7 +1705,7 @@ Low,Low,Environment,J2EE Misconfiguration: Excessive Session Timeout,src/adrui/L
 <session-config>
   <session-timeout>20</session-timeout>
 </session-config>
-,,C2F39B963AB1AFACD8D57325EEAF747F,B7ED276F-524D-444B-8930-7D77535BF0D0,,,,2024-02-13,
+,,C2F39B963AB1AFACD8D57325EEAF747F,B7ED276F-524D-444B-8930-7D77535BF0D0,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Environment,J2EE Misconfiguration: Missing Error Handling,src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1730,7 +1730,7 @@ Low,Low,Environment,J2EE Misconfiguration: Missing Error Handling,src/adrui/Logi
    <error-code>500</error-code>
 <location>/error.jsp</location>
 </error-page>
-,,399A248E35AE0FBB04255DE45FA9754C,749BCC9F-FE61-4DC0-9EF2-5EF1872C7717,,,,2024-02-13,
+,,399A248E35AE0FBB04255DE45FA9754C,749BCC9F-FE61-4DC0-9EF2-5EF1872C7717,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Security Features,Password Management,src/adrui/MyContextListener.java,MyContextListener.java,,		String url = sc.getInitParameter("url");
 		String user = sc.getInitParameter("user");
 		String pass = sc.getInitParameter("pass");
@@ -1799,7 +1799,7 @@ Password Management ÀÌ½´¸¦ °¨»çÇÏ·Á¸é ¾ÏÈ£°¡ ½Ã½ºÅÛ¿¡ ÀÔ·ÂµÇ´Â ÁöÁ¡ºÎÅÍ ¾ÏÈ£¸¦ »
 
 ¾ÏÈ£°¡ Á¦´ë·Î º¸È£µÈ´Ù°í È®½ÅÇÏ¸é ¾ÏÈ£°¡ ³­µ¶ Ã³¸®·Î º¸È£µÇ°í ÀÖÀ½À» ³ªÅ¸³»´Â ³­µ¶ Ã³¸® ÇØÁ¦ ·çÆ¾¿¡ ´ëÇÑ »ç¿ëÀÚ ÁöÁ¤ Åë°ú ±ÔÄ¢(pass-through rule)À» ÀÛ¼ºÇÕ´Ï´Ù. ÀÌ ±ÔÄ¢À» ÇâÈÄ ÀÀ¿ë ÇÁ·Î±×·¥ ºĞ¼®¿¡ Æ÷ÇÔ½ÃÅ°¸é ½Äº°µÈ ³­µ¶ Ã³¸® ÇØÁ¦ ·çÆ¾À» Åë°úÇÑ ¾ÏÈ£´Â ´õ ÀÌ»ó Password Management Ãë¾àÁ¡À» ÀÏÀ¸Å°Áö ¾Ê½À´Ï´Ù.
 
-2. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Struts 2 Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,88F5DB5C1FEF4C0BCA0EDC265177D3F9,E05C0DB1-F798-4A77-9A6A-42ACEBA215E6,,,,2024-02-13,
+2. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Struts 2 Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,88F5DB5C1FEF4C0BCA0EDC265177D3F9,E05C0DB1-F798-4A77-9A6A-42ACEBA215E6,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Errors,Poor Error Handling: Overly Broad Catch,src/adrui/MyContextListener.java,MyContextListener.java,,		String url = sc.getInitParameter("url");
 		String user = sc.getInitParameter("user");
 		String pass = sc.getInitParameter("pass");
@@ -1838,7 +1838,7 @@ Low,Low,Errors,Poor Error Handling: Overly Broad Catch,src/adrui/MyContextListen
   }
 
 
-ÇÏÁö¸¸ doExchange()°¡ ¼öÁ¤µÇ¾î ´Ù¸¥ ¹æ½ÄÀ¸·Î Ã³¸®ÇØ¾ß ÇÏ´Â »õ·Î¿î Çü½ÄÀÇ ¿¹¿Ü »çÇ×ÀÌ ¹ß»ıÇÏ¸é ±¤¹üÀ§ÇÑ catch ºí·Ï ¶§¹®¿¡ ÄÄÆÄÀÏ·¯°¡ ¹®Á¦¸¦ ÁöÀûÇÒ ¼ö ¾ø½À´Ï´Ù. »Ó¸¸ ¾Æ´Ï¶ó, »õ catch ºí·ÏÀº ClassCastException ¹× NullPointerException°ú °°ÀÌ RuntimeException¿¡¼­ ÆÄ»ıµÈ ¿¹¿Ü »çÇ×µµ Ã³¸®ÇÏ´Âµ¥ ÀÌ´Â ÇÁ·Î±×·¡¸ÓÀÇ ÀÇµµ¿Í ¹İ´ëµÇ´Â °ÍÀÔ´Ï´Ù.,¾ÆÁÖ ³ôÀº ¼öÁØÀÇ ÇÁ·Î±×·¥ÀÌ³ª ½º·¹µå¸¦ Á¦¿ÜÇÏ°í´Â Exception, Throwable, Error ¶Ç´Â RuntimeException °°Àº ±¤¹üÀ§ÇÑ ¿¹¿Ü Å¬·¡½º¸¦ catchÇÏÁö ¸¶½Ê½Ã¿À.,1. Fortify Secure Coding Rulepacks´Â ÇØ´ç catch ºí·ÏÀÌ Áï½Ã »õ ¿¹¿Ü »çÇ×À» ¹ß»ı½ÃÅ°¸é overly broad catch ºí·Ï¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏÁö ¾Ê½À´Ï´Ù.,C6BA8172A73EC89C2162EBDC5635A3D0,85E603E0-2933-4F38-851F-341604F75CB9,,,,2024-02-13,
+ÇÏÁö¸¸ doExchange()°¡ ¼öÁ¤µÇ¾î ´Ù¸¥ ¹æ½ÄÀ¸·Î Ã³¸®ÇØ¾ß ÇÏ´Â »õ·Î¿î Çü½ÄÀÇ ¿¹¿Ü »çÇ×ÀÌ ¹ß»ıÇÏ¸é ±¤¹üÀ§ÇÑ catch ºí·Ï ¶§¹®¿¡ ÄÄÆÄÀÏ·¯°¡ ¹®Á¦¸¦ ÁöÀûÇÒ ¼ö ¾ø½À´Ï´Ù. »Ó¸¸ ¾Æ´Ï¶ó, »õ catch ºí·ÏÀº ClassCastException ¹× NullPointerException°ú °°ÀÌ RuntimeException¿¡¼­ ÆÄ»ıµÈ ¿¹¿Ü »çÇ×µµ Ã³¸®ÇÏ´Âµ¥ ÀÌ´Â ÇÁ·Î±×·¡¸ÓÀÇ ÀÇµµ¿Í ¹İ´ëµÇ´Â °ÍÀÔ´Ï´Ù.,¾ÆÁÖ ³ôÀº ¼öÁØÀÇ ÇÁ·Î±×·¥ÀÌ³ª ½º·¹µå¸¦ Á¦¿ÜÇÏ°í´Â Exception, Throwable, Error ¶Ç´Â RuntimeException °°Àº ±¤¹üÀ§ÇÑ ¿¹¿Ü Å¬·¡½º¸¦ catchÇÏÁö ¸¶½Ê½Ã¿À.,1. Fortify Secure Coding Rulepacks´Â ÇØ´ç catch ºí·ÏÀÌ Áï½Ã »õ ¿¹¿Ü »çÇ×À» ¹ß»ı½ÃÅ°¸é overly broad catch ºí·Ï¿¡ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏÁö ¾Ê½À´Ï´Ù.,C6BA8172A73EC89C2162EBDC5635A3D0,85E603E0-2933-4F38-851F-341604F75CB9,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Encapsulation,Trust Boundary Violation,src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1868,7 +1868,7 @@ Trust boundary violationÀº Ã³¸®ÇÏ±â Àü¿¡ ÀÏ·ÃÀÇ »ç¿ëÀÚ »óÈ£ ÀÛ¿ëÀ» °ÅÃÄ ÀÔ·ÂÀ» »
 
 2. ´ëºÎºĞÀÇ ÇÁ·Î±×·¥¿¡´Â ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ÀÇ¹Ì·Î Á¤ÀÇµÇ´Â ½Å·Ú °æ°è°¡ ÀÖ½À´Ï´Ù. »ç¿ëÀÚ ÀÔ·ÂÀÌ ½Å·Ú °æ°è¸¦ ³Ñ´Â ´Ù¸¥ °æ¿ì¸¦ °Ë»çÇÏ±â À§ÇØ »ç¿ëÀÚ ÁöÁ¤ ±ÔÄ¢À» ÀÛ¼ºÇÏ´Â °Íµµ °í·ÁÇØ¾ß ÇÕ´Ï´Ù.
 
-3. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Spring MVC Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,EC5C8978193E476E43268D652AE9A30E,CBDB6290-DF73-42E1-8D9E-3B5C4B629761,,,,2024-02-13,
+3. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Spring MVC Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,EC5C8978193E476E43268D652AE9A30E,CBDB6290-DF73-42E1-8D9E-3B5C4B629761,,,,Tue Feb 13 20:18:45 KST 2024,
 High,High,Code Quality,Unreleased Resource: Database,src/adrui/LoginModel.java,LoginModel.java,,	public String check(Connection conn, String user, String pass) throws SQLException{
 		state = conn.createStatement();
 		rs = state.executeQuery(sql);
@@ -1926,7 +1926,7 @@ public static void safeClose(Statement stmt) {
 
 ÀÌ ÇØ°áÃ¥Àº µµ¿ì¹Ì ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© statement¸¦ ´İÀ¸·Á ÇÒ ¶§ ¹ß»ıÇÒ ¼ö ÀÖ´Â ¿¹¿Ü¸¦ ±â·ÏÇÕ´Ï´Ù. µµ¿ì¹Ì ÇÔ¼ö´Â statement¸¦ ´İÀ» ¶§¸¶´Ù Àç»ç¿ëµÉ °ÍÀÔ´Ï´Ù.
 
-¶ÇÇÑ execCxnSql ¸Ş¼­µå´Â stmt °³Ã¼¸¦ null·Î ÃÊ±âÈ­ÇÏÁö ¾Ê½À´Ï´Ù. ´ë½Å safeClose()¸¦ È£ÃâÇÏ±â Àü¿¡ stmt°¡ nullÀÌ ¾Æ´ÑÁö °Ë»çÇÕ´Ï´Ù. null °Ë»ç¸¦ ÇÏÁö ¾ÊÀ¸¸é Java ÄÄÆÄÀÏ·¯´Â stmt°¡ ÃÊ±âÈ­µÇÁö ¾Ê¾Ò´Ù°í º¸°íÇÕ´Ï´Ù. ÀÌ ¹æ¹ıÀº uninitialized variableÀ» ¹ß°ßÇÏ´Â Java ±â´ÉÀ» ÀÌ¿ëÇÑ °ÍÀÔ´Ï´Ù. stmt¸¦ ´õ º¹ÀâÇÑ ¹æ¹ıÀ» »ç¿ëÇÏ¿© null·Î ÃÊ±âÈ­ÇÏ¸é ÃÊ±âÈ­ÇÏÁö ¾Ê°í stmt¸¦ »ç¿ëÇÏ´Â °æ¿ì¸¦ ÄÄÆÄÀÏ·¯°¡ ¹ß°ßÇÒ ¼ö ¾ø½À´Ï´Ù.,1. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» ´İÀ¸¸é ¿¬°á °³Ã¼¿Í ¿¬°üµÈ ´Ù¸¥ ¸®¼Ò½º°¡ ÀÚµ¿À¸·Î ÇØÁ¦µÉ ¼öµµ ÀÖ°í ±×·¸Áö ¾ÊÀ» ¼öµµ ÀÖ½À´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¿¬°á Ç®¸µÀ» »ç¿ëÇÏ´Â °æ¿ì¿¡´Â ¿¬°áÀ» ´İÀº ÈÄ¿¡ ´Ù¸¥ ¸®¼Ò½º¸¦ ¸í½ÃÀûÀ¸·Î ´İ´Â °ÍÀÌ ÁÁ½À´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¿¬°á Ç®¸µÀ» »ç¿ëÇÏÁö ¾ÊÀ» °æ¿ì¿¡´Â µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» ´İÀ¸¸é ´Ù¸¥ ¸®¼Ò½ºµµ ÀÚµ¿À¸·Î ´İÈü´Ï´Ù. ÀÌ·¯ÇÑ °æ¿ì, ÀÌ Ãë¾àÁ¡Àº À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.,92023524C89EC71DA935E356D0E8C099,B7DFF4A8-9817-4418-A35B-E70D10DC825E,,,,2024-02-13,
+¶ÇÇÑ execCxnSql ¸Ş¼­µå´Â stmt °³Ã¼¸¦ null·Î ÃÊ±âÈ­ÇÏÁö ¾Ê½À´Ï´Ù. ´ë½Å safeClose()¸¦ È£ÃâÇÏ±â Àü¿¡ stmt°¡ nullÀÌ ¾Æ´ÑÁö °Ë»çÇÕ´Ï´Ù. null °Ë»ç¸¦ ÇÏÁö ¾ÊÀ¸¸é Java ÄÄÆÄÀÏ·¯´Â stmt°¡ ÃÊ±âÈ­µÇÁö ¾Ê¾Ò´Ù°í º¸°íÇÕ´Ï´Ù. ÀÌ ¹æ¹ıÀº uninitialized variableÀ» ¹ß°ßÇÏ´Â Java ±â´ÉÀ» ÀÌ¿ëÇÑ °ÍÀÔ´Ï´Ù. stmt¸¦ ´õ º¹ÀâÇÑ ¹æ¹ıÀ» »ç¿ëÇÏ¿© null·Î ÃÊ±âÈ­ÇÏ¸é ÃÊ±âÈ­ÇÏÁö ¾Ê°í stmt¸¦ »ç¿ëÇÏ´Â °æ¿ì¸¦ ÄÄÆÄÀÏ·¯°¡ ¹ß°ßÇÒ ¼ö ¾ø½À´Ï´Ù.,1. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» ´İÀ¸¸é ¿¬°á °³Ã¼¿Í ¿¬°üµÈ ´Ù¸¥ ¸®¼Ò½º°¡ ÀÚµ¿À¸·Î ÇØÁ¦µÉ ¼öµµ ÀÖ°í ±×·¸Áö ¾ÊÀ» ¼öµµ ÀÖ½À´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¿¬°á Ç®¸µÀ» »ç¿ëÇÏ´Â °æ¿ì¿¡´Â ¿¬°áÀ» ´İÀº ÈÄ¿¡ ´Ù¸¥ ¸®¼Ò½º¸¦ ¸í½ÃÀûÀ¸·Î ´İ´Â °ÍÀÌ ÁÁ½À´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¿¬°á Ç®¸µÀ» »ç¿ëÇÏÁö ¾ÊÀ» °æ¿ì¿¡´Â µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» ´İÀ¸¸é ´Ù¸¥ ¸®¼Ò½ºµµ ÀÚµ¿À¸·Î ´İÈü´Ï´Ù. ÀÌ·¯ÇÑ °æ¿ì, ÀÌ Ãë¾àÁ¡Àº À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.,92023524C89EC71DA935E356D0E8C099,B7DFF4A8-9817-4418-A35B-E70D10DC825E,,,,Tue Feb 13 20:18:45 KST 2024,
 Low,Low,Input Validation and Representation,Unsafe Reflection,src/adrui/MyContextListener.java,MyContextListener.java,,		// TODO Auto-generated method stub
 		ServletContext sc = event.getServletContext();
 		String driver = sc.getInitParameter("driver");
@@ -1993,4 +1993,4 @@ ao.doAction(request);
 
 ÀÌ·± ÀÌÀ¯·Î ÆÀ¿¡¼­ º¸¾È Æò°¡¿¡ ¾öÃ»³­ ³ë·ÂÀ» ÅõÀÔÇÒ ¼ö ÀÖ´Â »óÈ²ÀÌ ¾Æ´Ï¸é ÀÌ·± Çü½ÄÀÇ µğÀÚÀÎÀº ÇÇÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù.,1. ¸®ÇÃ·º¼Ç ¸Ş¼­µå È£ÃâÀÇ ÀÏºÎ·Î »ç¿ëÀÚ ÀÔ·ÂÀ» »ç¿ëÇÏ±â Àü¿¡ ¹İµå½Ã È®ÀÎÇØ¾ß ÇÕ´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¿î¿µ Ã¼Á¦, file system ¶Ç´Â ±âÅ¸ ½Ã½ºÅÛ ±¸¼º ¿ä¼Òº¸´Ù ºü¸¥ ¼Óµµ·Î ¹ßÀüÇÏ±â ¶§¹®¿¡ »ç¿ëÀÚ ÀÔ·Â°ª °ËÁõ¿¡ ÇÊ¿äÇÑ ÀÛ¾÷Àº »ç¿ëÀÚ µ¥ÀÌÅÍ¸¦ ´Ù¸¥ ½Ã½ºÅÛ ±¸¼º ¿ä¼Ò¿¡ º¸³»´Â µ¥ ÇÊ¿äÇÑ ÀÔ·Â È®ÀÎº¸´Ù ÈÎ¾À ºü¸£°Ô ¹ßÀüÇØ¾ß ÇÕ´Ï´Ù. ÇöÀç´Â °ËÁõÀÌ ¿Ã¹Ù·Î µ¿ÀÛÇÏ´õ¶óµµ ¾ÕÀ¸·Î´Â Á¤È®ÇÏÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù.
 
-2. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Spring MVC Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,5BA1400984294C9BF4B7411857C65201,E1B32227-C0BD-4A57-9C34-6794D9089A21,,,,2024-02-13,
+2. ¸¹Àº ÃÖ½Å À¥ ÇÁ·¹ÀÓ¿öÅ©´Â »ç¿ëÀÚ ÀÔ·ÂÀÇ °ËÁõÀ» ¼öÇàÇÏ±â À§ÇÑ ¸ŞÄ¿´ÏÁòÀ» Á¦°øÇÕ´Ï´Ù(Struts ¹× Spring MVC Æ÷ÇÔ). È®ÀÎµÇÁö ¾ÊÀº ÀÔ·ÂÀÇ ¼Ò½º¸¦ °­Á¶ÇÏ±â À§ÇØ, Fortify º¸¾È ÄÚµù ±ÔÄ¢ ÆÑÀº ¾Ç¿ë °¡´É¼ºÀ» ³·Ãß°í ÇÁ·¹ÀÓ¿öÅ© °ËÁõ ¸ŞÄ¿´ÏÁòÀÌ »ç¿ë ÁßÀÏ ¶§¸¶´Ù Áö¿øÇÏ´Â Áõ°Å¿¡ Æ÷ÀÎÅÍ¸¦ Á¦°øÇÏ¿© Fortify Static Code Analyzer¿¡¼­ º¸°íÇÑ ¹®Á¦ÀÇ ¿ì¼± ¼øÀ§¸¦ µ¿ÀûÀ¸·Î ÀçÁöÁ¤ÇÕ´Ï´Ù. ÀÌ ±â´ÉÀ» Context-Sensitive Ranking(ÄÁÅØ½ºÆ® °¨Áö ¼øÀ§)ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. Fortify »ç¿ëÀÚÀÇ °¨»ç ÇÁ·Î¼¼½º¸¦ Áö¿øÇÏ±â À§ÇØ, Fortify Software Security Research GroupÀº ÀÔ·Â ¼Ò½º¿¡ Àû¿ëµÈ °ËÁõ ¸ŞÄ¿´ÏÁò¿¡ µû¶ó ¹®Á¦¸¦ Æú´õ·Î ±×·ìÈ­ÇÏ´Â µ¥ÀÌÅÍ À¯È¿¼º ÇÁ·ÎÁ§Æ® ÅÛÇÃ¸´À» »ç¿ë °¡´ÉÇÏ°Ô ¸¸µì´Ï´Ù.,5BA1400984294C9BF4B7411857C65201,E1B32227-C0BD-4A57-9C34-6794D9089A21,,,,Tue Feb 13 20:18:45 KST 2024,

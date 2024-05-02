@@ -5,7 +5,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -99,33 +102,43 @@ public class XMLReaderService {
 				}else if (event_type == XmlPullParser.TEXT && tag_start) {
 					//각 태그별로 값을 가져온다.
 					if(tag.equals("Text") && !tag_Text){
-
-						String scan_ymd[] = xpp.getText().split(",");
-						String scan_monthdate = scan_ymd[0].replaceAll(" ", "");
-						String scan_year = scan_ymd[1].replaceAll(" ", "");
-
-
-						String scan_month = scan_monthdate.substring(2,5);
-						String scan_date = String.format("%02d", Integer.parseInt(scan_monthdate.substring(5)));
-
-						switch (scan_month){
-							case "Jan": scan_month = "01"; break;
-							case "Feb":	scan_month = "02"; break;
-							case "Mar":	scan_month = "03"; break;
-							case "Apr":	scan_month = "04"; break;
-							case "May": scan_month = "05"; break;
-							case "Jun":	scan_month = "06"; break;
-							case "Jul":	scan_month = "07"; break;
-							case "Aug":	scan_month = "08"; break;
-							case "Sep":	scan_month = "09"; break;
-							case "Oct":	scan_month = "10"; break;
-							case "Nov":	scan_month = "11"; break;
-							case "Dec": scan_month = "12"; break;
-							default: scan_month = "Invalid month"; break;
+						//System.out.println(xpp.getText().substring(3,4).matches("\\d"));
+						String[] scan_date_text = xpp.getText().split(",");
+						if(xpp.getText().substring(3,4).matches("\\d")) {
+							//reportgenerator cli 로 legacy report 생성할 경우, $SCAN_DAST$ 포맷 On 2024. 2. 14.,
+							String scan_ymd_text= scan_date_text[0].replace(" ", "0");
+							String scan_ymd[] = scan_ymd_text.split("\\.");
+							String scan_year = scan_ymd[0].substring(scan_ymd[0].length()-4, scan_ymd[0].length());
+							String scan_month = scan_ymd[1].substring(scan_ymd[1].length()-2, scan_ymd[1].length());
+							String scan_date = scan_ymd[2].substring(scan_ymd[2].length()-2, scan_ymd[2].length());
+							scandate = scan_year + "-" + scan_month + "-" + scan_date + "-" + LocalTime.now();
+						}else{
+							//AWB 로 legacy report 생성할 경우, $SCAN_DAST$ 포맷  On Feb 14, 2024,
+							String scan_ymd_text = scan_date_text[0].replace(" ", "0");
+							String scan_year = scan_date_text[1].substring(scan_date_text[1].length()-4, scan_date_text[1].length());
+							String scan_month = scan_ymd_text.substring(3, 6);
+							String scan_date = scan_ymd_text.substring(scan_ymd_text.length()-2, scan_ymd_text.length());
+							switch (scan_month){
+								case "Jan": scan_month = "01"; break;
+								case "Feb":	scan_month = "02"; break;
+								case "Mar":	scan_month = "03"; break;
+								case "Apr":	scan_month = "04"; break;
+								case "May": scan_month = "05"; break;
+								case "Jun":	scan_month = "06"; break;
+								case "Jul":	scan_month = "07"; break;
+								case "Aug":	scan_month = "08"; break;
+								case "Sep":	scan_month = "09"; break;
+								case "Oct":	scan_month = "10"; break;
+								case "Nov":	scan_month = "11"; break;
+								case "Dec": scan_month = "12"; break;
+								default: scan_month = "Invalid month"; break;
+							}
+							scandate = scan_year + "-" + scan_month + "-" + scan_date + "-" + LocalTime.now();
 						}
-
-						scandate = scan_year + "-" + scan_month + "-" + scan_date;
-						tag_Text=true;
+						SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+						Date KST_scandate = formatter.parse(scandate);
+						scandate = KST_scandate.toString();
+						tag_Text = true;
 					}
 					//GroupingSection 안의 내용만 확인
 					if(tag_GroupingSection){

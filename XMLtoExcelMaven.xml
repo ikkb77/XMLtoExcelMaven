@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReportDefinition type="standard">
+    <TemplateName>Fortify Security Report</TemplateName>
+    <TemplatePath></TemplatePath>
+    <LogoPath>/OT_logo.png</LogoPath>
+    <Footnote>Copyright 2023 Open Text.</Footnote>
+    <UserName></UserName>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Executive Summary</Title>
+        <SubSection enabled="true">
+            <Title>Issues Overview</Title>
+            <Description>This section provides an overview of the issues uncovered during analysis. The report covers a summary of vulnerability categories discovered by the tool. The auditor should augment this section with higher-level conclusions derived from human review of the application (including architecture reviews, black-box testing, compliance issues, etc.)</Description>
+            <Text>On 2024. 2. 14., a source code review was performed over the XMLtoExcelMaven code base. 9 files, 455 LOC (Executable) were scanned and reviewed for defects that could lead to potential security vulnerabilities. A total of 24 reviewed findings were uncovered during the analysis.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Issue Summary by Fortify Priority Order</Title>
+            <Description>A table summarizing the number of issues found and the breakdown of issues in each Fortify Priority Level</Description>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Fortify Priority Order</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="20">
+                        <groupTitle>Low</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>High</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Recommendations and Conclusions</Title>
+            <Description>This section gives some high-level recommendations on remediating the issues discussed in the Issues Summary sub section. Recommendations will vary based on deployment scenarios, risk appetite, and existing mitigating strategies. The auditor should supplement the Fortify generic recommendations with specific information that takes into account the application specific variables.</Description>
+            <Text>The Issues Category section provides Fortify recommendations for addressing issues at a generic level.  The recommendations for specific fixes can be extrapolated from those generic recommendations by the development group.</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Project Summary</Title>
+        <SubSection enabled="true">
+            <Title>Code Base Summary</Title>
+            <Description>Summary of the Codebase that was analyzed</Description>
+            <Text>Code location: C:/Users/ikkb7/IdeaProjects/XMLtoExcelMaven
+Number of Files: 9
+Lines of Code: 455
+Build Label: &lt;No Build Label&gt;</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Scan Information</Title>
+            <Description>Details of the analysis</Description>
+            <Text>Scan time: 01:01
+SCA Engine version: 23.2.0.0125
+Machine Name: kbkim-surface4
+Username running scan: ikkb7</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Results Certification</Title>
+            <Description>A full summary of the Results Certification for this project</Description>
+            <Text>Results Certification Valid
+
+Details:
+
+Results Signature:
+
+	SCA Analysis Results has Valid signature
+	
+
+Rules Signature:
+
+	There were no custom rules used in this scan</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Attack Surface</Title>
+            <Description>A full summary of the attack surface for this project</Description>
+            <Text>Attack Surface:
+Command Line Arguments:
+	service.XMLReaderService.main
+
+File System:
+	java.io.FileInputStream.FileInputStream
+	java.io.FileInputStream.FileInputStream
+
+Private Information:
+	java.util.Properties.getProperty
+
+Java Properties:
+	java.util.Properties.load
+
+System Information:
+	null.null.null
+</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Filter Set Summary</Title>
+            <Description>A brief summary of the filterset used to create this report</Description>
+            <Text>Current Enabled Filter Set:
+Security Auditor View
+
+Filter Set Details:
+
+Folder Filters:
+If [fortify priority order] contains critical Then set folder to Critical
+If [fortify priority order] contains high Then set folder to High
+If [fortify priority order] contains medium Then set folder to Medium
+If [fortify priority order] contains low Then set folder to Low</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Audit Guide Summary</Title>
+            <Description>Summary of the impact of the audit guide</Description>
+            <Text>Audit guide not enabled</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Results Outline</Title>
+        <SubSection enabled="true">
+            <Title>Overall number of results</Title>
+            <Description>Results count</Description>
+            <Text>The scan found 24 issues.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Vulnerability Examples by Category</Title>
+            <Description>Results summary for critical and high priority issues.  Vulnerability examples are provided by category.</Description>
+            <IssueListing listing="true" limit="1">
+                <Refinement>[fortify priority order]:critical OR [fortify priority order]:high</Refinement>
+                <Chart chartType="list">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="2">
+                        <groupTitle>Path Manipulation</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>공격자는 ExcelWriterService.java의 156 줄에 있는 FileOutputStream()의 파일 시스템 경로 인수를 제어할 수 있습니다. 그렇지 않으면 보호할 수 있는 파일을 공격자가 접근하거나 수정할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>Path manipulation 오류는 다음 두 가지 조건을 만족할 때 발생합니다.
+
+1. 공격자가 파일 시스템상의 작업에 사용되는 경로를 지정할 수 있습니다.
+
+2. 공격자가 리소스를 지정하여 다른 방법으로는 허용되지 않는 권한을 얻습니다.
+
+예를 들어, 프로그램이 공격자에게 지정한 파일을 덮어쓰거나 공격자가 제어하는 구성으로 실행할 수 있는 권한을 주는 것입니다.
+
+
+예제 1: 다음 코드는 HTTP 요청의 입력을 사용하여 파일 이름을 만듭니다. 프로그래머는 공격자가 "../../tomcat/conf/server.xml" 등의 파일 이름을 제공하여 응용 프로그램이 자신의 구성 파일을 삭제하게 만들 가능성을 고려하지 않았습니다.
+
+
+String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+
+예제 2: 다음 코드는 구성 파일의 입력을 사용하여 열 파일을 결정하고 사용자에게 돌려 보냅니다. 프로그램이 일정한 권한으로 실행되고 악의적인 사용자가 구성 파일을 변경할 수 있는 경우, 이 프로그램을 사용하여 시스템에서 확장명이 .txt인 파일을 읽을 수 있습니다.
+
+
+fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+
+모바일 환경에서는 Path manipulation과 같은 전형적인 취약성이 발생하지 않는다고 생각하는 사용자도 있습니다. 자기 자신을 공격하는 사용자는 없을 것이라 여기기 때문입니다. 그러나 모바일 플랫폼의 핵심 요소는 다양한 소스에서 다운로드되어 같은 장치에서 함께 실행되는 응용 프로그램이라는 점을 유념해야 합니다. 즉 금융 응용 프로그램과 맬웨어를 함께 실행할 가능성이 높으므로 프로세스 간 통신을 포함하도록 모바일 응용 프로그램의 공격 표면을 확장해야 합니다.
+
+예제 3: 다음 코드는 Example 1을 Android 플랫폼에 맞게 조정합니다.
+
+
+...
+        String rName = this.getIntent().getExtras().getString("reportName");
+        File rFile = getBaseContext().getFileStreamPath(rName);
+...
+        rFile.delete();
+...
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>Path Manipulation을 예방하는 최선의 방법은 사용자가 선택해야 하는 올바른 값 목록을 생성하는 간접 참조를 사용하는 것입니다. 이 접근 방식을 사용하면 사용자 제공 입력이 리소스 이름을 지정하는 데 직접 사용되지 않습니다.
+
+경우에 따라 올바른 리소스 이름 집합이 너무 크거나 유지 관리가 어렵기 때문에 이 접근 방식은 실용적이지 못합니다. 이때 프로그래머는 주로 거부 목록을 구현합니다. 거부 목록은 입력을 사용하기 전에 위험한 문자를 선별적으로 거부하거나 이스케이프 처리하는 데 사용됩니다. 하지만 안전하지 않은 문자의 목록은 불완전할 가능성이 크고 대부분 최신 상태를 유지하지 못합니다. 효율적인 접근 방식은 리소스 이름에 사용할 수 있는 문자의 목록을 만들어 목록에 있는 문자만으로 이루어진 입력만 받는 것입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. 프로그램에서 수행한 사용자 지정 입력값 검증에 만족하는 경우 Fortify Custom Rules Editor를 사용하여 검증 루틴에 대한 정리 규칙을 작성합니다.
+
+2. 효과적인 거부 목록을 구현하는 작업은 매우 어렵습니다. 검증 논리에 거부 목록을 구현해야 할 때는 신중해야 합니다. 다른 운영 체제, 데이터베이스 또는 기타 리소스에서 해석될 때 특수한 의미를 가질 수 있는 다른 메타 문자 집합 및 다른 유형의 입력 인코딩을 고려해 보십시오. 이 요구 사항이 끊임없이 변한다면 과연 거부 목록을 쉽고 정확하고 완전하게 업데이트할 수 있을 것인지 판단해야 합니다.
+
+3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="A124FE8FDB51D803D2809F248B060A7B" ruleID="823FE039-A7FE-4AAD-B976-9EC53FFE4A59">
+                            <Category>Path Manipulation</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Input Validation and Representation</Kingdom>
+                            <Abstract>공격자는 ExcelWriterService.java의 156 줄에 있는 FileOutputStream()의 파일 시스템 경로 인수를 제어할 수 있습니다. 그렇지 않으면 보호할 수 있는 파일을 공격자가 접근하거나 수정할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>156</LineStart>
+<Snippet>        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(excel_path);
+            workbook.write(fos);
+            fos.close();</Snippet>
+<TargetFunction>java.io.FileOutputStream.FileOutputStream()</TargetFunction>
+                            </Primary>
+                            <Source>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>310</LineStart>
+<Snippet>	}
+
+	public static void main(String[] args) {
+		if (args == null || args.length != 2) {
+			System.out.println("Usage : xlsx-generator &lt;xml file&gt; &lt;xlsx file&gt;");</Snippet>
+<TargetFunction>main(0)</TargetFunction>
+                            </Source>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Unreleased Resource: Streams</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>ExcelWriterService.java의 makeExcelFileParmList() 함수는 156 줄의 FileOutputStream()에 의해 할당된 시스템 리소스를 해제하지 못할 수도 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>프로그램이 시스템 리소스를 해제하지 못할 수도 있습니다.
+
+리소스 누출은 최소한 두 가지 공통 원인이 있습니다.
+
+- 오류 조건 및 기타 예외 상황.
+
+- 프로그램의 어떤 부분이 리소스 해제를 담당하고 있는지에 대한 혼란
+
+대부분의 공개되지 않은 리소스 문제는 일반적인 소프트웨어 안정성 문제를 일으킵니다. 하지만 공격자가 의도적으로 리소스 누출을 일으킬 수 있는 경우 공격자가 리소스 풀을 고갈시켜 DoS(Denial of Service) 공격을 실행할 수도 있습니다.
+
+예제: 다음 메서드는 자신이 연 파일 핸들을 닫지 않습니다. FileInputStream의 finalize() 메서드는 결국 close()를 호출하지만 finalize() 메서드를 호출하기까지 시간이 얼마나 걸릴지 장담할 수 없습니다. 사용량이 많은 환경에서는 이로 인해 JVM이 파일 핸들을 모두 소진시키는 결과를 초래할 수도 있습니다.
+
+private void processFile(String fName) throws FileNotFoundException, IOException {
+  FileInputStream fis = new FileInputStream(fName);
+  int sz;
+  byte[] byteArray = new byte[BLOCK_SIZE];
+  while ((sz = fis.read(byteArray)) != -1) {
+    processBytes(byteArray, sz);
+  }
+}
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>1. 리소스를 다시 확보하는 데 finalize()를 사용하지 마십시오. 개체의 finalize() 메서드를 호출하려면 가비지 수집기(garbage collector)는 개체가 가비지 수집 대상인지 판단해야 합니다. 가비지 수집기(garbage collector)는 JVM이 메모리가 부족한 경우를 제외하고는 실행할 필요가 없기 때문에 finalize() 메서드가 필요할 때 원하는 대로 호출된다는 보장이 없습니다. 또한 결국 가비지 수집기(garbage collector)가 실행되더라도 짧은 시간에 방대한 리소스를 다시 확보하기 때문에 성능이 "고르지 못하고" 전반적인 시스템 처리량이 낮아질 수 있습니다. 이런 효과는 시스템의 부하가 증가할수록 더욱 두드러집니다.
+
+마지막으로 리소스 확보 작업이 응답하지 않도록 할 수 있으면(예: 네트워크로 데이터베이스와 통신해야 하는 경우), finalize() 메서드를 실행하고 있는 스레드도 응답하지 않습니다.
+
+2. finally 블록의 리소스를 해제하십시오. 예제 코드는 다음과 같이 다시 작성해야 합니다.
+
+
+public void processFile(String fName) throws FileNotFoundException, IOException {
+  FileInputStream fis;
+  try {
+    fis = new FileInputStream(fName);
+    int sz;
+    byte[] byteArray = new byte[BLOCK_SIZE];
+    while ((sz = fis.read(byteArray)) != -1) {
+      processBytes(byteArray, sz);
+    }
+  }
+  finally {
+    if (fis != null) {
+      safeClose(fis);
+    }
+  }
+}
+
+public static void safeClose(FileInputStream fis) {
+  if (fis != null) {
+    try {
+      fis.close();
+    } catch (IOException e) {
+      log(e);
+    }
+  }
+}
+
+
+이 해결책은 도우미 함수를 사용하여 스트림을 닫으려고 할 때 발생할 수 있는 예외를 기록합니다. 이 도우미 함수는 스트림을 닫아야 할 때마다 재사용됩니다.
+
+또한 processFile 메서드는 fis 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 fis가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 fis가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. fis를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 fis를 사용하는 경우를 컴파일러가 발견할 수 없습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="729EEF510A617EBFF4F5B661DAE54F87" ruleID="74714BFC-EDF7-445B-8672-0996214D5845">
+                            <Category>Unreleased Resource: Streams</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>ExcelWriterService.java의 makeExcelFileParmList() 함수는 156 줄의 FileOutputStream()에 의해 할당된 시스템 리소스를 해제하지 못할 수도 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>156</LineStart>
+<Snippet>        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(excel_path);
+            workbook.write(fos);
+            fos.close();</Snippet>
+<TargetFunction>fos = new FileOutputStream(...)</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Count by Category</Title>
+        <SubSection enabled="true">
+            <Title>Issues By Category</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="9">
+                        <groupTitle>Null Dereference</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Denial of Service: StringBuilder</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Path Manipulation</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Poor Error Handling: Overly Broad Catch</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>System Information Leak</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Unreleased Resource: Streams</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Build Misconfiguration: External Maven Dependency Repository</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Code Correctness: Constructor Invokes Overridable Function</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: JVM Termination</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: Leftover Debug Code</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Poor Style: Non-final Public Static Field</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Breakdown by Analysis</Title>
+        <SubSection enabled="true">
+            <Title>Issue by Analysis</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="pie">
+                    <Axis>Analysis</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="24">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+</ReportDefinition>

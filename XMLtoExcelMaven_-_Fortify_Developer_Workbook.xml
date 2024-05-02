@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReportDefinition type="xml">
+    <TemplateName>Fortify Developer Workbook</TemplateName>
+    <TemplatePath></TemplatePath>
+    <LogoPath>/OT_logo.png</LogoPath>
+    <Footnote>Copyright 2023 Open Text.</Footnote>
+    <UserName>ikkb7</UserName>
+    <ReportSection enabled="true" optionalSubsections="false">
+        <Title>Report Overview</Title>
+        <SubSection enabled="true">
+            <Title>Report Summary</Title>
+            <Description>This provides a high level summary of the findings that the analysis produced.  Also includes basic information on the scope of the scan.</Description>
+            <Text>On Feb 14, 2024, a source code review was performed over the XMLtoExcelMaven code base. 9 files, 455 LOC (Executable) were scanned. A total of 24 issues were uncovered during the analysis.  This report provides a comprehensive description of all the types of issues found in this project.  Specific examples and source code are provided for each issue type.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Issue Summary by Fortify Priority Order</Title>
+            <Description>A table summarizing the number of issues found and the breakdown of issues in each Fortify Priority Level</Description>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Fortify Priority Order</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="20">
+                        <groupTitle>Low</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="4">
+                        <groupTitle>High</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="false">
+        <Title>Issue Summary</Title>
+        <SubSection enabled="true">
+            <Title>Overall number of results</Title>
+            <Description>Results count</Description>
+            <Text>The scan found 24 issues.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Issues By Category</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="9">
+                        <groupTitle>Null Dereference</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Denial of Service: StringBuilder</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Path Manipulation</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Poor Error Handling: Overly Broad Catch</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>System Information Leak</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Unreleased Resource: Streams</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Build Misconfiguration: External Maven Dependency Repository</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Code Correctness: Constructor Invokes Overridable Function</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: JVM Termination</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: Leftover Debug Code</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Poor Style: Non-final Public Static Field</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Results Outline</Title>
+        <SubSection enabled="true">
+            <Title>Vulnerability Examples by Category</Title>
+            <Description>Results summary of all issue categories.  Vulnerability examples are provided by category.</Description>
+            <IssueListing listing="true" limit="5">
+                <Refinement></Refinement>
+                <Chart chartType="list">
+                    <Axis>Category</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="9">
+                        <groupTitle>Null Dereference</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>XMLReaderService.java의 readXMLFile() 메서드는 107 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>Null 포인터 예외는 일반적으로 하나 이상의 프로그래머 가정을 위반했을 때 발생합니다. 저장 후 역참조(dereference-after-store) 오류는 프로그램이 명시적으로 개체를 null로 설정한 다음 나중에 역참조할 경우 발생합니다. 이 오류는 프로그래머가 선언된 상태의 변수를 null로 초기화하여 발생하는 경우가 많습니다.
+
+
+대부분의 null 포인터 이슈는 소프트웨어 전반의 안정성 문제를 야기하지만 공격자가 의도적으로 null 포인터 역참조를 실행하는 경우, 그 결과 발생하는 예외 사항을 사용하여 보안 로직을 무시하거나 차후의 공격을 계획하는 데 유용한 디버깅 정보를 응용 프로그램이 노출하도록 할 수 있습니다.
+
+예제: 다음 코드에서 프로그래머는 명시적으로 변수 foo를 null로 설정합니다. 나중에 프로그래머는 개체의 null 값을 검사하기 전에 foo를 역참조합니다.
+
+
+Foo foo = null;
+...
+foo.setBar(val);
+...
+}
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>null일 수도 있는 개체를 역참조하기 전에 주의를 기울여 검사합니다. 가능한 경우, 추상 null은 리소스를 조작하는 코드 주변의 래퍼를 검사하여 모든 경우에 적용되는지 확인하고 실수가 발생할 위치를 최소화합니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>9</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="D6AAD28AFF93F1660E23E1BC67D60D48" ruleID="B32F92AC-9605-0987-E73B-CCB28279AA24">
+                            <Category>Null Dereference</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 메서드는 131 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>131</LineStart>
+<Snippet>						}else if(tag_Issue){
+							if(tag_Primary){
+								switch (tag) {
+									case "FileName":
+										primary_filename = xpp.getText();</Snippet>
+<TargetFunction>Dereferenced : tag()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="D6AAD28AFF93F1660E23E1BC67D60D49" ruleID="B32F92AC-9605-0987-E73B-CCB28279AA24">
+                            <Category>Null Dereference</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 메서드는 149 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>149</LineStart>
+<Snippet>								}
+							}else if(tag_Source){
+								switch (tag) {
+									case "FileName":
+										source_filename = xpp.getText();</Snippet>
+<TargetFunction>Dereferenced : tag()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="E20CFCC15D645ECD57A60AA8E1413538" ruleID="B32F92AC-9605-0987-E73B-CCB28279AA24">
+                            <Category>Null Dereference</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 메서드는 167 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>167</LineStart>
+<Snippet>								}
+							}else if(tag_Tag){
+								if(tag.equals("Value")){
+									Issue_tag = xpp.getText();
+								}</Snippet>
+<TargetFunction>Dereferenced : tag()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="E20CFCC15D645ECD57A60AA8E1413537" ruleID="B32F92AC-9605-0987-E73B-CCB28279AA24">
+                            <Category>Null Dereference</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 메서드는 126 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>126</LineStart>
+<Snippet>								}
+							}
+							if(tag.equals("MetaInfo")){
+								tag_MetaInfo = true;
+							}</Snippet>
+<TargetFunction>Dereferenced : tag()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="E20CFCC15D645ECD57A60AA8E1413536" ruleID="B32F92AC-9605-0987-E73B-CCB28279AA24">
+                            <Category>Null Dereference</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 메서드는 107 줄의 null 포인터를 역참조하여 프로그램이 중단될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>107</LineStart>
+<Snippet>						if(tag_MajorAttributeSummary){
+							if(tag_MetaInfo){
+								if(tag.equals("Name")){
+									metainfo_name = xpp.getText();
+								}else if(tag.equals("Value")){</Snippet>
+<TargetFunction>Dereferenced : tag()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Denial of Service: StringBuilder</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>ExcelWriterService.java의 줄 198에 있는 append() 호출은 기본 백업 배열 크기(16)로 초기화된 StringBuilder 또는 StringBuffer 인스턴스에 신뢰할 수 없는 데이터를 추가합니다. 그러면 JVM이 힙 메모리 공간을 과소비하게 될 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>기본 백업 문자 배열 크기(16)로 초기화된 StringBuilder 또는 StringBuffer 인스턴스에 사용자 제어 데이터를 추가하면 응용 프로그램이 사용자의 데이터에 맞게 기본 배열의 크기를 조정하는 동안 대량의 힙 메모리를 소비하게 될 수 있습니다. 데이터가 StringBuilder 또는 StringBuffer 인스턴스에 추가되면 인스턴스는 백업 문자 배열에 데이터를 저장할 충분한 여유 공간이 있는지를 확인합니다. 데이터가 맞지 않는 경우 StringBuilder 또는 StringBuffer 인스턴스는 이전 배열 크기의 두 배 이상의 크기로 새 배열을 생성하지만 가비지가 수집되기 전까지 힙에 이전 배열이 남아 있습니다. 공격자는 이 구현 세부 정보를 사용하여 Denial of Service (DoS) 공격을 실행할 수 있습니다.
+
+예제 1: 기본 생성자로 초기화된 StringBuilder 인스턴스에 사용자 제어 데이터가 추가됩니다. 
+
+    ...
+    StringBuilder sb = new StringBuilder();
+    final String lineSeparator = System.lineSeparator();
+    String[] labels = request.getParameterValues("label");
+    for (String label : labels) {
+        sb.append(label).append(lineSeparator);
+    }
+    ...
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>백업 배열의 크기가 조정되는 횟수를 줄이기 위해 예상되는 추가 데이터 크기의 초기 용량으로 StringBuilder 또는 StringBuffer를 초기화합니다. StringBuilder 또는 StringBuffer 인스턴스에 추가하기 전에 데이터의 크기를 확인하십시오.
+
+예제 2: 초기 용량 생성자로 초기화된 StringBuilder 인스턴스에 사용자 제어 데이터가 추가됩니다. 추가 전에 데이터 길이를 검사하여 초기 StringBuilder 용량이 초과되지 않는지 확인합니다. 이는 백업 배열의 크기 조정을 방지하기 위한 것입니다.
+
+    ...
+    private final int BUFFER_CAPACITY = 5200;
+    StringBuilder sb = new StringBuilder(BUFFER_CAPACITY);
+    ...
+    final String lineSeparator = System.lineSeparator();
+    String[] labels = request.getParameterValues("label");
+    for (String label : labels) {
+        if (label.length() + lineSeparator.length() + sb.length() &lt;= sb.capacity()) {
+            sb.append(label).append(lineSeparator);
+        } else {
+            // Handle error
+        }
+    }
+    ...
+
+
+예제 3: 사용자 제어 데이터는 초기 용량 생성자로 초기화된 StringBuffer 인스턴스에 추가되고 문자열 길이와 데이터 항목 수를 확인하여 StringBuffer에 추가할 수 있는 데이터 양을 제한합니다.
+
+    ...
+    private final int MAX_LABEL_LEN = 50;
+    private final int MAX_LABEL_ITEMS = 100;
+    private final int BUFFER_CAPACITY = 5200;
+    StringBuffer sb = new StringBuffer(BUFFER_CAPACITY);
+    ...
+    final String lineSeparator = System.lineSeparator();
+    String[] labels = request.getParameterValues("label");
+    if (labels.length &lt;= MAX_LABEL_ITEMS) {
+        for (String label : labels) {
+            if (label.length() &lt;= MAX_LABEL_LEN) {
+                sb.append(label).append(lineSeparator);
+            } else {
+                // Handle error
+            }
+        }
+    } else {
+        // Handle error
+    }
+    ...
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. 이 취약점에 권장되는 수정 방법은 감지되지 않을 수 있으므로 수정 후 추가 감사를 수행하여 수정을 확인해야 할 수 있습니다. 취약점이 제거된 것을 확인한 후 문제를 안전하게 억제할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="7B117510F0EE941ADE731B5D94F8C31F" ruleID="F2BD85B8-504E-4D52-967C-E00A043BAFAD">
+                            <Category>Denial of Service: StringBuilder</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Input Validation and Representation</Kingdom>
+                            <Abstract>ExcelWriterService.java의 줄 198에 있는 append() 호출은 기본 백업 배열 크기(16)로 초기화된 StringBuilder 또는 StringBuffer 인스턴스에 신뢰할 수 없는 데이터를 추가합니다. 그러면 JVM이 힙 메모리 공간을 과소비하게 될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>198</LineStart>
+<Snippet>                if (!s.isEmpty()) {
+                    if (count == 0)
+                        description.append(s);
+                    else
+                        description.append("\r\n").append(s);</Snippet>
+<TargetFunction>java.lang.StringBuilder.append()</TargetFunction>
+                            </Primary>
+                            <Source>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>42</LineStart>
+<Snippet>			XmlPullParser xpp = factory.newPullParser();
+			FileInputStream fis	= new FileInputStream(file);
+			xpp.setInput(fis, "utf-8");
+
+</Snippet>
+<TargetFunction>org.xmlpull.v1.XmlPullParser.setInput()</TargetFunction>
+                            </Source>
+                        </Issue>
+                        <Issue iid="F14218A951B2BFBCE75E6CA622D1B72A" ruleID="F2BD85B8-504E-4D52-967C-E00A043BAFAD">
+                            <Category>Denial of Service: StringBuilder</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Input Validation and Representation</Kingdom>
+                            <Abstract>ExcelWriterService.java의 줄 200에 있는 append() 호출은 기본 백업 배열 크기(16)로 초기화된 StringBuilder 또는 StringBuffer 인스턴스에 신뢰할 수 없는 데이터를 추가합니다. 그러면 JVM이 힙 메모리 공간을 과소비하게 될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>200</LineStart>
+<Snippet>                        description.append(s);
+                    else
+                        description.append("\r\n").append(s);
+
+                    count++;</Snippet>
+<TargetFunction>java.lang.StringBuilder.append()</TargetFunction>
+                            </Primary>
+                            <Source>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>42</LineStart>
+<Snippet>			XmlPullParser xpp = factory.newPullParser();
+			FileInputStream fis	= new FileInputStream(file);
+			xpp.setInput(fis, "utf-8");
+
+</Snippet>
+<TargetFunction>org.xmlpull.v1.XmlPullParser.setInput()</TargetFunction>
+                            </Source>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Path Manipulation</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>공격자는 ExcelWriterService.java의 156 줄에 있는 FileOutputStream()의 파일 시스템 경로 인수를 제어할 수 있습니다. 그렇지 않으면 보호할 수 있는 파일을 공격자가 접근하거나 수정할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>Path manipulation 오류는 다음 두 가지 조건을 만족할 때 발생합니다.
+
+1. 공격자가 파일 시스템상의 작업에 사용되는 경로를 지정할 수 있습니다.
+
+2. 공격자가 리소스를 지정하여 다른 방법으로는 허용되지 않는 권한을 얻습니다.
+
+예를 들어, 프로그램이 공격자에게 지정한 파일을 덮어쓰거나 공격자가 제어하는 구성으로 실행할 수 있는 권한을 주는 것입니다.
+
+
+예제 1: 다음 코드는 HTTP 요청의 입력을 사용하여 파일 이름을 만듭니다. 프로그래머는 공격자가 "../../tomcat/conf/server.xml" 등의 파일 이름을 제공하여 응용 프로그램이 자신의 구성 파일을 삭제하게 만들 가능성을 고려하지 않았습니다.
+
+
+String rName = request.getParameter("reportName");
+File rFile = new File("/usr/local/apfr/reports/" + rName);
+...
+rFile.delete();
+
+
+예제 2: 다음 코드는 구성 파일의 입력을 사용하여 열 파일을 결정하고 사용자에게 돌려 보냅니다. 프로그램이 일정한 권한으로 실행되고 악의적인 사용자가 구성 파일을 변경할 수 있는 경우, 이 프로그램을 사용하여 시스템에서 확장명이 .txt인 파일을 읽을 수 있습니다.
+
+
+fis = new FileInputStream(cfg.getProperty("sub")+".txt");
+amt = fis.read(arr);
+out.println(arr);
+
+
+모바일 환경에서는 Path manipulation과 같은 전형적인 취약성이 발생하지 않는다고 생각하는 사용자도 있습니다. 자기 자신을 공격하는 사용자는 없을 것이라 여기기 때문입니다. 그러나 모바일 플랫폼의 핵심 요소는 다양한 소스에서 다운로드되어 같은 장치에서 함께 실행되는 응용 프로그램이라는 점을 유념해야 합니다. 즉 금융 응용 프로그램과 맬웨어를 함께 실행할 가능성이 높으므로 프로세스 간 통신을 포함하도록 모바일 응용 프로그램의 공격 표면을 확장해야 합니다.
+
+예제 3: 다음 코드는 Example 1을 Android 플랫폼에 맞게 조정합니다.
+
+
+...
+        String rName = this.getIntent().getExtras().getString("reportName");
+        File rFile = getBaseContext().getFileStreamPath(rName);
+...
+        rFile.delete();
+...
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>Path Manipulation을 예방하는 최선의 방법은 사용자가 선택해야 하는 올바른 값 목록을 생성하는 간접 참조를 사용하는 것입니다. 이 접근 방식을 사용하면 사용자 제공 입력이 리소스 이름을 지정하는 데 직접 사용되지 않습니다.
+
+경우에 따라 올바른 리소스 이름 집합이 너무 크거나 유지 관리가 어렵기 때문에 이 접근 방식은 실용적이지 못합니다. 이때 프로그래머는 주로 거부 목록을 구현합니다. 거부 목록은 입력을 사용하기 전에 위험한 문자를 선별적으로 거부하거나 이스케이프 처리하는 데 사용됩니다. 하지만 안전하지 않은 문자의 목록은 불완전할 가능성이 크고 대부분 최신 상태를 유지하지 못합니다. 효율적인 접근 방식은 리소스 이름에 사용할 수 있는 문자의 목록을 만들어 목록에 있는 문자만으로 이루어진 입력만 받는 것입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. 프로그램에서 수행한 사용자 지정 입력값 검증에 만족하는 경우 Fortify Custom Rules Editor를 사용하여 검증 루틴에 대한 정리 규칙을 작성합니다.
+
+2. 효과적인 거부 목록을 구현하는 작업은 매우 어렵습니다. 검증 논리에 거부 목록을 구현해야 할 때는 신중해야 합니다. 다른 운영 체제, 데이터베이스 또는 기타 리소스에서 해석될 때 특수한 의미를 가질 수 있는 다른 메타 문자 집합 및 다른 유형의 입력 인코딩을 고려해 보십시오. 이 요구 사항이 끊임없이 변한다면 과연 거부 목록을 쉽고 정확하고 완전하게 업데이트할 수 있을 것인지 판단해야 합니다.
+
+3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="A124FE8FDB51D803D2809F248B060A7B" ruleID="823FE039-A7FE-4AAD-B976-9EC53FFE4A59">
+                            <Category>Path Manipulation</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Input Validation and Representation</Kingdom>
+                            <Abstract>공격자는 ExcelWriterService.java의 156 줄에 있는 FileOutputStream()의 파일 시스템 경로 인수를 제어할 수 있습니다. 그렇지 않으면 보호할 수 있는 파일을 공격자가 접근하거나 수정할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>156</LineStart>
+<Snippet>        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(excel_path);
+            workbook.write(fos);
+            fos.close();</Snippet>
+<TargetFunction>java.io.FileOutputStream.FileOutputStream()</TargetFunction>
+                            </Primary>
+                            <Source>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>310</LineStart>
+<Snippet>	}
+
+	public static void main(String[] args) {
+		if (args == null || args.length != 2) {
+			System.out.println("Usage : xlsx-generator &lt;xml file&gt; &lt;xlsx file&gt;");</Snippet>
+<TargetFunction>main(0)</TargetFunction>
+                            </Source>
+                        </Issue>
+                        <Issue iid="EF832AEBA36A52F430B21C97B47371A0" ruleID="823FE039-A7FE-4AAD-B976-9EC53FFE4A59">
+                            <Category>Path Manipulation</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Input Validation and Representation</Kingdom>
+                            <Abstract>공격자는 XMLReaderService.java의 36 줄에 있는 File()의 파일 시스템 경로 인수를 제어할 수 있습니다. 그렇지 않으면 보호할 수 있는 파일을 공격자가 접근하거나 수정할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>36</LineStart>
+<Snippet>		try {
+
+			File file = new File(xml_path);
+
+			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();</Snippet>
+<TargetFunction>java.io.File.File()</TargetFunction>
+                            </Primary>
+                            <Source>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>310</LineStart>
+<Snippet>	}
+
+	public static void main(String[] args) {
+		if (args == null || args.length != 2) {
+			System.out.println("Usage : xlsx-generator &lt;xml file&gt; &lt;xlsx file&gt;");</Snippet>
+<TargetFunction>main(0)</TargetFunction>
+                            </Source>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Poor Error Handling: Overly Broad Catch</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>ExcelWriterService.java 줄 161의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>여러 catch 블록은 반복적이지만 Exception 같은 높은 수준의 클래스를 catch하여 catch 블록을 "압축"하면 특수 처리가 필요하거나 프로그램의 이 시점에서 catch되지 않아야 하는 예외 사항을 숨길 수 있습니다. 지나치게 광범위한 예외 사항을 catch하면 Java의 형식화된 예외 사항을 사용하는 의미가 사라지고 특히 프로그램이 커져서 새로운 형식의 예외 사항이 발생하기 시작하면 위험해질 수 있습니다. 새 예외 형식에는 주의를 기울이지 않기 때문입니다.
+
+예제: 다음 발췌된 코드는 세 가지 형식의 예외 사항을 동일한 방식으로 처리합니다.
+
+
+  try {
+    doExchange();
+  }
+  catch (IOException e) {
+    logger.error("doExchange failed", e);
+  }
+  catch (InvocationTargetException e) {
+    logger.error("doExchange failed", e);
+  }
+  catch (SQLException e) {
+    logger.error("doExchange failed", e);
+  }
+
+
+언뜻 보기에 다음과 같이 예외 사항을 하나의 catch 블록으로 처리하는 것이 바람직한 것처럼 보입니다.
+
+
+  try {
+    doExchange();
+  }
+  catch (Exception e) {
+    logger.error("doExchange failed", e);
+  }
+
+
+하지만 doExchange()가 수정되어 다른 방식으로 처리해야 하는 새로운 형식의 예외 사항이 발생하면 광범위한 catch 블록 때문에 컴파일러가 문제를 지적할 수 없습니다. 뿐만 아니라, 새 catch 블록은 ClassCastException 및 NullPointerException과 같이 RuntimeException에서 파생된 예외 사항도 처리하는데 이는 프로그래머의 의도와 반대되는 것입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>아주 높은 수준의 프로그램이나 스레드를 제외하고는 Exception, Throwable, Error 또는 RuntimeException 같은 광범위한 예외 클래스를 catch하지 마십시오.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. Fortify Secure Coding Rulepacks는 해당 catch 블록이 즉시 새 예외 사항을 발생시키면 overly broad catch 블록에 플래그를 지정하지 않습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="0174FF0DB61793BB29D91C539E421864" ruleID="85E603E0-2933-4F38-851F-341604F75CB9">
+                            <Category>Poor Error Handling: Overly Broad Catch</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>XMLReaderService.java 줄 286의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>286</LineStart>
+<Snippet>			new ExcelWriterService(properties).makeExcelFileParmList(list);
+
+		} catch (Exception e) {
+			System.out.println(xml_path + " �뙆�씪�쓣 �씫�쓣 �닔 �뾾�뒿�땲�떎.");
+			e.printStackTrace();</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="492BDC50E7D80562EAA6E34B8F4A76F6" ruleID="85E603E0-2933-4F38-851F-341604F75CB9">
+                            <Category>Poor Error Handling: Overly Broad Catch</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>ExcelWriterService.java 줄 161의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>161</LineStart>
+<Snippet>            workbook.close();
+            System.out.println("�셿猷�.");
+        } catch (Exception e) {
+            System.out.println(excel_path + " �뙆�씪�쓣 �깮�꽦�븷 �닔 �뾾�뒿�땲�떎.");
+        	e.printStackTrace();</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>System Information Leak</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>ExcelWriterService.java의 makeExcelFileParmList() 함수는 163 줄의 printStackTrace()을(를) 호출하여 시스템 데이터 또는 디버그 정보를 노출합니다. printStackTrace()에 의해 노출된 정보는 공격자가 공격을 계획하는 데 도움을 줄 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>정보 누출은 시스템 데이터 또는 디버그 정보가 출력 스트림이나 로깅 함수를 통해 프로그램을 벗어날 때 발생합니다.
+
+
+
+예제 1: 다음 코드는 표준 오류 스트림에 예외 사항을 작성합니다.
+
+
+try {
+    ...
+} catch (Exception e) {
+    e.printStackTrace();
+}
+
+
+시스템 구성에 따라 이 정보는 콘솔에 덤프되거나 로그 파일에 작성되거나 원격 사용자에게 노출될 수 있습니다. 예를 들어, 스크립팅 메커니즘을 사용하면 "표준 오류" 또는 "표준 출력"에서 파일이나 다른 프로그램으로 출력 정보를 간단하게 리디렉션할 수 있습니다. 또는 프로그램이 실행되는 시스템에는 로그를 원격 장치로 전송하는 "syslog" 서버와 같은 원격 로깅 메커니즘이 있을 수 있습니다. 개발 단계에서는 이 정보가 어디에 표시될지 알 방법이 없습니다.
+
+경우에 따라 오류 메시지가 공격자에게 시스템이 취약한 정확한 공격 유형을 알려주기도 합니다. 예를 들어, 데이터베이스 오류 메시지가 응용 프로그램이 SQL injection 공격에 취약하다는 것을 드러낼 수 있습니다. 다른 오류 메시지도 비교적 모호하지만 시스템에 대한 단서를 제공합니다. Example 1에서는 누출된 정보가 운영 체제의 종류, 시스템에 설치된 응용 프로그램 및 관리자가 프로그램 구성에 들인 관심의 정도에 대한 정보를 암시할 수 있습니다.
+
+모바일 환경과 관련된 시나리오를 하나 더 소개하겠습니다. 현재 대부분의 모바일 장치는 무선 통신을 사용하는 장치 간에 정보를 빠르게 교환할 수 있도록 NFC(근거리 통신) 프로토콜을 구현합니다. NFC 프로토콜은 장치를 근접하게 또는 서로 접촉하도록 배치하는 방식으로 작동합니다. NFC의 통신 범위는 불과 몇 센티미터 정도로 제한되지만 NFC만 사용해서는 보안 통신이 보장되지 않으므로 도청, 데이터 수정 및 기타 다양한 유형의 공격을 할 수 있습니다.
+
+예제 2: Android 플랫폼에서는 NFC가 지원됩니다. 다음 코드는 범위 내의 다른 장치로 푸시되는 메시지를 생성합니다.
+
+...
+public static final String TAG = "NfcActivity";
+private static final String DATA_SPLITTER = "__:DATA:__";
+private static final String MIME_TYPE = "application/my.applications.mimetype";
+...
+public NdefMessage createNdefMessage(NfcEvent event) {
+    TelephonyManager tm = (TelephonyManager)Context.getSystemService(Context.TELEPHONY_SERVICE);
+    String VERSION = tm.getDeviceSoftwareVersion();
+    String text = TAG + DATA_SPLITTER + VERSION;
+    NdefRecord record = new NdefRecord(NdefRecord.TNF_MIME_MEDIA,
+            MIME_TYPE.getBytes(), new byte[0], text.getBytes());
+    NdefRecord[] records = { record };
+    NdefMessage msg = new NdefMessage(records);
+    return msg;
+}
+...
+
+
+NDEF(NFC 데이터 교환 형식) 메시지에는 형식화된 데이터, URI 또는 사용자 지정 응용 프로그램 페이로드가 포함됩니다. 메시지에 응용 프로그램 이름, MIME 유형 또는 장치 소프트웨어 버전 같은 응용 프로그램 관련 정보가 포함되어 있으면 도청자에게 해당 정보가 노출될 수 있습니다. Example 2에서 Fortify Static Code Analyzer는 return 문에서 system information leak 취약성을 보고합니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>오류 메시지를 쓸 때는 항상 보안을 염두에 두어야 합니다. 운영 환경에서는 자세한 오류 정보 대신 간단한 메시지를 사용합니다. 관리자와 프로그래머가 문제를 진단하는 데 도움이 되는 상세한 출력의 생성 및 저장은 삼가는 것이 좋습니다. 디버깅 추적은 때에 따라 엉뚱한 곳에 나타날 수 있습니다(예: 오류 페이지의 HTML에서 주석에 포함됨).
+
+스택 추적이나 데이터베이스 덤프를 나타내지 않는 간결한 오류 메시지도 공격자에게 도움을 줍니다. 예를 들어, "접근 거부" 메시지는 시스템에 파일이나 사용자가 존재한다는 것을 나타냅니다.
+
+Android 장치에서 NFC를 통한 시스템 데이터 누출이 염려되면 다음의 세 가지 작업 중 하나를 수행하면 됩니다. 즉 범위 내에 있는 다른 장치로 푸시되는 메시지에 시스템 데이터를 포함하지 않거나, 메시지 페이로드를 암호화하거나, 상위 계층에 보안 통신 채널을 설정합니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. System information leak을 예방하는 데 래퍼 스크립트, 회사 IT 정책 또는 빠른 판단력을 가진 시스템 관리자에만 의존하지 마십시오. 자체적으로 안전한 소프트웨어를 작성해야 합니다.
+
+2. 이 카테고리의 취약점은 모든 유형의 프로그램에 적용되지 않습니다. 예를 들어, 응용 프로그램이 공격자가 이미 시스템 정보를 확보한 클라이언트 시스템에서 실행되거나 시스템 정보를 신뢰할 수 있는 로그 파일에만 인쇄하는 경우, Audit Guide를 사용하여 스캔 결과에서 이 카테고리의 취약점을 필터링할 수 있습니다.
+
+3. Fortify AppDefender adds protection against this category.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="F4E601F87A70CDDB564CDB34FD8B57B4" ruleID="FE4EADF2-7055-4C36-863E-5A01C4A0E1A4">
+                            <Category>System Information Leak</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>ExcelWriterService.java의 makeExcelFileParmList() 함수는 163 줄의 printStackTrace()을(를) 호출하여 시스템 데이터 또는 디버그 정보를 노출합니다. printStackTrace()에 의해 노출된 정보는 공격자가 공격을 계획하는 데 도움을 줄 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>163</LineStart>
+<Snippet>        } catch (Exception e) {
+            System.out.println(excel_path + " �뙆�씪�쓣 �깮�꽦�븷 �닔 �뾾�뒿�땲�떎.");
+        	e.printStackTrace();
+        }
+    }</Snippet>
+<TargetFunction>printStackTrace()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="42FBE17CCE95CEC169AC54EE3582DE92" ruleID="FE4EADF2-7055-4C36-863E-5A01C4A0E1A4">
+                            <Category>System Information Leak</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 함수는 288 줄의 printStackTrace()을(를) 호출하여 시스템 데이터 또는 디버그 정보를 노출합니다. printStackTrace()에 의해 노출된 정보는 공격자가 공격을 계획하는 데 도움을 줄 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>288</LineStart>
+<Snippet>		} catch (Exception e) {
+			System.out.println(xml_path + " �뙆�씪�쓣 �씫�쓣 �닔 �뾾�뒿�땲�떎.");
+			e.printStackTrace();
+		}
+</Snippet>
+<TargetFunction>printStackTrace()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>Unreleased Resource: Streams</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>ExcelWriterService.java의 makeExcelFileParmList() 함수는 156 줄의 FileOutputStream()에 의해 할당된 시스템 리소스를 해제하지 못할 수도 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>프로그램이 시스템 리소스를 해제하지 못할 수도 있습니다.
+
+리소스 누출은 최소한 두 가지 공통 원인이 있습니다.
+
+- 오류 조건 및 기타 예외 상황.
+
+- 프로그램의 어떤 부분이 리소스 해제를 담당하고 있는지에 대한 혼란
+
+대부분의 공개되지 않은 리소스 문제는 일반적인 소프트웨어 안정성 문제를 일으킵니다. 하지만 공격자가 의도적으로 리소스 누출을 일으킬 수 있는 경우 공격자가 리소스 풀을 고갈시켜 DoS(Denial of Service) 공격을 실행할 수도 있습니다.
+
+예제: 다음 메서드는 자신이 연 파일 핸들을 닫지 않습니다. FileInputStream의 finalize() 메서드는 결국 close()를 호출하지만 finalize() 메서드를 호출하기까지 시간이 얼마나 걸릴지 장담할 수 없습니다. 사용량이 많은 환경에서는 이로 인해 JVM이 파일 핸들을 모두 소진시키는 결과를 초래할 수도 있습니다.
+
+private void processFile(String fName) throws FileNotFoundException, IOException {
+  FileInputStream fis = new FileInputStream(fName);
+  int sz;
+  byte[] byteArray = new byte[BLOCK_SIZE];
+  while ((sz = fis.read(byteArray)) != -1) {
+    processBytes(byteArray, sz);
+  }
+}
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>1. 리소스를 다시 확보하는 데 finalize()를 사용하지 마십시오. 개체의 finalize() 메서드를 호출하려면 가비지 수집기(garbage collector)는 개체가 가비지 수집 대상인지 판단해야 합니다. 가비지 수집기(garbage collector)는 JVM이 메모리가 부족한 경우를 제외하고는 실행할 필요가 없기 때문에 finalize() 메서드가 필요할 때 원하는 대로 호출된다는 보장이 없습니다. 또한 결국 가비지 수집기(garbage collector)가 실행되더라도 짧은 시간에 방대한 리소스를 다시 확보하기 때문에 성능이 "고르지 못하고" 전반적인 시스템 처리량이 낮아질 수 있습니다. 이런 효과는 시스템의 부하가 증가할수록 더욱 두드러집니다.
+
+마지막으로 리소스 확보 작업이 응답하지 않도록 할 수 있으면(예: 네트워크로 데이터베이스와 통신해야 하는 경우), finalize() 메서드를 실행하고 있는 스레드도 응답하지 않습니다.
+
+2. finally 블록의 리소스를 해제하십시오. 예제 코드는 다음과 같이 다시 작성해야 합니다.
+
+
+public void processFile(String fName) throws FileNotFoundException, IOException {
+  FileInputStream fis;
+  try {
+    fis = new FileInputStream(fName);
+    int sz;
+    byte[] byteArray = new byte[BLOCK_SIZE];
+    while ((sz = fis.read(byteArray)) != -1) {
+      processBytes(byteArray, sz);
+    }
+  }
+  finally {
+    if (fis != null) {
+      safeClose(fis);
+    }
+  }
+}
+
+public static void safeClose(FileInputStream fis) {
+  if (fis != null) {
+    try {
+      fis.close();
+    } catch (IOException e) {
+      log(e);
+    }
+  }
+}
+
+
+이 해결책은 도우미 함수를 사용하여 스트림을 닫으려고 할 때 발생할 수 있는 예외를 기록합니다. 이 도우미 함수는 스트림을 닫아야 할 때마다 재사용됩니다.
+
+또한 processFile 메서드는 fis 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 fis가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 fis가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. fis를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 fis를 사용하는 경우를 컴파일러가 발견할 수 없습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="A18F7B43D1ED5C6B1C9A439855020BE7" ruleID="74714BFC-EDF7-445B-8672-0996214D5845">
+                            <Category>Unreleased Resource: Streams</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 readXMLFile() 함수는 41 줄의 FileInputStream()에 의해 할당된 시스템 리소스를 해제하지 못할 수도 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>41</LineStart>
+<Snippet>			factory.setNamespaceAware(true);
+			XmlPullParser xpp = factory.newPullParser();
+			FileInputStream fis	= new FileInputStream(file);
+			xpp.setInput(fis, "utf-8");
+</Snippet>
+<TargetFunction>fis = new FileInputStream(...)</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="729EEF510A617EBFF4F5B661DAE54F87" ruleID="74714BFC-EDF7-445B-8672-0996214D5845">
+                            <Category>Unreleased Resource: Streams</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>ExcelWriterService.java의 makeExcelFileParmList() 함수는 156 줄의 FileOutputStream()에 의해 할당된 시스템 리소스를 해제하지 못할 수도 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>ExcelWriterService.java</FileName>
+<FilePath>src/service/ExcelWriterService.java</FilePath>
+<LineStart>156</LineStart>
+<Snippet>        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(excel_path);
+            workbook.write(fos);
+            fos.close();</Snippet>
+<TargetFunction>fos = new FileOutputStream(...)</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Build Misconfiguration: External Maven Dependency Repository</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>이 maven 빌드 스크립트가 외부 소스에 의존하면 공격자가 악성 코드를 최종 제품에 삽입하거나 build system을 제어할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>Dependency 관리를 지원하는 Java 개발 환경에는 다음과 같은 몇 가지 도구가 있습니다. Apache Ant 및 Apache Maven build system에는 종속성을 관리하는 데 도움을 주도록 특별히 설계된 기능이 포함되어 있으며, Apache Ivy는 dependency 관리자로서 개발되었습니다. 이러한 도구들은 동작에는 차이점이 있지만 빌드 시 빌드 프로세스에 지정된 외부의 종속성을 자동으로 다운로드하는 일반적인 기능은 공통적으로 가지고 있습니다. 따라서 개발자 B가 개발자 A와 동일한 방법으로 소프트웨어를 쉽게 빌드할 수 있습니다. 개발자들은 dependency 정보를 빌드 파일에 저장합니다. 즉, 각 개발자 및 빌드 엔지니어가 수동 dependency 관리 시 일어나는 dependency 관리 문제 없이 종속성을 얻고 코드를 컴파일하고 배치하는 일관된 방법을 가진다는 것을 의미합니다. 다음 예제는 Ivy, Ant 및 Maven이 빌드 프로세스의 일부로 외부 종속성을 관리하는 데 사용되는 방법을 보여줍니다.
+
+Maven의 경우, 개발자는 종속성을 검색할 명시적인 URL을 나열하는 대신 dependency 이름과 버전을 지정하고 Maven은 자체의 기본적인 구성에 의존하여 종속성을 검색하는 서버를 식별합니다. 따라서 일반적으로 사용되는 구성 요소의 경우에는 개발자가 dependency 위치를 확인하지 않아도 됩니다.
+
+예제 1: Maven pom.xml 파일에서 발췌한 다음 내용은 개발자가 이름과 버전을 사용하여 여러 외부 종속성을 지정하는 방법을 보여줍니다.
+
+
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+    &lt;version&gt;1.1&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;javax.jms&lt;/groupId&gt;
+    &lt;artifactId&gt;jms&lt;/artifactId&gt;
+    &lt;version&gt;1.1&lt;/version&gt;
+  &lt;/dependency&gt;
+  ...
+&lt;/dependencies&gt;
+
+
+두 가지 별개 유형의 공격 시나리오가 이들 시스템에 영향을 줍니다. 공격자는 dependency를 호스팅하는 서버를 손상시키거나, dependency를 호스팅하는 서버의 호스트 이름에 대한 요청을 공격자에 의해 제어되는 시스템으로 리디렉션하도록 build system이사용하는 DNS 서버를 손상시킬 수 있습니다. 두 경우 모두, 공격자는 악의적인 버전의 dependency를 손상되지 않은 시스템에서 실행 중인 빌드에 삽입할 수 있는 능력을 얻게 됩니다.
+
+Trojan dependency를 전달하는 데 사용되는 공격에 관계없이 이러한 경우에는 build system에서 악성 바이너리를 무조건 받고 빌드에 포함시킨다는 점이 공통 사항입니다. Build system은 일반적으로 외부 종속성이 아닌 내부적으로 개발된 코드에 초점을 맞춘 코드 검사 등의 악성 바이너리 및 기존 보안 메커니즘을 거부할 방법이 없으므로 이런 유형의 공격은 개발 환경 및 제품에 잠재적으로 퍼져 있는 것처럼 눈에 띄지 않게 진행될 가능성이 큽니다.
+
+수동 빌드 프로세스에 손상된 dependency가 발생할 위험이 일부 있지만, 매번 외부 소스에서 dependency를 검색하는 자동화된 build system의 경향으로 인해 build system은 공격자에게 기회의 창이 크게 증가된 새로운 환경에서 실행됩니다. 공격자가 빌드를 실행 중인 시스템을 손상시키는 데에는 dependency를 검색하는 여러 번 중 한 번만 dependency 서버 또는 DNS 서버만 손상시키기만 하면 됩니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>가장 단순한 해결책은 자동화된 dependency 관리 시스템을 전혀 적용하지 않는 것입니다. 종속성을 수동으로 관리하면 build system에 의해 발생되는 예상치 못한 동작에 대한 가능성이 제거됩니다. 물론, 공격자는 dependency의 수동 검색과 동시에 일어나는 앞서 설명된 공격들 중 하나를 수행할 수 있지만, dependency가 검색되는 빈도를 상당히 제한하면 공격자에게 기회가 줄어듭니다. 결국, 이 해결책으로 인해 개발 조직은 표면적으로 오래된 build system에 강제로 의존하게 됩니다. 수동 dependency 관리 기반의 시스템은 사용 및 관리하기가 어려운 경우가 있어서 일부 소프트웨어 개발 환경에서는 허용되지 않을 수도 있습니다.
+
+두 번째 솔루션은 수동 dependency 관리 접근 방식과 요즘 많이 사용되는 완전히 자동화된 솔루션의 혼합입니다. 수동 빌드 프로세스의 가장 좋은 이점은 외부 dependency 서버를 내부적으로 복제하여 반자동화된 시스템에서 공격 기회를 줄일 수 있다는 점입니다. 외부 dependency가 필요한 일부 build system은 DNS 기반 공격의 위험을 우회하기 위해 하드코드된 내부 IP 주소를 사용하는 내부 서버를 가리킬 수 있습니다. 새로운 dependency가 추가되고 새 버전이 출시되면 이를 다운로드하여 내부 리포지토리에 포함시킬 수 있습니다. 이 솔루션은 공격 기회를 줄이고 조직에서 기존의 내부 네트워크 보안 인프라를 이용할 수 있도록 합니다.
+
+Maven을 사용하여 이 솔루션을 구현하려면 프로젝트에서 내부 리포지토리의 IP 주소를 pom.xml에 하드코드해야 합니다. pom.xml에 IP 주소를 지정하면 내부 리포지토리가 해당하는 빌드에서 사용되지만 특정 프로젝트에 연결됩니다. 또는 IP 주소를 settings.xml에 지정할 수 있으며 그렇게 하면 여러 프로젝트에서 구성을 쉽게 공유할 수 있습니다.
+
+예제 2: 다음 Maven pom.xml은 명시적인 내부 IP 주소의 사용 예를 보여 줍니다(이 항목은 settings.xml에서도 사용할 수 있음).
+
+
+&lt;project&gt;
+  ...
+  &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;releases&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+        &lt;checksumPolicy&gt;warn&lt;/checksumPolicy&gt;
+      &lt;/releases&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;updatePolicy&gt;never&lt;/updatePolicy&gt;
+        &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;
+      &lt;/snapshots&gt;
+      &lt;id&gt;central&lt;/id&gt;
+      &lt;name&gt;Internal Repository&lt;/name&gt;
+      &lt;url&gt;http://172.16.1.13/maven2&lt;/url&gt;
+      &lt;layout&gt;default&lt;/layout&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+  &lt;pluginRepositories&gt;
+    ...
+  &lt;/pluginRepositories&gt;
+  ...
+&lt;/project&gt;
+</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>1</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="87E3EC5CC8154C006783CC461A6DDEEB" ruleID="FF57412F-DD28-44DE-8F4F-0AD39620768C">
+                            <Category>Build Misconfiguration: External Maven Dependency Repository</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Environment</Kingdom>
+                            <Abstract>이 maven 빌드 스크립트가 외부 소스에 의존하면 공격자가 악성 코드를 최종 제품에 삽입하거나 build system을 제어할 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>pom.xml</FileName>
+<FilePath>pom.xml</FilePath>
+<LineStart>1</LineStart>
+<Snippet>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;XMLtoExcelMaven&lt;/groupId&gt;</Snippet>
+<TargetFunction>//project/repositories()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Code Correctness: Constructor Invokes Overridable Function</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>XMLReaderService.java의 30 줄에서 XMLReaderService의 생성자는 공격자가 재정의할 수 있는 함수를 호출합니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>생성자가 오버라이드 가능 함수를 호출하면 공격자는 개체가 완전히 초기화되기 전에 this 참조에 접근할 수 있으므로 취약점이 발생할 수 있습니다.
+
+예제 1: 다음 코드는 오버라이드 가능한 메서드를 호출합니다.
+
+
+  ...
+  class User {
+    private String username;
+    private boolean valid;
+    public User(String username, String password){
+      this.username = username;
+      this.valid = validateUser(username, password);
+    }
+    public boolean validateUser(String username, String password){
+      //validate user is real and can authenticate
+      ...
+    }
+    public final boolean isValid(){
+      return valid;
+    }
+  }
+
+
+validateUser 함수와 클래스는 final이 아니므로 오버라이드할 수 있습니다. 그런 다음 이 함수를 오버라이드하는 하위 클래스로 변수를 초기화하면 validateUser 기능을 무시할 수 있습니다. 예: 
+
+
+  ...
+  class Attacker extends User{
+    public Attacker(String username, String password){
+      super(username, password);
+    }
+    public boolean validateUser(String username, String password){
+      return true;
+    }
+  }
+  ...
+  class MainClass{
+    public static void main(String[] args){
+      User hacker = new Attacker("Evil", "Hacker");
+      if (hacker.isValid()){
+        System.out.println("Attack successful!");
+      }else{
+        System.out.println("Attack failed");
+      }
+    }
+  }
+
+
+Example 1의 코드는 “Attack successful!”을 출력합니다. Attacker 클래스는 슈퍼클래스 User의 생성자에서 호출되는 validateUser() 함수를 오버라이드하고, Java는 생성자에서 호출되는 함수의 하위 클래스를 먼저 확인하기 때문입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>생성자는 오버라이드할 수 있는 함수를 final로 지정하거나 클래스를 final로 지정하여 해당 함수를 호출해서는 안 됩니다. 이 코드가 생성자에서만 필요한 경우에는 private 접근 지정자를 사용하거나, 슈퍼클래스의 생성자에 로직을 직접 배치할 수도 있습니다.
+
+예제 2: 다음 코드는 다른 위치에서 함수를 오버라이드할 수 없도록 클래스를 final로 지정합니다.
+
+
+  ...
+  final class User {
+    private String username;
+    private boolean valid;
+    public User(String username, String password){
+      this.username = username;
+      this.valid = validateUser(username, password);
+    }
+    private boolean validateUser(String username, String password){
+      //validate user is real and can authenticate
+      ...
+    }
+    public final boolean isValid(){
+      return valid;
+    }
+  }
+
+
+이 예제에서는 클래스를 하위 클래스로 구분할 수 없도록 final로 지정하고, validateUser() 함수는 이 응용 프로그램의 다른 위치에서 필요하지 않으므로 private로 변경합니다. 이 방식은 방어적인 프로그래밍 기술인데, 나중에 User 클래스를 하위 클래스로 구분해야 할 수 있기 때문입니다. 이 경우 validateUser() 함수를 private으로 설정하지 않았다면 이 취약점이 다시 나타나게 됩니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>1</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="0B871DA9754175BEF8E54FBC38685D40" ruleID="95ACE7A2-BF14-4254-AFD3-22769C5FDC5F">
+                            <Category>Code Correctness: Constructor Invokes Overridable Function</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>XMLReaderService.java의 30 줄에서 XMLReaderService의 생성자는 공격자가 재정의할 수 있는 함수를 호출합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>30</LineStart>
+<Snippet>		}
+
+		readXMLFile(properties);
+	}
+</Snippet>
+<TargetFunction>FunctionCall: readXMLFile()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: JVM Termination</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>XMLReaderService.java의 315 줄, main()에 있는 exit() 호출은 웹 응용 프로그램 컨테이너를 종료합니다. 웹 응용 프로그램은 컨테이너를 종료하면 안됩니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>웹 응용 프로그램을 통해 응용 프로그램 컨테이너를 종료하려 하는 것은 좋은 방법이 아닙니다. 종료 메서드 호출은 제거되지 않은 leftover debug code의 일부분이거나 Non-J2EE 응용 프로그램에서 가져온 코드일 것입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>웹 응용 프로그램 내에서 종료 메서드를 호출하지 마십시오. J2EE 응용 프로그램에 그와 같은 메서드 호출이 있으면 소프트웨어 상태가 불량해지므로 제거하는 것이 좋습니다. 인식 가능한 위험성 존재 여부를 떠나 그런 코드를 응용 프로그램에 남겨둘 합당한 이유를 찾기가 어렵습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. J2EE 응용 프로그램에 exit() 또는 halt() 호출이 있으면 다른 문제가 나타날 수 있습니다. exit() 또는 halt() 호출을 발견하면 개발자가 성급했거나 Non-J2EE 코드의 상당 부분이 보안 또는 품질 문제를 고려하지 않고 응용 프로그램에 도입되었다는 다른 증거도 찾아야 합니다.
+
+2. J2EE가 아닌 Java 응용 프로그램을 감사하는 경우 J2EE의 부적절한 사례 범주가 사용자 환경에 적용되지 않을 수 있습니다. 이런 경우 Audit Guide를 사용하여 이러한 문제를 억제할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>1</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="96C119C01864064BB7E3C37CE037A545" ruleID="9D479AB5-B986-492C-B1F0-C11F2FD623F7">
+                            <Category>J2EE Bad Practices: JVM Termination</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Time and State</Kingdom>
+                            <Abstract>XMLReaderService.java의 315 줄, main()에 있는 exit() 호출은 웹 응용 프로그램 컨테이너를 종료합니다. 웹 응용 프로그램은 컨테이너를 종료하면 안됩니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>315</LineStart>
+<Snippet>			System.out.println("Convert xml file into xlsx file");
+
+			System.exit(-1);
+		}
+</Snippet>
+<TargetFunction>exit()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>J2EE Bad Practices: Leftover Debug Code</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>XMLReaderService 클래스에는 디버그 코드가 포함되어 있어서 배포된 웹 응용 프로그램에 예기치 않은 진입점을 만들 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>일반적인 개발 방법은 응용 프로그램으로 발표하거나 배포하지는 않고 디버깅 및 테스트 목적으로만 특별 디자인된 "비밀" 코드를 추가하는 것입니다. 이 비밀 디버그 코드가 실수로 응용 프로그램에 남아 있게 되면 응용 프로그램은 예기치 않은 상호 작용 모드에 노출됩니다. 이 비밀 진입점은 디자인이나 테스트 도중 고려되지 않고 응용 프로그램의 예상 동작 조건 범위를 벗어나기 때문에 보안 위험을 야기합니다.
+
+실수로 남겨둔 디버그 코드의 가장 일반적인 예는 main() 메서드가 웹 응용 프로그램에 나타나는 것입니다. 이는 제품 개발에서는 허용되는 방식이지만 J2EE 운영 응용 프로그램에 속한 클래스는 main()을 정의할 수 없습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>응용 프로그램의 운영 버전을 배포하기 전에 디버그 코드를 제거해야 합니다. 직접적인 보안 위협의 증명 여부에 관계없이 초기 개발 단계 이후에 응용 프로그램에 디버그 코드가 남아 있을 이유가 없습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. main() 메서드의 존재는 빙산의 일각일 수 있습니다. main()를 발견하면 개발자가 서둘렀거나 정상적으로 작업을 끝내지 못했음을 나타내는 다른 증거도 찾아 보십시오.
+
+2. J2EE가 아닌 Java 응용 프로그램을 감사하는 경우 J2EE의 부적절한 사례 범주가 사용자 환경에 적용되지 않을 수 있습니다. 이런 경우 Audit Guide를 사용하여 이러한 문제를 억제할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>1</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="FB61267CFA67BD462187D7BB67EDBF5F" ruleID="625EEE1F-464F-42DC-85D6-269A637EF747">
+                            <Category>J2EE Bad Practices: Leftover Debug Code</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>XMLReaderService 클래스에는 디버그 코드가 포함되어 있어서 배포된 웹 응용 프로그램에 예기치 않은 진입점을 만들 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>XMLReaderService.java</FileName>
+<FilePath>src/service/XMLReaderService.java</FilePath>
+<LineStart>310</LineStart>
+<Snippet>	}
+
+	public static void main(String[] args) {
+		if (args == null || args.length != 2) {
+			System.out.println("Usage : xlsx-generator &lt;xml file&gt; &lt;xlsx file&gt;");</Snippet>
+<TargetFunction>Function: main()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="1">
+                        <groupTitle>Poor Style: Non-final Public Static Field</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>비 final public static 필드는 외부 클래스에 의해 변경될 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>일반적으로, public 필드가 임의의 외부 클래스에 의해 변경될 수 있으므로 개체의 멤버 필드에 외부 클래스의 직접 접근을 제공하려고 하지 않습니다. 지향적으로 설계된 좋은 개체는 encapsulation을 사용하여 멤버 필드와 같은 구현 세부 정보가 다른 클래스에 노출되는 것을 막습니다. 또한 시스템에서 이 필드를 변경할 수 없다고 보는 경우, 악성 코드는 시스템 동작을 불리하게 변경할 수도 있습니다.
+
+예제 1: 다음 코드에서 ERROR_CODE 필드가 final이 아니라 public 및 static으로 선언되었습니다.
+
+
+public class MyClass
+{
+public static int ERROR_CODE = 100;
+//...
+}
+
+이 경우, 악성 코드는 이 오류 코드를 변경하고 프로그램을 예기치 않은 방식으로 동작하게 만들 수도 있습니다.&#13;
+이 카테고리는 Cigital Java Rulepack에서 비롯되었습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>필드를 상수 값으로 노출시키려면 해당 필드는 public static final로 선언되어야 합니다. 그렇지 않으면 private 필드를 선언하십시오.
+
+예제 2:
+
+public class MyClass
+{
+public static final int ERROR_CODE = 123;
+//...
+}</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>1</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="5BC144BE5EE17050E95B08CFCF31037B" ruleID="3F30430E-C978-475D-97A0-37D917C45791">
+                            <Category>Poor Style: Non-final Public Static Field</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>비 final public static 필드는 외부 클래스에 의해 변경될 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>FortifyDTO.java</FileName>
+<FilePath>src/model/FortifyDTO.java</FilePath>
+<LineStart>29</LineStart>
+<Snippet>	private String comment;
+	private String scandate;
+	public static String[] parameters = {"friority",
+			"folder",
+			"kingdom",</Snippet>
+<TargetFunction>Field: parameters()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+</ReportDefinition>
