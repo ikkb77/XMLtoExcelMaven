@@ -5,6 +5,7 @@ import model.FortifyDTO;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.impl.regex.Match;
 
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ExcelWriterService {
@@ -126,10 +129,10 @@ public class ExcelWriterService {
             for(int i = 0; i < row.getLastCellNum() ; i++){
                 row.getCell(i).setCellStyle(defaultStyle);
             }
-
+            nCount = 1;
             // 줄바꿈 셀기준 행 높이 설정
             row.setHeightInPoints((nCount * sheet.getDefaultRowHeightInPoints()));
-            nCount = 1;
+
 
         }
 
@@ -177,14 +180,26 @@ public class ExcelWriterService {
             Workbook workbook = new XSSFWorkbook(fis);
 
             Sheet sheet = workbook.getSheetAt(0);
+            DataFormatter dataFormatter = new DataFormatter();
 
             FileWriter writer = new FileWriter(excel_path+".csv");
 
             for (Row row : sheet){
                 for (Cell cell : row){
-                    switch (cell.getCellTypeEnum()){
+                    switch (cell.getCellTypeEnum()) {
                         case STRING:
-                            writer.append(cell.getStringCellValue());
+                            if (cell.getStringCellValue().contains("\"") || cell.getStringCellValue().contains(".") || cell.getStringCellValue().contains(",")){
+                                Pattern pattern = Pattern.compile("\"");
+                                Matcher matcher = pattern.matcher(cell.getStringCellValue());
+                                String cellValue = matcher.replaceAll("\"\"");
+                                writer.append("\"" + cellValue + "\"");
+                            }else {
+                                writer.append(dataFormatter.formatCellValue(cell));
+                            }
+                            //writer.append(cell.getStringCellValue().contains("\"")?dataFormatter.formatCellValue():cell.getStringCellValue());
+                            break;
+                        case NUMERIC:
+                            writer.append(dataFormatter.formatCellValue(cell));
                             break;
                         default:
                             break;
@@ -197,7 +212,7 @@ public class ExcelWriterService {
             writer.close();
             fis.close();
 
-            System.out.println("xlsx to CSV file converted successfully.");
+            System.out.println("CSV file converted successfully.");
 
         } catch (IOException e) {
             e.printStackTrace();
