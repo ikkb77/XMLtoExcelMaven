@@ -88,7 +88,7 @@ public class ExcelWriterService {
         row.createCell(seq.get("tag")).setCellValue("auditor 태그");
         row.createCell(seq.get("userinfo")).setCellValue("auditor 아이디");
         row.createCell(seq.get("comment")).setCellValue("auditor 의견");
-        row.createCell(seq.get("scandate")).setCellValue("scan 시간");
+        row.createCell(seq.get("scandate")).setCellValue("스캔시간");
 
         int count = 1;
 

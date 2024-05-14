@@ -1,4 +1,4 @@
-위험도,폴더,대분류,취약점,위험인자 진입 파일경로,위험인자 진입 파일명,위험인자 진입 라인넘버,위험인자 진입 소스조각,위험인자 진입 함수,취약점 탐지 파일경로,취약점 탐지 파일명,취약점 탐지 라인넘버,취약점 탐지 소스조각,취약점 탐지 함수,취약점 이슈 개요,취약점 개요,취약점 설명,취약점 조치 권고내용,취약점 조치 tip,취약점 이슈 고유키,취약점 rule 고유키,auditor 태그,auditor 아이디,auditor 의견,scan 시간,
+위험도,폴더,대분류,취약점,위험인자 진입 파일경로,위험인자 진입 파일명,위험인자 진입 라인넘버,위험인자 진입 소스조각,위험인자 진입 함수,취약점 탐지 파일경로,취약점 탐지 파일명,취약점 탐지 라인넘버,취약점 탐지 소스조각,취약점 탐지 함수,취약점 이슈 개요,취약점 개요,취약점 설명,취약점 조치 권고내용,취약점 조치 tip,취약점 이슈 고유키,취약점 rule 고유키,auditor 태그,auditor 아이디,auditor 의견,스캔시간,
 High,High,Input Validation and Representation,Path Manipulation,Downloads/WebGoat-2023.5/WebGoat-2023.5/.mvn/wrapper/MavenWrapperDownloader.java,MavenWrapperDownloader.java,,    private static final String PROPERTY_NAME_WRAPPER_URL = "wrapperUrl";
 
     public static void main(String args[]) {
@@ -50,7 +50,7 @@ out.println(arr);
 
 2. 효과적인 거부 목록을 구현하는 작업은 매우 어렵습니다. 검증 논리에 거부 목록을 구현해야 할 때는 신중해야 합니다. 다른 운영 체제, 데이터베이스 또는 기타 리소스에서 해석될 때 특수한 의미를 가질 수 있는 다른 메타 문자 집합 및 다른 유형의 입력 인코딩을 고려해 보십시오. 이 요구 사항이 끊임없이 변한다면 과연 거부 목록을 쉽고 정확하고 완전하게 업데이트할 수 있을 것인지 판단해야 합니다.
 
-3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,BCC0CC7930F0C1517E78308FD4FF0933,823FE039-A7FE-4AAD-B976-9EC53FFE4A59,,,,Wed Apr 17 15:03:30 KST 2024,
+3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,BCC0CC7930F0C1517E78308FD4FF0933,823FE039-A7FE-4AAD-B976-9EC53FFE4A59,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,Cross-Site Scripting: DOM,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/resources/lessons/challenges/js/challenge8.js,challenge8.js,,
 function loadVotes() {
     $.get("challenge/8/votes/", function (votes) {
@@ -183,7 +183,7 @@ Block-level element 항목(텍스트 단락 중간):
 
 2. 비록 신뢰할 수 없는 데이터에 대한 URL 인코딩이 많은 XSS 공격을 막아주긴 하지만, 일부 브라우저는 JavaScript 인터프리터로 전송하기 전에 DOM(Document Object Model) 내의 특정 지점에서 자동으로 내용을 해독합니다. 이러한 위험을 반영하기 위해 Rulepacks는 더 이상 Cross-Site Scripting을 방지하는 데 충분한 URL 인코딩 루틴을 처리하지 않습니다. URL 암호화 이후 도출되는 데이터 값을 통해 Fortify는 Cross-Site Scripting: Poor Validation 취약점을 확인하게 됩니다.
 
-3. React 이전 버전은 전체 구성 요소를 제어하여 cross-site scripting 공격에 더 취약합니다. Symbols를 사용하여 React 구성 요소를 식별하는 최신 버전에서는 악용이 차단됩니다. 하지만 Symbol을 지원(기본적으로 또는 polyfills를 통해)하지 않는 구형 브라우저는 여전히 취약합니다. 다른 Cross-Site Scripting 공격 유형은 모든 브라우저 및 React 버전에 유효합니다.,86D6531C6F6737839E0CD291D7D3E3FC,D23845BE-28FC-4A70-BE22-3BB3A26746750,,,,Wed Apr 17 15:03:30 KST 2024,
+3. React 이전 버전은 전체 구성 요소를 제어하여 cross-site scripting 공격에 더 취약합니다. Symbols를 사용하여 React 구성 요소를 식별하는 최신 버전에서는 악용이 차단됩니다. 하지만 Symbol을 지원(기본적으로 또는 polyfills를 통해)하지 않는 구형 브라우저는 여전히 취약합니다. 다른 Cross-Site Scripting 공격 유형은 모든 브라우저 및 React 버전에 유효합니다.,86D6531C6F6737839E0CD291D7D3E3FC,D23845BE-28FC-4A70-BE22-3BB3A26746750,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Security Features,Credential Management: Hardcoded API Credentials,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/resources/lessons/challenges/js/challenge8.js,challenge8.js,,
 function loadVotes() {
     $.get("challenge/8/votes/", function (votes) {
@@ -192,7 +192,7 @@ function loadVotes() {
                 with:
                     gh_access_token: ${{ secrets.GITHUB_TOKEN }}
                     report_path: 'robotreport',ConfigPair(),하드코드 API 자격 증명은 쉽게 해결할 수 없는 방식으로 시스템 보안을 손상시킬 수 있습니다.,하드코드 API 자격 증명은 쉽게 해결할 수 없는 방식으로 시스템 보안을 손상시킬 수 있습니다.,사용자 이름, 암호, API 키, API 기밀 및 API 토큰을 포함한 자격 증명을 하드코드하지 마십시오. 하드코드된 자격 증명은 모든 프로젝트 개발자에게 표시될 뿐만 아니라 업데이트하기가 매우 어렵습니다. 코드가 운영 단계에 들어간 후에는 소프트웨어 패치 없이는 자격 증명을 변경할 수 없습니다. 자격 증명이 손상되면 조직은 보안과 시스템 가용성 중 한 가지를 선택할 수밖에 없습니다.
-        ,API 자격 증명이 런타임 환경에서만 사용할 수 있는 구성 파일 또는 환경 변수에서 로드되는지 확인하십시오.,,964B6489427B42AD93C00CD160F424D6,C4BAD16D-847F-47D1-9B09-1B4E8FC9C2E4,,,,Wed Apr 17 15:03:30 KST 2024,
+        ,API 자격 증명이 런타임 환경에서만 사용할 수 있는 구성 파일 또는 환경 변수에서 로드되는지 확인하십시오.,,964B6489427B42AD93C00CD160F424D6,C4BAD16D-847F-47D1-9B09-1B4E8FC9C2E4,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Security Features,Password Management: Hardcoded Password,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/resources/lessons/challenges/js/challenge8.js,challenge8.js,,
 function loadVotes() {
     $.get("challenge/8/votes/", function (votes) {
@@ -259,7 +259,7 @@ android.database.sqlite.SQLiteDatabase 관련 참조는 net.sqlcipher.database.SQLite
 
 WebView 저장소에서 암호화를 활성화하려면 sqlcipher.so 라이브러리를 사용하여 WebKit를 다시 컴파일해야 합니다.,1. Fortify Java Annotations FortifyPassword 및 FortifyNotPassword를 사용하여 암호를 나타내는 필드 및 변수를 표시할 수 있습니다.
 
-2. null 암호, 빈 암호 또는 Hardcoded Password를 식별할 때 기본 규칙은 password 단어를 포함하는 필드와 변수만 고려합니다. 그러나 Fortify Custom Rules Editor는 사용자가 이름을 지정한 필드 및 변수의 암호 관리 이슈 감지에 필요한 규칙을 쉽게 만들 수 있는 Password Management 마법사를 제공합니다.,29FF9EC250A65E78FFAF022F815A1479,60A3A244-EAE2-415D-A054-EDFF20D3E7AA,,,,Wed Apr 17 15:03:30 KST 2024,
+2. null 암호, 빈 암호 또는 Hardcoded Password를 식별할 때 기본 규칙은 password 단어를 포함하는 필드와 변수만 고려합니다. 그러나 Fortify Custom Rules Editor는 사용자가 이름을 지정한 필드 및 변수의 암호 관리 이슈 감지에 필요한 규칙을 쉽게 만들 수 있는 Password Management 마법사를 제공합니다.,29FF9EC250A65E78FFAF022F815A1479,60A3A244-EAE2-415D-A054-EDFF20D3E7AA,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,SQL Injection,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java,Assignment5.java,,  @ResponseBody
   public AttackResult login(
       @RequestParam String username_login, @RequestParam String password_login) throws Exception {
@@ -399,7 +399,7 @@ Android에 해당하는 코드는 다음과 같습니다.
 
 2. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.
 
-3. SQL Injection 문제는 데이터 흐름 수정 작업 후에도 계속해서 보고될 수 있습니다(우선 순위 값은 감소). Fortify Static Code Analyzer에서 사용자 제어 입력이 SQL 문 구성에 사용되고 있다는 분명한 데이터 흐름 증거가 발견되면 높음/심각 우선 순위의 데이터 흐름 문제가 보고됩니다. Fortify Static Code Analyzer에서 데이터 소스를 결정할 수 없고 소스가 동적으로 변경될 수 있는 경우 낮음/중간 우선 순위의 의미 체계 문제가 보고됩니다. 이 전략은 SQL Injection과 같이 악용의 잠재적 영향이 거짓 긍정 문제를 감사하는 불편함보다 큰 일부 취약성 범주에 채택되었습니다.,335B38300BD8C08EC7CA2C4E1343A7B0,5870A527-08AF-452C-84B2-7F6C360CA7EF,,,,Wed Apr 17 15:03:30 KST 2024,
+3. SQL Injection 문제는 데이터 흐름 수정 작업 후에도 계속해서 보고될 수 있습니다(우선 순위 값은 감소). Fortify Static Code Analyzer에서 사용자 제어 입력이 SQL 문 구성에 사용되고 있다는 분명한 데이터 흐름 증거가 발견되면 높음/심각 우선 순위의 데이터 흐름 문제가 보고됩니다. Fortify Static Code Analyzer에서 데이터 소스를 결정할 수 없고 소스가 동적으로 변경될 수 있는 경우 낮음/중간 우선 순위의 의미 체계 문제가 보고됩니다. 이 전략은 SQL Injection과 같이 악용의 잠재적 영향이 거짓 긍정 문제를 감사하는 불편함보다 큰 일부 취약성 범주에 채택되었습니다.,335B38300BD8C08EC7CA2C4E1343A7B0,5870A527-08AF-452C-84B2-7F6C360CA7EF,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Security Features,Insecure Randomness,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java,Assignment5.java,,  @ResponseBody
   public AttackResult login(
       @RequestParam String username_login, @RequestParam String password_login) throws Exception {
@@ -432,7 +432,7 @@ Sun은 SHA1PRNG라는 Java 배포판을 사용하여 단일 SecureRandom 구현을 제공하는데 그
 
 "매 연산마다 1씩 증가하는 64비트 카운터와 연결된 실제 무작위 시드 값에 대해 SHA-1 해시를 계산합니다. 160비트 SHA-1 출력부터 64비트만 사용됩니다[1]." 
 
-하지만 Sun의 SHA1PRNG 알고리즘 구현에 대한 구체적인 내용은 상세하게 설명되어 있지 않고 구현에 사용한 엔트로피 소스가 불확실하며, 따라서 출력의 실제 무작위성이 어떤 수준인지도 불확실합니다. 웹 상에 Sun 구현에 대한 추측이 난무하지만 알고리즘의 암호화가 강력하고 보안에 민감한 상황에서 안전하게 사용할 수 있다는 주장을 반박할 만한 증거는 없습니다.,,DAC4D23B147E71AA4BE012918D1DA902,49D75ADD-4BBD-49B9-AAF2-92B9BAB332FE,,,,Wed Apr 17 15:03:30 KST 2024,
+하지만 Sun의 SHA1PRNG 알고리즘 구현에 대한 구체적인 내용은 상세하게 설명되어 있지 않고 구현에 사용한 엔트로피 소스가 불확실하며, 따라서 출력의 실제 무작위성이 어떤 수준인지도 불확실합니다. 웹 상에 Sun 구현에 대한 추측이 난무하지만 알고리즘의 암호화가 강력하고 보안에 민감한 상황에서 안전하게 사용할 수 있다는 주장을 반박할 만한 증거는 없습니다.,,DAC4D23B147E71AA4BE012918D1DA902,49D75ADD-4BBD-49B9-AAF2-92B9BAB332FE,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,Open Redirect,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadRetrieval.java,ProfileUploadRetrieval.java,,    }
     try {
       var id = request.getParameter("id");
@@ -486,7 +486,7 @@ Critical,Critical,Input Validation and Representation,Open Redirect,Downloads/We
     %>
 
 
-경우에 따라, 이러한 방법은 올바른 URL 집합이 너무 크거나 추적이 어려워 실용적이지 못할 수 있습니다. 이러한 경우 사용자를 리디렉션할 수 있는 도메인을 제한하는 다른 방법을 사용하면, 적어도 사용자를 악의적인 외부 사이트로 보내는 공격을 예방할 수 있습니다.,1. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,C0D6B66EED312C47C976F1FD7D5DFDEB,6A431DA2-72CD-4A27-B3F9-1FFE5F8CCACA,,,,Wed Apr 17 15:03:30 KST 2024,
+경우에 따라, 이러한 방법은 올바른 URL 집합이 너무 크거나 추적이 어려워 실용적이지 못할 수 있습니다. 이러한 경우 사용자를 리디렉션할 수 있는 도메인을 제한하는 다른 방법을 사용하면, 적어도 사용자를 악의적인 외부 사이트로 보내는 공격을 예방할 수 있습니다.,1. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,C0D6B66EED312C47C976F1FD7D5DFDEB,6A431DA2-72CD-4A27-B3F9-1FFE5F8CCACA,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Time and State,Race Condition,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadRetrieval.java,ProfileUploadRetrieval.java,,    }
     try {
       var id = request.getParameter("id");
@@ -543,7 +543,7 @@ promiseAuthentication()
 .then(authenticatedActions, sendUnauthenticatedMessage);
 
 
-이 경우 코드는 항상 명확하게 정의된 순서로 실행되므로 코드를 보다 쉽게 파악하고 race condition을 방지할 수 있습니다.,,164D7609B14457235788ACCB474E0C90,632C0055-B853-4E37-B49F-720C6448B1C7,,,,Wed Apr 17 15:03:30 KST 2024,
+이 경우 코드는 항상 명확하게 정의된 순서로 실행되므로 코드를 보다 쉽게 파악하고 race condition을 방지할 수 있습니다.,,164D7609B14457235788ACCB474E0C90,632C0055-B853-4E37-B49F-720C6448B1C7,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Security Features,Privacy Violation,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -676,7 +676,7 @@ webview.setWebViewClient(new WebViewClient() {
 
 2. Fortify Java Annotations FortifyPassword, FortifyNotPassword, FortifyPrivate 및 FortifyNotPrivate를 사용하여 암호 및 개인 정보를 나타내는 필드 및 변수를 표시할 수 있습니다.
 
-3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,327A61D07BCA5E76E2F8918566E8F496,31546B66-03D9-48A3-A1B8-0DF151C9DA2B0,,,,Wed Apr 17 15:03:30 KST 2024,
+3. 많은 최신 웹 프레임워크는 사용자 입력의 검증을 수행하기 위한 메커니즘을 제공합니다(Struts 및 Spring MVC 포함). 확인되지 않은 입력의 소스를 강조하기 위해, Fortify 보안 코딩 규칙 팩은 악용 가능성을 낮추고 프레임워크 검증 메커니즘이 사용 중일 때마다 지원하는 증거에 포인터를 제공하여 Fortify Static Code Analyzer에서 보고한 문제의 우선 순위를 동적으로 재지정합니다. 이 기능을 Context-Sensitive Ranking(컨텍스트 감지 순위)이라고 부릅니다. Fortify 사용자의 감사 프로세스를 지원하기 위해, Fortify Software Security Research Group은 입력 소스에 적용된 검증 메커니즘에 따라 문제를 폴더로 그룹화하는 데이터 유효성 프로젝트 템플릿을 사용 가능하게 만듭니다.,327A61D07BCA5E76E2F8918566E8F496,31546B66-03D9-48A3-A1B8-0DF151C9DA2B0,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Code Quality,Unreleased Resource: Streams,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -742,7 +742,7 @@ public static void safeClose(FileInputStream fis) {
 
 이 해결책은 도우미 함수를 사용하여 스트림을 닫으려고 할 때 발생할 수 있는 예외를 기록합니다. 이 도우미 함수는 스트림을 닫아야 할 때마다 재사용됩니다.
 
-또한 processFile 메서드는 fis 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 fis가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 fis가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. fis를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 fis를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,,126879C79E72DAEA161B955EFC3ECCED,74714BFC-EDF7-445B-8672-0996214D5845,,,,Wed Apr 17 15:03:30 KST 2024,
+또한 processFile 메서드는 fis 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 fis가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 fis가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. fis를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 fis를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,,126879C79E72DAEA161B955EFC3ECCED,74714BFC-EDF7-445B-8672-0996214D5845,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Security Features,Key Management: Hardcoded Encryption Key,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -766,7 +766,7 @@ DiJPJY2LNBQ7jS685mb6650JdvH8uQl6oeJ/aUmq63o2zOw=
 ...
 
 
-코드에 접근할 수 있는 누구든 암호화 키를 볼 수 있습니다. 응용 프로그램을 공개한 후에는 프로그램에 패치를 적용하지 않고는 암호화 키를 변경할 방법이 없습니다. 직원이 이 정보에 대한 접근 권한을 갖게 되면 이를 사용하여 시스템에 침입할 수 있습니다. 응용 프로그램 실행 파일에 액세스할 수 있는 모든 공격자는 암호화 키 값을 추출할 수 있습니다.,소스 제어 시스템에 암호화 키를 체크인하거나 하드코드하지 마십시오. 항상 암호화 키를 난독화하고 외부 소스에서 관리하십시오. 시스템의 임의의 장소에 암호화 키를 일반 텍스트로 저장하는 경우 충분한 권한이 있는 사용자라면 누구나 암호화 키를 읽어 남용할 가능성이 있습니다.,,D82BB8C3FE651E8C9433DAC433992D66,6DBD0F5A-99EB-53B7-AB1E-D9B012E68020,,,,Wed Apr 17 15:03:30 KST 2024,
+코드에 접근할 수 있는 누구든 암호화 키를 볼 수 있습니다. 응용 프로그램을 공개한 후에는 프로그램에 패치를 적용하지 않고는 암호화 키를 변경할 방법이 없습니다. 직원이 이 정보에 대한 접근 권한을 갖게 되면 이를 사용하여 시스템에 침입할 수 있습니다. 응용 프로그램 실행 파일에 액세스할 수 있는 모든 공격자는 암호화 키 값을 추출할 수 있습니다.,소스 제어 시스템에 암호화 키를 체크인하거나 하드코드하지 마십시오. 항상 암호화 키를 난독화하고 외부 소스에서 관리하십시오. 시스템의 임의의 장소에 암호화 키를 일반 텍스트로 저장하는 경우 충분한 권한이 있는 사용자라면 누구나 암호화 키를 읽어 남용할 가능성이 있습니다.,,D82BB8C3FE651E8C9433DAC433992D66,6DBD0F5A-99EB-53B7-AB1E-D9B012E68020,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Environment,Password Management: Password in Configuration File,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -781,7 +781,7 @@ username=Username,password(),구성 파일에 일반 텍스트 암호를 저장하면 시스템 침해
 
 일부 타사 제품에 보다 안전한 방법으로 암호를 관리하는 기능이 있다고 합니다. 예를 들면, WebSphere Application Server 4.x는 간단한 XOR 암호화 알고리즘을 사용하여 값을 난독 처리하지만 그 기능을 신뢰하기 어렵습니다. WebSphere 및 기타 응용 프로그램 서버는 보안에 민감한 환경에는 불충분한 오래되고 비교적 약한 암호화 메커니즘을 제공합니다. 보안 솔루션의 경우 현실성 있는 유일한 옵션은 독점적 솔루션을 사용하는 것입니다.,1. Fortify Static Code Analyzer는 구성 파일에서 암호 속성에 사용되는 일반 이름을 검색합니다. 플래그가 지정된 항목이 암호로 사용되고 있고 암호 항목에 일반 텍스트가 포함되어 있는지 확인하여 이러한 문제를 감사하십시오.
 
-2. 구성 파일의 항목이 기본 암호인 경우 이를 변경해야 할 뿐 아니라 구성 파일에서 난독 처리해야 합니다.,668C351ACC6D2190863E12F66A0CB9CA,29C589A2-3796-4486-A12D-BCE05ADFFE11,,,,Wed Apr 17 15:03:30 KST 2024,
+2. 구성 파일의 항목이 기본 암호인 경우 이를 변경해야 할 뿐 아니라 구성 파일에서 난독 처리해야 합니다.,668C351ACC6D2190863E12F66A0CB9CA,29C589A2-3796-4486-A12D-BCE05ADFFE11,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Security Features,Privacy Violation: Autocomplete,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -810,7 +810,7 @@ High,High,Security Features,Privacy Violation: Autocomplete,Downloads/WebGoat-20
   </form>
 
 
-autocomplete 속성의 기본값이 on인지 확인하십시오. 따라서 민감한 입력을 다룰 경우, 속성을 생략하지 마십시오.,,8E778A7762E99826CA67E0A83B2E4C25,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Wed Apr 17 15:03:30 KST 2024,
+autocomplete 속성의 기본값이 on인지 확인하십시오. 따라서 민감한 입력을 다룰 경우, 속성을 생략하지 마십시오.,,8E778A7762E99826CA67E0A83B2E4C25,2FC7D1FF-11E4-468E-B7AB-F127828F4016,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,API Abuse,Mass Assignment: Insecure Binder Configuration,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java,EncodingAssignment.java,,      String password =
           HashingAssignment.SECRETS[new Random().nextInt(HashingAssignment.SECRETS.length)];
       basicAuth = getBasicAuth(username, password);
@@ -979,7 +979,7 @@ public class User {
     }
 
 
-대량 할당 취약점을 방지하기 위한 다른 접근법은 HTTP 요청 매개 변수가 DTO 개체에 바운딩된 레이어 아키텍처를 사용하는 것입니다. DTO 개체는 해당 목적으로만 사용되며 웹 폼 또는 API 계약에 정의된 속성만 노출하고 나머지 비공개 속성을 정의할 수 있는 도메인 개체에 이러한 DTO 개체를 매핑합니다.,1. 이 취약점 범주는 문제를 정확하게 발견하기 위해서는 정적 분석의 기능을 넘어서는 응용 프로그램 아키텍처의 이해를 요구하므로 설계 결함으로 분류할 수 있습니다. 따라서 응용 프로그램이 HTTP 요청 바인딩에 특정 DTO 개체를 사용하도록 설계된 경우 속성을 배제하기 위해 바인더를 구성할 필요가 없을 수 있습니다.,0DB73467214500201BE9DFDD25C27D9D,66F1C785-3EDF-4CF2-9217-3275D7BC5DB7,,,,Wed Apr 17 15:03:30 KST 2024,
+대량 할당 취약점을 방지하기 위한 다른 접근법은 HTTP 요청 매개 변수가 DTO 개체에 바운딩된 레이어 아키텍처를 사용하는 것입니다. DTO 개체는 해당 목적으로만 사용되며 웹 폼 또는 API 계약에 정의된 속성만 노출하고 나머지 비공개 속성을 정의할 수 있는 도메인 개체에 이러한 DTO 개체를 매핑합니다.,1. 이 취약점 범주는 문제를 정확하게 발견하기 위해서는 정적 분석의 기능을 넘어서는 응용 프로그램 아키텍처의 이해를 요구하므로 설계 결함으로 분류할 수 있습니다. 따라서 응용 프로그램이 HTTP 요청 바인딩에 특정 DTO 개체를 사용하도록 설계된 경우 속성을 배제하기 위해 바인더를 구성할 필요가 없을 수 있습니다.,0DB73467214500201BE9DFDD25C27D9D,66F1C785-3EDF-4CF2-9217-3275D7BC5DB7,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,XML External Entity Injection,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/xxe/ContentTypeAssignment.java,ContentTypeAssignment.java,,  public AttackResult createNewUser(
       HttpServletRequest request,
       @RequestBody String commentStr,
@@ -1024,7 +1024,7 @@ xmlInputFactory.setProperty("javax.xml.stream.supportDTD", false);
 - 외부 또는 로컬 엔터티 확인이 필요한 경우 안전한 리졸버(resolver)를 구축하고 XML 문서를 구문 분석하기 전에 설정합니다.
 
 xmlInputFactory.setXMLResolver(mySafeResolver);
-,,0A2051480F7728E46FF699494826E1B1,D92D11B4-E03C-4B93-9DAA-402C19BE7EFC,,,,Wed Apr 17 15:03:30 KST 2024,
+,,0A2051480F7728E46FF699494826E1B1,D92D11B4-E03C-4B93-9DAA-402C19BE7EFC,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,Cross-Site Scripting: Persistent,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/missingac/MissingAccessControlUserRepository.java,MissingAccessControlUserRepository.java,,
   public List<User> findAllUsers() {
     return jdbcTemplate.query("select username, password, admin from access_control_users", mapper);
@@ -1157,7 +1157,7 @@ Block-level element 항목(텍스트 단락 중간):
 
 많은 응용 프로그램 서버가 응용 프로그램이 Cross-Site Scripting 공격에 필수적인 문자가 있는지 확인하는 특정 HTTP 응답 콘텐트 설정을 담당하는 기능을 구현하여 Cross-Site Scripting 취약점에 노출되는 것을 막으려고 합니다. 응용 프로그램을 실행하는 서버에 응용 프로그램의 보안을 맡길 수 없습니다. 개발된 응용 프로그램이 응용 프로그램의 수명 동안 어떤 서버에서 실행될지 알 수 없기 때문입니다. 표준 및 알려진 익스플로이트의 진화 속도에 따라 응용 프로그램 서버가 계속 진화한다는 보장이 없습니다.,1. 데이터베이스에 신뢰할 수 없는 데이터를 쓰면 Fortify Secure Coding Rulepacks에서 SQL Injection 관련 경고를 표시하며, 데이터베이스를 신뢰할 수 없는 데이터의 소스로 처리하므로 XSS 취약성이 발생할 수 있습니다. 데이터베이스가 사용자 환경에서 신뢰할 수 있는 리소스인 경우, 사용자 지정 필터를 사용하여 DATABASE 감염 플래그를 포함하고 데이터베이스 소스에서 발생하는 데이터 흐름 이슈를 필터링하십시오. 그러나 데이터베이스에서 읽는 모든 내용을 확인하는 것이 여전히 효과적인 경우가 많습니다.
 
-2. 비록 신뢰할 수 없는 데이터에 대한 URL 인코딩이 많은 XSS 공격을 막아주긴 하지만, 일부 브라우저는 JavaScript 인터프리터로 전송하기 전에 DOM(Document Object Model) 내의 특정 지점에서 자동으로 내용을 해독합니다. 이러한 위험을 반영하기 위해 Rulepacks는 더 이상 Cross-Site Scripting을 방지하는 데 충분한 URL 인코딩 루틴을 처리하지 않습니다. URL 암호화 이후 도출되는 데이터 값을 통해 Fortify는 Cross-Site Scripting: Poor Validation 취약점을 확인하게 됩니다.,4CC0DB7730948834E7569DC29E7B48A6,B15BA48C-C3A9-42C0-928D-B555CD29BFAD0,,,,Wed Apr 17 15:03:30 KST 2024,
+2. 비록 신뢰할 수 없는 데이터에 대한 URL 인코딩이 많은 XSS 공격을 막아주긴 하지만, 일부 브라우저는 JavaScript 인터프리터로 전송하기 전에 DOM(Document Object Model) 내의 특정 지점에서 자동으로 내용을 해독합니다. 이러한 위험을 반영하기 위해 Rulepacks는 더 이상 Cross-Site Scripting을 방지하는 데 충분한 URL 인코딩 루틴을 처리하지 않습니다. URL 암호화 이후 도출되는 데이터 값을 통해 Fortify는 Cross-Site Scripting: Poor Validation 취약점을 확인하게 됩니다.,4CC0DB7730948834E7569DC29E7B48A6,B15BA48C-C3A9-42C0-928D-B555CD29BFAD0,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Code Quality,Unreleased Resource: Database,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/missingac/MissingAccessControlUserRepository.java,MissingAccessControlUserRepository.java,,
   public List<User> findAllUsers() {
     return jdbcTemplate.query("select username, password, admin from access_control_users", mapper);
@@ -1215,7 +1215,7 @@ public static void safeClose(Statement stmt) {
 
 이 해결책은 도우미 함수를 사용하여 statement를 닫으려 할 때 발생할 수 있는 예외를 기록합니다. 도우미 함수는 statement를 닫을 때마다 재사용될 것입니다.
 
-또한 execCxnSql 메서드는 stmt 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 stmt가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 stmt가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. stmt를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 stmt를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,1. 데이터베이스 연결을 닫으면 연결 개체와 연관된 다른 리소스가 자동으로 해제될 수도 있고 그렇지 않을 수도 있습니다. 응용 프로그램이 연결 풀링을 사용하는 경우에는 연결을 닫은 후에 다른 리소스를 명시적으로 닫는 것이 좋습니다. 응용 프로그램이 연결 풀링을 사용하지 않을 경우에는 데이터베이스 연결을 닫으면 다른 리소스도 자동으로 닫힙니다. 이러한 경우, 이 취약점은 유효하지 않습니다.,3B4143342141EB51A8EA6745F88C34CD,B7DFF4A8-9817-4418-A35B-E70D10DC825E,,,,Wed Apr 17 15:03:30 KST 2024,
+또한 execCxnSql 메서드는 stmt 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 stmt가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 stmt가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. stmt를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 stmt를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,1. 데이터베이스 연결을 닫으면 연결 개체와 연관된 다른 리소스가 자동으로 해제될 수도 있고 그렇지 않을 수도 있습니다. 응용 프로그램이 연결 풀링을 사용하는 경우에는 연결을 닫은 후에 다른 리소스를 명시적으로 닫는 것이 좋습니다. 응용 프로그램이 연결 풀링을 사용하지 않을 경우에는 데이터베이스 연결을 닫으면 다른 리소스도 자동으로 닫힙니다. 이러한 경우, 이 취약점은 유효하지 않습니다.,3B4143342141EB51A8EA6745F88C34CD,B7DFF4A8-9817-4418-A35B-E70D10DC825E,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Environment,Dockerfile Misconfiguration: Default User Privilege,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/missingac/MissingAccessControlUserRepository.java,MissingAccessControlUserRepository.java,,
   public List<User> findAllUsers() {
     return jdbcTemplate.query("select username, password, admin from access_control_users", mapper);
@@ -1229,7 +1229,7 @@ MAINTAINER "WebGoat team",FROM(),Dockerfile에 USER가 지정되어 있지 않으므로 기본
 RUN useradd myLowPrivilegeUser
 USER myLowPrivilegeUser
 
-    ,,F8A0F676D23B0CE1F581A2966E424F8C,375B7CCC-5920-4230-AE53-A7B264045525,,,,Wed Apr 17 15:03:30 KST 2024,
+    ,,F8A0F676D23B0CE1F581A2966E424F8C,375B7CCC-5920-4230-AE53-A7B264045525,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Environment,Dockerfile Misconfiguration: Dependency Confusion,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/missingac/MissingAccessControlUserRepository.java,MissingAccessControlUserRepository.java,,
   public List<User> findAllUsers() {
     return jdbcTemplate.query("select username, password, admin from access_control_users", mapper);
@@ -1282,7 +1282,7 @@ Fortify는 또한 다음을 권장합니다.
 - latest와 같은 이미지 태그 또는 imagename-lst, imagename-last, myimage와 같은 취약한 태그를 운영 환경의 배포에 사용하지 마십시오.
 - 특정 버전 태그와 같이 더 안정적인 태그를 사용하십시오. 그러나 이러한 태그도 변경되지 않는다는 보장은 없습니다.
 - 뮤턴트 태그를 만들지 마십시오.
-- 이미지 소스 및 해당 계층에 대한 엄격한 제어를 구현하십시오.,,F311119CB9A7E566CD0798F54D580940,10AB223B-7AA6-464A-A036-4616C822C299,,,,Wed Apr 17 15:03:30 KST 2024,
+- 이미지 소스 및 해당 계층에 대한 엄격한 제어를 구현하십시오.,,F311119CB9A7E566CD0798F54D580940,10AB223B-7AA6-464A-A036-4616C822C299,,,,Wed Apr 17 17:37:17 KST 2024,
 Critical,Critical,Input Validation and Representation,Dynamic Code Evaluation: Unsafe XStream Deserialization,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/vulnerablecomponents/VulnerableComponentsLesson.java,VulnerableComponentsLesson.java,,
   @PostMapping("/VulnerableComponents/attack1")
   public @ResponseBody AttackResult completed(@RequestParam String payload) {
@@ -1343,7 +1343,7 @@ XStream을 Spring 프로젝트의 마샬링 솔루션으로 사용하는 경우 “converters” 속성�
             </list>
         </property>
     </bean>
-,,7F03CE88BFEC1BE527092446C93EB6D7,3B3C6BD3-2ACF-46BE-AB6B-1719C0D8940B,,,,Wed Apr 17 15:03:30 KST 2024,
+,,7F03CE88BFEC1BE527092446C93EB6D7,3B3C6BD3-2ACF-46BE-AB6B-1719C0D8940B,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Security Features,Insecure Randomness: User-Controlled Seed,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java,PasswordResetLink.java,,  }
 
   public static void main(String[] args) {
@@ -1354,7 +1354,7 @@ High,High,Security Features,Insecure Randomness: User-Controlled Seed,Downloads/
     }
     return scramble(random, scramble(random, scramble(random, MD5.getHashString(username))));,java.util.Random.setSeed(),PasswordResetLink.java의 createPasswordReset() 함수에 시드에 대해 감염된 값이 전달됩니다. 시드가 전달되어 난수 또는 의사 난수 값을 생성하는 함수는 감염된 정수 인수로 호출해서는 안 됩니다.,PasswordResetLink.java의 createPasswordReset() 함수에 시드에 대해 감염된 값이 전달됩니다. 시드가 전달되어 난수 또는 의사 난수 값을 생성하는 함수는 감염된 정수 인수로 호출해서는 안 됩니다.,Random.setSeed()는 감염된 정수 인수로 호출해서는 안 됩니다. 그렇게 하면 공격자가 의사 난수 발생기(PRNG)의 시드 생성에 사용되는 값을 제어할 수 있게 되므로 Random.nextInt(), Random.nextShort(), Random.nextLong()을 호출하여 생성되거나, Random.nextBoolean()에서 반환되거나, Random.nextBytes(byte[])에 설정되는 값(대개 정수)의 시퀀스를 예측할 수 있게 됩니다.
     ,링 발진기, 디스크 드라이브 타이밍, 열 잡음 또는 방사성 붕괴 같은 하드웨어 기반의 무작위성 소스를 사용하여 시드가 생성되는 암호화 PRNG(예: java.security.SecureRandom)를 사용하십시오.
-	,,140E99ACA7DA41F5640C2A65B803CD23,3CB1D23E-CE0D-47E5-B387-F1026CDA0D64,,,,Wed Apr 17 15:03:30 KST 2024,
+	,,140E99ACA7DA41F5640C2A65B803CD23,3CB1D23E-CE0D-47E5-B387-F1026CDA0D64,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Security Features,Password Management: Empty Password,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java,PasswordResetLink.java,,  }
 
   public static void main(String[] args) {
@@ -1439,7 +1439,7 @@ android.database.sqlite.SQLiteDatabase 관련 참조는 net.sqlcipher.database.SQLite
 
 WebView 저장소에서 암호화를 활성화하려면 sqlcipher.so 라이브러리를 사용하여 WebKit를 다시 컴파일해야 합니다.,1. Fortify Java Annotations FortifyPassword 및 FortifyNotPassword를 사용하여 암호를 나타내는 필드 및 변수를 표시할 수 있습니다.
 
-2. null 암호, 빈 암호 또는 Hardcoded Password를 식별할 때 기본 규칙은 password 단어를 포함하는 필드와 변수만 고려합니다. 그러나 Fortify Custom Rules Editor는 사용자가 이름을 지정한 필드 및 변수의 암호 관리 이슈 감지에 필요한 규칙을 쉽게 만들 수 있는 Password Management 마법사를 제공합니다.,74F1E8AD635A457A4F9E96B9052D094D,8bd01c50-a769-11de-8a39-0800200c9a66,,,,Wed Apr 17 15:03:30 KST 2024,
+2. null 암호, 빈 암호 또는 Hardcoded Password를 식별할 때 기본 규칙은 password 단어를 포함하는 필드와 변수만 고려합니다. 그러나 Fortify Custom Rules Editor는 사용자가 이름을 지정한 필드 및 변수의 암호 관리 이슈 감지에 필요한 규칙을 쉽게 만들 수 있는 Password Management 마법사를 제공합니다.,74F1E8AD635A457A4F9E96B9052D094D,8bd01c50-a769-11de-8a39-0800200c9a66,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Time and State,Race Condition: Singleton Member Field,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java,PasswordResetLink.java,,  }
 
   public static void main(String[] args) {
@@ -1538,7 +1538,7 @@ public class GuestBook extends HttpServlet {
      }
    }
 }
-,,FA3D4834DC852AEB4341576A9CC76F7F,46BD334E-BA05-4177-B856-06B1034F5FB3,,,,Wed Apr 17 15:03:30 KST 2024,
+,,FA3D4834DC852AEB4341576A9CC76F7F,46BD334E-BA05-4177-B856-06B1034F5FB3,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Input Validation and Representation,Server-Side Request Forgery,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask2.java,SSRFTask2.java,,  @PostMapping("/SSRF/task2")
   @ResponseBody
   public AttackResult completed(@RequestParam String url) {
@@ -1583,7 +1583,7 @@ CloseableHttpResponse response1 = httpclient.execute(httpGet);
 
 경우에 따라 올바른 리소스 이름 집합이 너무 크거나 유지 관리가 어렵기 때문에 이 접근 방식은 실용적이지 못합니다. 이때 프로그래머는 주로 거부 목록을 구현합니다. 거부 목록은 입력을 사용하기 전에 위험한 문자를 선별적으로 거부하거나 이스케이프 처리하는 데 사용됩니다. 하지만 안전하지 않은 문자의 목록은 불완전할 가능성이 크고 대부분 최신 상태를 유지하지 못합니다. 효율적인 접근 방식은 리소스 이름에 사용할 수 있는 문자의 목록을 만들어 목록에 있는 문자만으로 이루어진 입력만 받는 것입니다.
 
-또한 필요한 경우 사용자 입력이 대상 시스템의 지정된 리소스에만 사용되도록 하십시오. URI 스키마, 호스트, 포트는 응용 프로그램이 제어하도록 해야 합니다. 이런 방식을 통해 공격자가 가할 수 있는 피해를 크게 줄일 수 있습니다.,,1CE8A3993EC5BF68D0047C66EA8F9468,33DDCCB9-248C-46E8-BF4E-0A8DFA006946,,,,Wed Apr 17 15:03:30 KST 2024,
+또한 필요한 경우 사용자 입력이 대상 시스템의 지정된 리소스에만 사용되도록 하십시오. URI 스키마, 호스트, 포트는 응용 프로그램이 제어하도록 해야 합니다. 이런 방식을 통해 공격자가 가할 수 있는 피해를 크게 줄일 수 있습니다.,,1CE8A3993EC5BF68D0047C66EA8F9468,33DDCCB9-248C-46E8-BF4E-0A8DFA006946,,,,Wed Apr 17 17:37:17 KST 2024,
 High,High,Code Quality,Unreleased Resource: Files,Downloads/WebGoat-2023.5/WebGoat-2023.5/src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask2.java,SSRFTask2.java,,  @PostMapping("/SSRF/task2")
   @ResponseBody
   public AttackResult completed(@RequestParam String url) {
@@ -1661,4 +1661,4 @@ public static void safeClose(ZipFile zf) {
 
 이 해결책은 도우미 함수를 사용하여 파일을 닫으려 할 때 발생할 수 있는 예외를 기록합니다. 도우미 함수는 파일을 닫을 때마다 재사용될 것입니다.
 
-또한 printZipContents 메서드는 zf 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 zf가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 zf가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. zf를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 zf를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,,381DF997102B00173D237486D12C65D0,15A7E886-8858-4BA6-B35E-91FAA8C562F4,,,,Wed Apr 17 15:03:30 KST 2024,
+또한 printZipContents 메서드는 zf 개체를 null로 초기화하지 않습니다. 대신 safeClose()를 호출하기 전에 zf가 null이 아닌지 검사합니다. null 검사를 하지 않으면 Java 컴파일러는 zf가 초기화되지 않았다고 보고합니다. 이 방법은 uninitialized variable을 발견하는 Java 기능을 이용한 것입니다. zf를 더 복잡한 방법을 사용하여 null로 초기화하면 초기화하지 않고 zf를 사용하는 경우를 컴파일러가 발견할 수 없습니다.,,381DF997102B00173D237486D12C65D0,15A7E886-8858-4BA6-B35E-91FAA8C562F4,,,,Wed Apr 17 17:37:17 KST 2024,
