@@ -26,6 +26,7 @@ public class FortifyDTO {
 	private String userinfo;
 	private String comment;
 	private String scandate;
+
 	public static String[] parameters = {"friority",
 			"folder",
 			"kingdom",

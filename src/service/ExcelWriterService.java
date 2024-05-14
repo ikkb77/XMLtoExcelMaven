@@ -32,7 +32,7 @@ public class ExcelWriterService {
             seq.put(name, properties.getProperty(name) == null ? null : Integer.parseInt(properties.getProperty(name))-1);
 
             // 열 숨김 설정 저장
-            // properties 에 설정할때 숨김을 0으로 저장함.
+            // properties 에 설정할 때 숨김을 0으로 저장함.
             hidden.put(name, properties.getProperty(name + "_hidden") != null && (properties.getProperty(name + "_hidden").equals("0")));
 
         }
@@ -88,7 +88,7 @@ public class ExcelWriterService {
         row.createCell(seq.get("tag")).setCellValue("auditor 태그");
         row.createCell(seq.get("userinfo")).setCellValue("auditor 아이디");
         row.createCell(seq.get("comment")).setCellValue("auditor 의견");
-        row.createCell(seq.get("scandate")).setCellValue("scan 일자");
+        row.createCell(seq.get("scandate")).setCellValue("scan 시간");
 
         int count = 1;
 
