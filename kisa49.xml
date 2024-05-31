@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReportDefinition type="xml">
+    <TemplateName>kisa49</TemplateName>
+    <TemplatePath>C:\Users\ikkb7\AppData\Local\Fortify\config\AWB-24.2.0\reports\kisa49.xml</TemplatePath>
+    <LogoPath>/OT_logo.png</LogoPath>
+    <Footnote>Copyright 2024 Open Text.</Footnote>
+    <UserName>ikkb7</UserName>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Executive Summary</Title>
+        <SubSection enabled="true">
+            <Title>Issues Overview</Title>
+            <Description>This section provides an overview of the issues uncovered during analysis. The report covers a summary of vulnerability categories discovered by the tool. The auditor should augment this section with higher-level conclusions derived from human review of the application (including architecture reviews, black-box testing, compliance issues, etc.)</Description>
+            <Text>On May 29, 2024, a source code review was performed over the protobuf-gradle-plugin-master code base. 72 files, 381 LOC (Executable) were scanned and reviewed for defects that could lead to potential security vulnerabilities. A total of 29 reviewed findings were uncovered during the analysis.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Issue Summary by Fortify Priority Order</Title>
+            <Description>A table summarizing the number of issues found and the breakdown of issues in each Fortify Priority Level</Description>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>행안부49개항목</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="24">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>04.03. 부적절한 예외처리</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>04.02. 오류 상황 대응 부재</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Recommendations and Conclusions</Title>
+            <Description>This section gives some high-level recommendations on remediating the issues discussed in the Issues Summary sub section. Recommendations will vary based on deployment scenarios, risk appetite, and existing mitigating strategies. The auditor should supplement the Fortify generic recommendations with specific information that takes into account the application specific variables.</Description>
+            <Text>The Issues Category section provides Fortify recommendations for addressing issues at a generic level.  The recommendations for specific fixes can be extrapolated from those generic recommendations by the development group.</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Project Summary</Title>
+        <SubSection enabled="true">
+            <Title>Code Base Summary</Title>
+            <Description>Summary of the Codebase that was analyzed</Description>
+            <Text>Code location: C:/Users/CChoi/Downloads/protobuf-gradle-plugin-master&#13;
+Number of Files: 72&#13;
+Lines of Code: 381&#13;
+Build Label: &lt;No Build Label&gt;</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Scan Information</Title>
+            <Description>Details of the analysis</Description>
+            <Text>Scan time: 00:56&#13;
+SCA Engine version: 23.2.0.0125&#13;
+Machine Name: KRCCHOI01&#13;
+Username running scan: kchoi</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Results Certification</Title>
+            <Description>A full summary of the Results Certification for this project</Description>
+            <Text>Results Certification Valid&#13;
+&#13;
+Details:&#13;
+&#13;
+Results Signature:
+
+	SCA Analysis Results has Valid signature
+	
+
+Rules Signature:
+
+	There were no custom rules used in this scan</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Attack Surface</Title>
+            <Description>A full summary of the attack surface for this project</Description>
+            <Text>Attack Surface:&#13;
+Command Line Arguments:
+	null.Build_gradle.Build_gradle
+	null.Settings_gradle.Settings_gradle
+
+System Information:
+	null.null.null
+</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Filter Set Summary</Title>
+            <Description>A brief summary of the filterset used to create this report</Description>
+            <Text>Current Enabled Filter Set:&#13;
+Security Auditor View&#13;
+&#13;
+Filter Set Details:&#13;
+&#13;
+Folder Filters:
+If [fortify priority order] contains critical Then set folder to Critical
+If [fortify priority order] contains high Then set folder to High
+If [fortify priority order] contains medium Then set folder to Medium
+If [fortify priority order] contains low Then set folder to Low</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Audit Guide Summary</Title>
+            <Description>Summary of the impact of the audit guide</Description>
+            <Text>Audit guide not enabled</Text>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Results Outline</Title>
+        <SubSection enabled="true">
+            <Title>Overall number of results</Title>
+            <Description>Results count</Description>
+            <Text>The scan found 29 issues.</Text>
+        </SubSection>
+        <SubSection enabled="true">
+            <Title>Vulnerability Examples by Category</Title>
+            <Description>Results summary for critical and high priority issues.  Vulnerability examples are provided by category.</Description>
+            <IssueListing listing="true" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="list">
+                    <Axis>행안부49개항목</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="24">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 일반 예외 사항(generic exception)이 발생하기 때문에 호출자가 오류 처리 및 복구 작업을 하기가 어려워집니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>메서드를 Exception 또는 Throwable이 발생하도록 선언하면 호출자가 올바른 오류 처리 및 오류 복구 작업을 수행하기 어렵습니다. Java의 예외 메커니즘은 호출자가 손쉽게 잘못을 예상하고 각각의 고유한 예외 상황을 처리하기 위한 코드를 쓸 수 있도록 설계되어 있습니다. 일반적인 형태의 예외 사항이 발생하도록 메서드를 선언하면 이런 메커니즘이 아무 소용이 없습니다.
+
+예제: 다음 메서드는 세 가지 형식의 예외 사항이 발생합니다.
+
+
+public void doExchange()
+  throws IOException, InvocationTargetException,
+         SQLException {
+  ...
+}
+
+
+
+코드를 다음과 같이 쓰는 것이 깔끔해 보입니다.
+
+
+public void doExchange()
+  throws Exception {
+  ...
+}
+
+
+하지만 이 방법은 호출자가 발생하는 예외 사항을 이해하고 처리하는 기능을 방해합니다. 또한 doExchange()의 이후 수정 버전에서 이전 예외 사항과 다르게 처리해야 하는 새 형식의 예외 사항을 도입하는 경우 이 요구 사항을 쉽게 적용할 수 없습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>Exception 또는 Throwable이 발생하도록 메서드를 선언하지 마십시오. 메서드에서 발생한 예외 사항을 복구할 수 없거나 호출자가 쉽게 파악할 수 없는 경우 검사하는 예외 사항 대신 검사하지 않는 예외 사항 발생을 고려해 보십시오. Exception 대신 RuntimeException 또는 Error를 확장하거나 메서드에 try/catch 래퍼를 추가하여 검사할 예외 사항을 검사하지 않는 예외로 변환하는 예외 클래스를 구현하면 됩니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>24</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="99CE813A2404A3E5C2283445AF0AD57B" ruleID="572EA1F6-FC86-443E-B1A9-A227D5AD17CC">
+                            <Category>Poor Error Handling: Overly Broad Throws</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 일반 예외 사항(generic exception)이 발생하기 때문에 호출자가 오류 처리 및 복구 작업을 하기가 어려워집니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>25</LineStart>
+<Snippet>
+  @Test
+  public void ensureAndroidTestProtosNotVisible() throws Exception {
+    // we should not see the protos from src/androidTest/proto/
+    try {</Snippet>
+<TargetFunction>Function: ensureAndroidTestProtosNotVisible()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="C8425CC5E64774A5DA2060EB233A61A8" ruleID="DA628366-FBE1-4D37-879F-7B8F53FF24C1">
+                            <Category>Privilege Management: Unnecessary Permission</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>응용 프로그램이 최소 권한 원칙을 지키지 못하면 다른 취약점으로 인한 위험이 매우 커집니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/main/AndroidManifest.xml</FilePath>
+<LineStart>5</LineStart>
+<Snippet>    package="io.grpc.helloworldexample" &gt;
+
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+    &lt;application</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="44CB84E8EFE1E66514194B78D4F3EE53" ruleID="B9B07F1C-4E9E-46D5-A9BD-CC394F982CC0">
+                            <Category>Android Bad Practices: Missing Google Play Services Updated Security Provider</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 Google Play 서비스의 업데이트 보안 공급자를 사용하지 않기 때문에 OpenSSL 라이브러리의 향후 취약점에 취약할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="438D53B59EF243CAB18A12CD56D8E466" ruleID="75B96986-50D0-45F9-9FE5-EB1F6E9C2FAD">
+                            <Category>Android Bad Practices: Missing Network Security Configuration</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 네트워크 보안 구성을 사용하지 않습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="44CB84E8EFE1E66514194B78D4F3EE55" ruleID="B9B07F1C-4E9E-46D5-A9BD-CC394F982CC0">
+                            <Category>Android Bad Practices: Missing Google Play Services Updated Security Provider</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 Google Play 서비스의 업데이트 보안 공급자를 사용하지 않기 때문에 OpenSSL 라이브러리의 향후 취약점에 취약할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="8883A98EB44E20BE98F0966FC4F4A037" ruleID="B30DBA7A-A9F6-4ACE-8C1B-7514C9B66F01">
+                            <Category>Insecure Storage: Android Backup Storage</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>이 프로그램은 Android의 백업 서비스를 사용하여 영구 응용 프로그램 데이터를 원격 클라우드 스토리지에 저장합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+<TargetFunction>/manifest/application()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="8883A98EB44E20BE98F0966FC4F4A036" ruleID="B30DBA7A-A9F6-4ACE-8C1B-7514C9B66F01">
+                            <Category>Insecure Storage: Android Backup Storage</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>이 프로그램은 Android의 백업 서비스를 사용하여 영구 응용 프로그램 데이터를 원격 클라우드 스토리지에 저장합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidDependentBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+<TargetFunction>/manifest/application()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="DC8FD9AD3A529D6E482FA4E587668E89" ruleID="B30AA17C-87EC-42CF-9160-CFDF122CE28E">
+                            <Category>Poor Style: Value Never Read</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 28 줄의 ignored 변수에 할당된 값을 사용하지 않습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroid/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>28</LineStart>
+<Snippet>    // we should not see the protos from src/androidTest/proto/
+    try {
+      Class&lt;?&gt; ignored = Class.forName("com.example.tutorial.Msg");
+      fail();
+    } catch (ClassNotFoundException expected){</Snippet>
+<TargetFunction>VariableAccess: ignored</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="8883A98EB44E20BE98F0966FC4F4A035" ruleID="B30DBA7A-A9F6-4ACE-8C1B-7514C9B66F01">
+                            <Category>Insecure Storage: Android Backup Storage</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>이 프로그램은 Android의 백업 서비스를 사용하여 영구 응용 프로그램 데이터를 원격 클라우드 스토리지에 저장합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+<TargetFunction>/manifest/application()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="44CB84E8EFE1E66514194B78D4F3EE52" ruleID="B9B07F1C-4E9E-46D5-A9BD-CC394F982CC0">
+                            <Category>Android Bad Practices: Missing Google Play Services Updated Security Provider</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 Google Play 서비스의 업데이트 보안 공급자를 사용하지 않기 때문에 OpenSSL 라이브러리의 향후 취약점에 취약할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBare/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.dont.build.me" &gt;
+    &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="8883A98EB44E20BE98F0966FC4F4A038" ruleID="B30DBA7A-A9F6-4ACE-8C1B-7514C9B66F01">
+                            <Category>Insecure Storage: Android Backup Storage</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>이 프로그램은 Android의 백업 서비스를 사용하여 영구 응용 프로그램 데이터를 원격 클라우드 스토리지에 저장합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidLibrary/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.dont.build.me" &gt;
+  &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+<TargetFunction>/manifest/application()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="438D53B59EF243CAB18A12CD56D8E468" ruleID="75B96986-50D0-45F9-9FE5-EB1F6E9C2FAD">
+                            <Category>Android Bad Practices: Missing Network Security Configuration</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 네트워크 보안 구성을 사용하지 않습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="28B384BBA6ACB155895049591B924A00" ruleID="B30AA17C-87EC-42CF-9160-CFDF122CE28E">
+                            <Category>Poor Style: Value Never Read</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>DependentTest.java의 testProtos() 메서드는 15 줄의 testMessage 변수에 할당된 값을 사용하지 않습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>DependentTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectDependentApp/src/test/java/DependentTest.java</FilePath>
+<LineStart>15</LineStart>
+<Snippet>    assertSame(ws.antonov.protobuf.test.Test.Item.getDefaultInstance(),
+        message.getItem());
+    Dependent2.TestWrapperMessage testMessage =
+        Dependent2.TestWrapperMessage.newBuilder()
+            .setM(message).build();</Snippet>
+<TargetFunction>VariableAccess: testMessage</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="DC8FD9AD3A529D6E482FA4E587668E8A" ruleID="B30AA17C-87EC-42CF-9160-CFDF122CE28E">
+                            <Category>Poor Style: Value Never Read</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 28 줄의 ignored 변수에 할당된 값을 사용하지 않습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>28</LineStart>
+<Snippet>    // we should not see the protos from src/androidTest/proto/
+    try {
+      Class&lt;?&gt; ignored = Class.forName("com.example.tutorial.Msg");
+      fail();
+    } catch (ClassNotFoundException expected){</Snippet>
+<TargetFunction>VariableAccess: ignored</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="44CB84E8EFE1E66514194B78D4F3EE54" ruleID="B9B07F1C-4E9E-46D5-A9BD-CC394F982CC0">
+                            <Category>Android Bad Practices: Missing Google Play Services Updated Security Provider</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 Google Play 서비스의 업데이트 보안 공급자를 사용하지 않기 때문에 OpenSSL 라이브러리의 향후 취약점에 취약할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidDependentBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="438D53B59EF243CAB18A12CD56D8E469" ruleID="75B96986-50D0-45F9-9FE5-EB1F6E9C2FAD">
+                            <Category>Android Bad Practices: Missing Network Security Configuration</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 네트워크 보안 구성을 사용하지 않습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidLibrary/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.dont.build.me" &gt;
+  &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="C8425CC5E64774A5DA2060EB233A61A7" ruleID="DA628366-FBE1-4D37-879F-7B8F53FF24C1">
+                            <Category>Privilege Management: Unnecessary Permission</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>응용 프로그램이 최소 권한 원칙을 지키지 못하면 다른 취약점으로 인한 위험이 매우 커집니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidDependentBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>5</LineStart>
+<Snippet>    package="io.grpc.helloworldexample" &gt;
+
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+    &lt;application</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="8883A98EB44E20BE98F0966FC4F4A034" ruleID="B30DBA7A-A9F6-4ACE-8C1B-7514C9B66F01">
+                            <Category>Insecure Storage: Android Backup Storage</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Encapsulation</Kingdom>
+                            <Abstract>이 프로그램은 Android의 백업 서비스를 사용하여 영구 응용 프로그램 데이터를 원격 클라우드 스토리지에 저장합니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBare/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.dont.build.me" &gt;
+    &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+<TargetFunction>/manifest/application()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="28B384BBA6ACB155895049591B9249FF" ruleID="B30AA17C-87EC-42CF-9160-CFDF122CE28E">
+                            <Category>Poor Style: Value Never Read</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Code Quality</Kingdom>
+                            <Abstract>DependentTest.java의 testProtos() 메서드는 15 줄의 testMessage 변수에 할당된 값을 사용하지 않습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>DependentTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectDependent/src/test/java/DependentTest.java</FilePath>
+<LineStart>15</LineStart>
+<Snippet>    assertSame(ws.antonov.protobuf.test.Test.Item.getDefaultInstance(),
+        message.getItem());
+    Dependent2.TestWrapperMessage testMessage =
+        Dependent2.TestWrapperMessage.newBuilder()
+            .setM(message).build();</Snippet>
+<TargetFunction>VariableAccess: testMessage</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="99CE813A2404A3E5C2283445AF0AD57A" ruleID="572EA1F6-FC86-443E-B1A9-A227D5AD17CC">
+                            <Category>Poor Error Handling: Overly Broad Throws</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 일반 예외 사항(generic exception)이 발생하기 때문에 호출자가 오류 처리 및 복구 작업을 하기가 어려워집니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroid/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>25</LineStart>
+<Snippet>
+  @Test
+  public void ensureAndroidTestProtosNotVisible() throws Exception {
+    // we should not see the protos from src/androidTest/proto/
+    try {</Snippet>
+<TargetFunction>Function: ensureAndroidTestProtosNotVisible()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="438D53B59EF243CAB18A12CD56D8E467" ruleID="75B96986-50D0-45F9-9FE5-EB1F6E9C2FAD">
+                            <Category>Android Bad Practices: Missing Network Security Configuration</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 네트워크 보안 구성을 사용하지 않습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidDependentBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>11</LineStart>
+<Snippet>        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.V7.Theme.AppCompat.Light" &gt;
+        &lt;activity
+            android:name=".HelloworldActivity"</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="44CB84E8EFE1E66514194B78D4F3EE56" ruleID="B9B07F1C-4E9E-46D5-A9BD-CC394F982CC0">
+                            <Category>Android Bad Practices: Missing Google Play Services Updated Security Provider</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 Google Play 서비스의 업데이트 보안 공급자를 사용하지 않기 때문에 OpenSSL 라이브러리의 향후 취약점에 취약할 수 있습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidLibrary/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.dont.build.me" &gt;
+  &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="438D53B59EF243CAB18A12CD56D8E465" ruleID="75B96986-50D0-45F9-9FE5-EB1F6E9C2FAD">
+                            <Category>Android Bad Practices: Missing Network Security Configuration</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>이 응용 프로그램은 네트워크 보안 구성을 사용하지 않습니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBare/src/main/AndroidManifest.xml</FilePath>
+<LineStart>4</LineStart>
+<Snippet>&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.dont.build.me" &gt;
+    &lt;application /&gt;
+&lt;/manifest&gt;</Snippet>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="C8425CC5E64774A5DA2060EB233A61A6" ruleID="DA628366-FBE1-4D37-879F-7B8F53FF24C1">
+                            <Category>Privilege Management: Unnecessary Permission</Category>
+                            <Folder>High</Folder>
+                            <Kingdom>Security Features</Kingdom>
+                            <Abstract>응용 프로그램이 최소 권한 원칙을 지키지 못하면 다른 취약점으로 인한 위험이 매우 커집니다.</Abstract>
+                            <Friority>High</Friority>
+                            <Primary>
+<FileName>AndroidManifest.xml</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidBase/src/main/AndroidManifest.xml</FilePath>
+<LineStart>5</LineStart>
+<Snippet>    package="io.grpc.helloworldexample" &gt;
+
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+
+    &lt;application</Snippet>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>04.03. 부적절한 예외처리</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>HelloworldActivity.java 줄 73의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>여러 catch 블록은 반복적이지만 Exception 같은 높은 수준의 클래스를 catch하여 catch 블록을 "압축"하면 특수 처리가 필요하거나 프로그램의 이 시점에서 catch되지 않아야 하는 예외 사항을 숨길 수 있습니다. 지나치게 광범위한 예외 사항을 catch하면 Java의 형식화된 예외 사항을 사용하는 의미가 사라지고 특히 프로그램이 커져서 새로운 형식의 예외 사항이 발생하기 시작하면 위험해질 수 있습니다. 새 예외 형식에는 주의를 기울이지 않기 때문입니다.
+
+예제: 다음 발췌된 코드는 세 가지 형식의 예외 사항을 동일한 방식으로 처리합니다.
+
+
+  try {
+    doExchange();
+  }
+  catch (IOException e) {
+    logger.error("doExchange failed", e);
+  }
+  catch (InvocationTargetException e) {
+    logger.error("doExchange failed", e);
+  }
+  catch (SQLException e) {
+    logger.error("doExchange failed", e);
+  }
+
+
+언뜻 보기에 다음과 같이 예외 사항을 하나의 catch 블록으로 처리하는 것이 바람직한 것처럼 보입니다.
+
+
+  try {
+    doExchange();
+  }
+  catch (Exception e) {
+    logger.error("doExchange failed", e);
+  }
+
+
+하지만 doExchange()가 수정되어 다른 방식으로 처리해야 하는 새로운 형식의 예외 사항이 발생하면 광범위한 catch 블록 때문에 컴파일러가 문제를 지적할 수 없습니다. 뿐만 아니라, 새 catch 블록은 ClassCastException 및 NullPointerException과 같이 RuntimeException에서 파생된 예외 사항도 처리하는데 이는 프로그래머의 의도와 반대되는 것입니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>아주 높은 수준의 프로그램이나 스레드를 제외하고는 Exception, Throwable, Error 또는 RuntimeException 같은 광범위한 예외 클래스를 catch하지 마십시오.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. Fortify Secure Coding Rulepacks는 해당 catch 블록이 즉시 새 예외 사항을 발생시키면 overly broad catch 블록에 플래그를 지정하지 않습니다.</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>2</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="619DFBE6C55CE90C6F58D73296E79E37" ruleID="85E603E0-2933-4F38-851F-341604F75CB9">
+                            <Category>Poor Error Handling: Overly Broad Catch</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>HelloworldActivity.java 줄 73의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>HelloworldActivity.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/main/java/io/grpc/helloworldexample/HelloworldActivity.java</FilePath>
+<LineStart>73</LineStart>
+<Snippet>        mChannel = OkHttpChannelBuilder.forAddress(mHost, mPort).build();
+        return sayHello(mChannel);
+      } catch (Exception e) {
+
+        return "Failed... : " + e.getMessage();</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="619DFBE6C55CE90C6F58D73296E79E36" ruleID="85E603E0-2933-4F38-851F-341604F75CB9">
+                            <Category>Poor Error Handling: Overly Broad Catch</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>HelloworldActivity.java 줄 73의 Catch 블록은 광범위한 예외 사항을 처리하기 때문에 프로그램의 이 시점에서 다루어서는 안 되는 상이한 사안이나 문제를 포착할 수 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>HelloworldActivity.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroid/src/main/java/io/grpc/helloworldexample/HelloworldActivity.java</FilePath>
+<LineStart>73</LineStart>
+<Snippet>                mChannel = OkHttpChannelBuilder.forAddress(mHost, mPort).build();
+                return sayHello(mChannel);
+            } catch (Exception e) {
+
+                return "Failed... : " + e.getMessage();</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>04.02. 오류 상황 대응 부재</groupTitle>
+                        <MajorAttributeSummary>
+                            <MetaInfo>
+<Name>Abstract</Name>
+<Value>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 30 줄의 예외 사항을 무시합니다. 이로 인해 프로프램이 예기치 못한 상태와 조건을 간과할 수도 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Explanation</Name>
+<Value>소프트웨어에 대한 대부분의 심각한 공격은 프로그래머의 가정 위반에서 비롯됩니다. 공격 후, 프로그래머의 가정은 취약하고 근거가 빈약해 보이지만 공격 전에는 많은 프로그래머가 열심히 자신의 가정을 옹호하게 마련입니다.
+
+코드에서 흔히 발견되는 두 가지 의심스런 가정은 "이 메서드 호출은 절대 실패하지 않는다" 및 "이 호출이 실패해도 상관 없다"입니다. 프로그래머가 예외를 무시하는 경우 암시적으로 이 가정 중 하나에 따라 동작하는 것으로 볼 수 있습니다.
+
+예제 1: 다음의 발췌된 코드는 doExchange()에서 아주 드물게 발생하는 예외 사항을 무시합니다.
+
+
+try {
+  doExchange();
+}
+catch (RareException e) {
+  // this can never happen
+}
+
+
+RareException이 발생해도 프로그램은 아무 일도 없었던 것처럼 계속 실행됩니다. 프로그램은 특수한 상황을 나타내는 증거를 전혀 기록하지 않기 때문에 이후에 프로그램의 동작을 밝히려는 노력이 실패할 수 있습니다.</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Recommendations</Name>
+<Value>최소한 예외 사항이 발생했다는 사실을 기록하여 나중에 다시 검토할 때 예외 사항으로 인한 프로그램 동작을 이해할 수 있도록 해야 합니다. 더 좋은 방법은 현재 작업을 취소하는 것입니다. 호출자가 예외 사항을 올바로 처리할 수 없고 예외 사항이 발생한다는 것을 선언하기 어렵거나 불가능한 상황으로 인해 예외 사항이 무시되는 경우, RuntimeException 또는 Error 발생을 고려해 보십시오. 둘 다 검사하지 않는 예외 사항입니다. JDK 1.4부터 RuntimeException에는 다른 예외 사항을 쉽게 래핑할 수 있는 생성자가 있습니다. 
+
+예제 2: Example 1의 코드는 다음과 같이 다시 작성할 수 있습니다.
+
+
+try {
+  doExchange();
+}
+catch (RareException e) {
+  throw new RuntimeException("This can never happen", e);
+}
+</Value>
+                            </MetaInfo>
+                            <MetaInfo>
+<Name>Tips</Name>
+<Value>1. 경우에 따라 무시할 수 있는 드문 유형의 예외 사항이 있습니다. 예를 들면, Thread.sleep()은 InterruptedException을 발생시키고 대부분의 경우 프로그램은 중간에 깨어났는지 여부에 관계없이 동일하게 동작합니다.
+
+
+  try {
+    Thread.sleep(1000);
+  }
+  catch (InterruptedException e){
+    // The thread has been woken up prematurely, but its
+    // behavior should be the same either way.
+  }
+</Value>
+                            </MetaInfo>
+                            <AttributeValue>
+<Name>&lt;Unaudited&gt;</Name>
+<Count>3</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Not an Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Reliability Issue</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Bad Practice</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Suspicious</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                            <AttributeValue>
+<Name>Exploitable</Name>
+<Count>0</Count>
+                            </AttributeValue>
+                        </MajorAttributeSummary>
+                        <Issue iid="C7C09D5B761863057F9F4379F9B83F85" ruleID="8843F319-8A22-4101-A378-C2B2F2597988">
+                            <Category>Poor Error Handling: Empty Catch Block</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>UnitTestKotlin.kt의 ensureAndroidTestProtosNotVisible() 메서드는 27 줄의 예외 사항을 무시합니다. 이로 인해 프로프램이 예기치 못한 상태와 조건을 간과할 수도 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTestKotlin.kt</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlin/src/test/kotlin/io/grpc/helloworldexample/UnitTestKotlin.kt</FilePath>
+<LineStart>27</LineStart>
+<Snippet>      Class.forName("com.example.tutorial.Msg");
+      fail();
+    } catch (expected: ClassNotFoundException) {
+      // noop
+    }</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="BA557A7ABF36E64F3CEEF886199812AE" ruleID="8843F319-8A22-4101-A378-C2B2F2597988">
+                            <Category>Poor Error Handling: Empty Catch Block</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 30 줄의 예외 사항을 무시합니다. 이로 인해 프로프램이 예기치 못한 상태와 조건을 간과할 수도 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroid/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>30</LineStart>
+<Snippet>      Class&lt;?&gt; ignored = Class.forName("com.example.tutorial.Msg");
+      fail();
+    } catch (ClassNotFoundException expected){
+      // noop
+    }</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                        <Issue iid="BA557A7ABF36E64F3CEEF886199812AF" ruleID="8843F319-8A22-4101-A378-C2B2F2597988">
+                            <Category>Poor Error Handling: Empty Catch Block</Category>
+                            <Folder>Low</Folder>
+                            <Kingdom>Errors</Kingdom>
+                            <Abstract>UnitTest.java의 ensureAndroidTestProtosNotVisible() 메서드는 30 줄의 예외 사항을 무시합니다. 이로 인해 프로프램이 예기치 못한 상태와 조건을 간과할 수도 있습니다.</Abstract>
+                            <Friority>Low</Friority>
+                            <Primary>
+<FileName>UnitTest.java</FileName>
+<FilePath>protobuf-gradle-plugin-master/testProjectAndroidKotlinDsl/src/test/java/io/grpc/helloworldexample/UnitTest.java</FilePath>
+<LineStart>30</LineStart>
+<Snippet>      Class&lt;?&gt; ignored = Class.forName("com.example.tutorial.Msg");
+      fail();
+    } catch (ClassNotFoundException expected){
+      // noop
+    }</Snippet>
+<TargetFunction>CatchBlock()</TargetFunction>
+                            </Primary>
+                        </Issue>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Count by Category</Title>
+        <SubSection enabled="true">
+            <Title>Issues By Category</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="table">
+                    <Axis>행안부49개항목</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="24">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="2">
+                        <groupTitle>04.03. 부적절한 예외처리</groupTitle>
+                    </GroupingSection>
+                    <GroupingSection count="3">
+                        <groupTitle>04.02. 오류 상황 대응 부재</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+    <ReportSection enabled="true" optionalSubsections="true">
+        <Title>Issue Breakdown by Analysis</Title>
+        <SubSection enabled="true">
+            <Title>Issue by Analysis</Title>
+            <IssueListing listing="false" limit="-1">
+                <Refinement></Refinement>
+                <Chart chartType="pie">
+                    <Axis>Analysis</Axis>
+                    <MajorAttribute>Analysis</MajorAttribute>
+                    <GroupingSection count="29">
+                        <groupTitle>&lt;none&gt;</groupTitle>
+                    </GroupingSection>
+                </Chart>
+            </IssueListing>
+        </SubSection>
+    </ReportSection>
+</ReportDefinition>

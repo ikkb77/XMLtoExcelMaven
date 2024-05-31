@@ -49,6 +49,7 @@ public class XMLReaderService {
 			String tag = null;
 			boolean tag_start = false;
 			boolean tag_GroupingSection = false;
+			boolean tag_groupTitle = false;
 			boolean tag_MajorAttributeSummary = false;
 			boolean tag_MetaInfo = false;
 			boolean tag_Issue = false;
@@ -65,6 +66,7 @@ public class XMLReaderService {
 			String folder = null;
 			String kingdom = null;
 			String category = null;
+			String group_title = null;
 			String source_filepath = null;
 			String source_filename = null;
 			String source_linestart = null;
@@ -141,10 +143,11 @@ public class XMLReaderService {
 						tag_Text = true;
 					}
 					//GroupingSection 안의 내용만 확인
-					if(tag_GroupingSection){
-
-						//MajorAttributeSummary 안에서 MetaInfo 내용들 저장
-						if(tag_MajorAttributeSummary){
+					if(tag_GroupingSection) {
+						if (tag.equals("groupTitle")) {
+							group_title = xpp.getText();
+						}
+						if(tag_MajorAttributeSummary){ //MajorAttributeSummary 안에서 MetaInfo 내용들 저장
 							if(tag_MetaInfo){
 								if(tag.equals("Name")){
 									metainfo_name = xpp.getText();
@@ -227,7 +230,8 @@ public class XMLReaderService {
 									kingdom = xpp.getText();
 									break;
 								case "Category":
-									category = xpp.getText();
+									//category = xpp.getText();
+									category = group_title;
 									break;
 								case "Abstract":
 									issue_abstract = xpp.getText();
@@ -267,6 +271,9 @@ public class XMLReaderService {
 							metainfo_explanation = null;
 							metainfo_recommendations = null;
 							metainfo_tips = null;
+							break;
+						case "groupTitle":
+							tag_groupTitle = false;
 							break;
 						case "MajorAttributeSummary":
 							tag_MajorAttributeSummary = false;
