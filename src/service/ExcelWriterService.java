@@ -5,7 +5,11 @@ import model.FortifyDTO;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.xmlbeans.impl.regex.Match;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
@@ -186,7 +190,7 @@ public class ExcelWriterService {
 
             for (Row row : sheet){
                 for (Cell cell : row){
-                    switch (cell.getCellTypeEnum()) {
+                    switch (cell.getCellType()) {
                         case STRING:
                             // 셀 내용에 특수문자(더블쿼트,쉼표,마침표)가 있는 경우, 더블쿼트로 감싼다.
                             // 더블쿼트(") 는 더블쿼트 2개("") 로 치환한다.
