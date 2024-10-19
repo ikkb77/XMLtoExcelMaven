@@ -29,6 +29,7 @@ public class XMLReaderService {
 		} catch (IOException e) {
 			System.out.println("설정파일을 찾을 수 없습니다.");
 			System.out.println("xls-generator.properties 파일을 확인해 주시기 바랍니다.");
+			e.printStackTrace();
 		}
 
 		readXMLFile(properties);
