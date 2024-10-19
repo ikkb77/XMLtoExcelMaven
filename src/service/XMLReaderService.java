@@ -336,6 +336,7 @@ public class XMLReaderService {
 
 		} catch (Exception e) {
 			System.out.println(xml_path + " 파일을 읽을 수 없습니다.");
+			System.out.println("................................");
 			e.printStackTrace();
 		}
 
