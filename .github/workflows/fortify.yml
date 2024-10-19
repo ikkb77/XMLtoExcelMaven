@@ -73,7 +73,7 @@ jobs:
           ### Required configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
            SSC_URL: ${{secrets.SSC_URL}}                            # SSC URL
            SSC_TOKEN: ${{secrets.SSC_TOKEN}}                        # SSC CIToken or AutomationToken
-          # SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}                # ScanCentral SAST client auth token
+           SC_SAST_TOKEN: ${{secrets.SC_SAST_TOKEN}}                # ScanCentral SAST client auth token
            SC_SAST_SENSOR_VERSION: ${{vars.SC_SAST_SENSOR_VERSION}} # Sensor version on which to run the scan;
                                                                      # usually defined as organization or repo variable
           ### Optional configuration when integrating with Fortify Hosted / Software Security Center & ScanCentral
