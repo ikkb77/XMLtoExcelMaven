@@ -171,8 +171,6 @@ public class ExcelWriterService {
         } catch (Exception e) {
             System.out.println(excel_path + " xlsx couldn't generated.");
         	e.printStackTrace();
-            e.printStackTrace();
-            e.printStackTrace();
         }
     }
 
