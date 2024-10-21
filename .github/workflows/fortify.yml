@@ -64,8 +64,8 @@ jobs:
           vuln-exporter: latest
           bugtracker-utility: skip
           debricked-cli: skip
-        # with:
-        #  sast-scan: true
+          sast-scan: true
+
         env:
           ### Required configuration when integrating with Fortify on Demand
           #FOD_URL: https://ams.fortify.com
