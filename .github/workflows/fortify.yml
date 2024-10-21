@@ -64,7 +64,13 @@ jobs:
           vuln-exporter: latest
           bugtracker-utility: skip
           debricked-cli: skip
-          sast-scan: true
+          # sast-scan: true
+          
+      - name: Run scancentral from PATH
+        run: scancentral --version
+
+      - name: Run scancentral using SC_CLIENT_CMD environment variable
+        run: ${SC_CLIENT_CMD} -h
 
         env:
           ### Required configuration when integrating with Fortify on Demand
