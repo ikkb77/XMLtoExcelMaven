@@ -219,6 +219,8 @@ public class ExcelWriterService {
 
         } catch (IOException e) {
             System.out.println("CSV file converting failed...");
+            System.out.println("CSV file converting failed...");
+            e.printStackTrace();
             e.printStackTrace();
         }
 
