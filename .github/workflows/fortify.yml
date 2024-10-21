@@ -52,10 +52,20 @@ jobs:
       # required, you can use sub-actions like fortify/github-action/setup@v1 to set up the various Fortify tools
       # and run them directly from within your pipeline; see https://github.com/fortify/github-action#readme for
       # details.
-      - name: Run FoD SAST Scan
-        uses: fortify/github-action@a92347297e02391b857e7015792cd1926a4cd418
+
+          
+      - name: Setup Fortify tools
+        uses: fortify/github-action/setup@v1.2.2
         with:
+          tool-definitions: https://github.com/fortify/tool-definitions/releases/download/v1/tool-definitions.yaml.zip
+          export-path: true
+          fcli: skip
+          sc-client: 24.2
+          vuln-exporter: latest
+          bugtracker-utility: skip
+          debricked-cli: skip
           sast-scan: true
+
         env:
           ### Required configuration when integrating with Fortify on Demand
           #FOD_URL: https://ams.fortify.com
