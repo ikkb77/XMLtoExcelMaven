@@ -98,3 +98,15 @@ jobs:
            EXTRA_PACKAGE_OPTS: -bt none                   # Extra 'scancentral package' options
            DO_WAIT: true                                  # Wait for scan completion, implied if 'DO_EXPORT: true'
            DO_EXPORT: true                                # Export SAST results to GitHub code scanning dashboard
+           
+      - name: Start SAST scan-
+        uses: fortify/github-action/internal/run@v1.2.2
+        env:
+          DO_WAIT: true
+          DO_EXPORT: true
+          SSC_URL: ${{ secrets.SSC_URL_KAKAOENT }}
+          SC_CONTROLLER_URL: ${{ secrets.SC_CONTROLLER_URL_KAKAOENT }}
+          SSC_TOKEN: ${{ secrets.SSC_TOKEN_KAKAOENT }}
+          SSC_UPLOAD_TOKEN: ${{ secrets.SSC_UPLOAD_TOKEN_KAKAOENT }}
+        with:
+          cmd: '"${SC_CLIENT_CMD}" -url ${SC_CONTROLLER_URL} start -bt none -upload -application "github_action" -version "test1" -uptoken ${SSC_UPLOAD_TOKEN}'
