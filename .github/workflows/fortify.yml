@@ -106,9 +106,9 @@ jobs:
         env:
           DO_WAIT: true
           DO_EXPORT: true
-          SSC_URL: ${{ secrets.SSC_URL_KAKAOENT }}
-          SC_CONTROLLER_URL: ${{ secrets.SC_CONTROLLER_URL_KAKAOENT }}
-          SSC_TOKEN: ${{ secrets.SSC_TOKEN_KAKAOENT }}
-          SSC_UPLOAD_TOKEN: ${{ secrets.SSC_UPLOAD_TOKEN_KAKAOENT }}
+          SSC_URL: ${{secrets.SSC_URL}} 
+          SC_CONTROLLER_URL: ${{ secrets.SC_CONTROLLER_URL }}
+          SSC_TOKEN: ${{secrets.SSC_TOKEN}}  
+          SSC_UPLOAD_TOKEN: ${{ secrets.SSC_UPLOAD_TOKEN }}
         with:
           cmd: '"${SC_CLIENT_CMD}" -url ${SC_CONTROLLER_URL} start -bt none -upload -application "github_action" -version "test1" -uptoken ${SSC_UPLOAD_TOKEN}'
