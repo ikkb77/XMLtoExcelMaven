@@ -288,10 +288,10 @@ public class XMLReaderService {
 							// Error 내용: The maximum length of cell contents (text) is 32767 characters
 							// 조치 내용: 해당 snippet 내용을 대체 텍스트로 변환 출력하도록 수정
 							if (primary_snippet != null && primary_snippet.length() > 32767){
-								primary_snippet = "This source code snippet is truncated due to too long text error when excel is generating...";
+								primary_snippet = "This source code snippet is truncated due to too long text error when excel is generating.";
 							}
 							if (source_snippet != null && source_snippet.length() > 32767){
-								source_snippet = "This source code snippet is truncated due to too long text error when excel is generating...";
+								source_snippet = "This source code snippet is truncated due to too long text error when excel is generating.";
 							}
 
 							FortifyDTO entity = new FortifyDTO();
