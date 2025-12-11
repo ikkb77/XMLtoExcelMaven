@@ -311,11 +311,17 @@ public class XMLReaderService {
 							entity.setScanDate(scandate);
 
 							list.add(entity);
-                            source_filename = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
-							source_filepath = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
-							source_linestart = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
-							source_snippet = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
-							source_targetfunction = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+
+                            source_filename = null; //2025-12-11 "위험인자 진입 정보" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_filepath = null; //2025-12-11 "위험인자 진입 정보" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_linestart = null; //2025-12-11 "위험인자 진입 정보" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_snippet = null; //2025-12-11 "위험인자 진입 정보" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_targetfunction = null; //2025-12-11 "위험인자 진입" 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+
+							Issue_tag = null; //2025-12-11 "auditor 태그" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							userinfo = null; //2025-12-11 "userinfo 아이디" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							comment = null; //2025-12-11 "comment 의견" 버그 수정 (이전 값을 쓰지 않도록 초기화)
+
 							tag_Issue = false;
 							break;
 						case "Primary":
