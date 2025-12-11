@@ -92,9 +92,6 @@ public class XMLReaderService {
 			String metainfo_name = null;
 			String scandate = null;
 
-
-
-
 			while (event_type != XmlPullParser.END_DOCUMENT) {
 				if (event_type == XmlPullParser.START_TAG) {
 					tag = xpp.getName();
@@ -109,7 +106,7 @@ public class XMLReaderService {
 						//System.out.println(xpp.getText().substring(3,4).matches("\\d"));
 						String[] scan_date_text = xpp.getText().split(",");
 						if(xpp.getText().substring(3,4).matches("\\d")) {
-							//reportgenerator cli 로 legacy report 생성할 경우, $SCAN_DAST$ 포맷 On 2024. 2. 14.,
+							//reportgenerator cli 로 legacy report 생성할 경우, $SCAN_DATE$ 포맷 On 2024. 2. 14.,
 							String scan_ymd_text= scan_date_text[0].replace(" ", "0");
 							String scan_ymd[] = scan_ymd_text.split("\\.");
 							String scan_year = scan_ymd[0].substring(scan_ymd[0].length()-4, scan_ymd[0].length());
@@ -173,8 +170,8 @@ public class XMLReaderService {
 							if(tag.equals("MetaInfo")){
 								tag_MetaInfo = true;
 							}
-						}else if(tag_Issue){
-							if(tag_Primary){
+						}else if(tag_Issue) {
+							if (tag_Primary) {
 								switch (tag) {
 									case "FileName":
 										primary_filename = xpp.getText();
@@ -192,7 +189,7 @@ public class XMLReaderService {
 										primary_targetfunction = xpp.getText();
 										break;
 								}
-							}else if(tag_Source){
+							} else if (tag_Source) {
 								switch (tag) {
 									case "FileName":
 										source_filename = xpp.getText();
@@ -210,11 +207,13 @@ public class XMLReaderService {
 										source_targetfunction = xpp.getText();
 										break;
 								}
-							}else if(tag_Tag){
+							//} else if (!tag_Source) {
+							//	source_filepath = "";
+							} else if(tag_Tag){
 								if(tag.equals("Value")){
 									Issue_tag = xpp.getText();
 								}
-							}else if(tag_Comment){
+							} else if(tag_Comment){
 								if(tag.equals("UserInfo")){
 									userinfo = xpp.getText();
 								}else if(tag.equals("Comment")){
@@ -312,6 +311,11 @@ public class XMLReaderService {
 							entity.setScanDate(scandate);
 
 							list.add(entity);
+                            source_filename = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_filepath = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_linestart = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_snippet = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
+							source_targetfunction = null; //2025-12-11 위험인자 진입 정보 버그 수정 (이전 값을 쓰지 않도록 초기화)
 							tag_Issue = false;
 							break;
 						case "Primary":
